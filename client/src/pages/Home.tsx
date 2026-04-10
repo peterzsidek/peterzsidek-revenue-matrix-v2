@@ -496,57 +496,64 @@ function RevenueSystemSection() {
                   lineHeight: 1.75,
                 }}>{card.desc}</div>
               </div>
-              {/* Horizontal line + right arrow for cards 01–05 */}
+              {/* Long shaft line + right arrow for cards 01–05 */}
               {i < 5 && (
                 <div className="revenue-card-arrow" style={{
                   position: "absolute",
-                  bottom: "28px",
+                  bottom: "20px",
                   left: "36px",
-                  right: "16px",
+                  right: "20px",
                   height: "20px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "flex-end",
                   pointerEvents: "none",
                 }}>
-                  {/* horizontal line */}
+                  {/* shaft line */}
                   <div style={{
                     flex: 1,
                     height: "1px",
-                    backgroundColor: "rgba(240,223,200,0.15)",
-                    marginRight: "4px",
+                    backgroundColor: "rgba(240,223,200,0.20)",
+                    marginRight: "2px",
                   }} />
-                  {/* arrowhead */}
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ flexShrink: 0, color: "rgba(240,223,200,0.25)" }}>
-                    <path d="M1 5H9M9 5L5.5 1.5M9 5L5.5 8.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  {/* arrow character */}
+                  <span style={{
+                    color: "rgba(240,223,200,0.25)",
+                    fontSize: "18px",
+                    fontFamily: "'Poppins', sans-serif",
+                    lineHeight: 1,
+                    flexShrink: 0,
+                  }}>→</span>
                 </div>
               )}
-              {/* Vertical line + down arrow for card 06 */}
+              {/* Long shaft line + down arrow for card 06 */}
               {i === 5 && (
                 <div className="revenue-card-arrow" style={{
                   position: "absolute",
-                  bottom: "16px",
-                  right: "28px",
-                  top: "56px",
-                  width: "20px",
+                  bottom: "20px",
+                  left: "36px",
+                  right: "20px",
+                  height: "20px",
                   display: "flex",
-                  flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "flex-end",
                   pointerEvents: "none",
                 }}>
-                  {/* vertical line */}
+                  {/* shaft line reaching to the left wing of the down arrow */}
                   <div style={{
                     flex: 1,
-                    width: "1px",
-                    backgroundColor: "rgba(240,223,200,0.15)",
-                    marginBottom: "4px",
+                    height: "1px",
+                    backgroundColor: "rgba(240,223,200,0.20)",
+                    marginRight: "2px",
                   }} />
-                  {/* arrowhead */}
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" style={{ flexShrink: 0, color: "rgba(240,223,200,0.25)" }}>
-                    <path d="M5 1V9M5 9L1.5 5.5M5 9L8.5 5.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  {/* down arrow character */}
+                  <span style={{
+                    color: "rgba(240,223,200,0.25)",
+                    fontSize: "18px",
+                    fontFamily: "'Poppins', sans-serif",
+                    lineHeight: 1,
+                    flexShrink: 0,
+                  }}>↓</span>
                 </div>
               )}
             </div>
