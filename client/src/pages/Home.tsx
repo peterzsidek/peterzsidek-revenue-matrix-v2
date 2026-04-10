@@ -478,7 +478,7 @@ function RevenueSystemSection() {
                 userSelect: "none" as const,
               }}>{card.num}</div>
               {/* Content */}
-              <div style={{ padding: "100px 36px 40px 36px", position: "relative" }}>
+              <div style={{ padding: "100px 36px 56px 36px", position: "relative" }}>
                 <div className="revenue-card-title" style={{
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 700,
@@ -495,24 +495,24 @@ function RevenueSystemSection() {
                   color: "rgba(240,223,200,0.65)",
                   lineHeight: 1.75,
                 }}>{card.desc}</div>
-                {/* Bottom-right arrow for cards 01–05 */}
-                {i < 5 && (
-                  <div className="revenue-card-arrow" style={{
-                    position: "absolute",
-                    bottom: 0,
-                    right: 0,
-                    width: "32px",
-                    height: "32px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "rgba(240,223,200,0.65)",
-                    fontSize: "18px",
-                    fontFamily: "'Poppins', sans-serif",
-                    lineHeight: 1,
-                  }}>→</div>
-                )}
               </div>
+              {/* Bottom-right arrow for cards 01–05 — anchored to card corner */}
+              {i < 5 && (
+                <div className="revenue-card-arrow" style={{
+                  position: "absolute",
+                  bottom: "20px",
+                  right: "20px",
+                  width: "28px",
+                  height: "28px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "rgba(240,223,200,0.65)",
+                  fontSize: "18px",
+                  fontFamily: "'Poppins', sans-serif",
+                  lineHeight: 1,
+                }}>→</div>
+              )}
             </div>
           ))}
         </div>
