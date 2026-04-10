@@ -455,7 +455,7 @@ function RevenueMatrixIntroSection() {
     <section style={{ padding: "120px 0", backgroundColor: "#2c2c2c", position: "relative", overflow: "visible" }}>
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/QvwZVu498WhwxVrDug5WRT/hatter3_13fbd15f.jpg')", backgroundSize: "cover", backgroundPosition: "center", WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)", zIndex: 0 }} />
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to bottom, #2a2a2a 0%, rgba(42,42,42,0) 100%)", pointerEvents: "none", zIndex: 2 }} />
-      <div style={{ position: "absolute", bottom: "0", right: 0, width: "700px", height: "600px", background: "radial-gradient(ellipse at center, rgba(240,111,102,0.30) 0%, rgba(220,100,90,0.20) 28%, rgba(200,80,70,0.12) 52%, rgba(180,60,50,0.05) 72%, transparent 100%)", pointerEvents: "none", zIndex: 5, borderRadius: "50%", filter: "blur(55px)", transform: "translateX(35%)" }} />
+      <div style={{ position: "absolute", bottom: "0", right: 0, width: "700px", height: "600px", background: "radial-gradient(ellipse at center, rgba(240,111,102,0.30) 0%, rgba(220,100,90,0.20) 28%, rgba(200,80,70,0.12) 52%, rgba(180,60,50,0.05) 72%, transparent 100%)", pointerEvents: "none", zIndex: 1, borderRadius: "50%", filter: "blur(55px)", transform: "translateX(35%)" }} />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }}>
           <div>
@@ -496,7 +496,7 @@ function HowItWorksSection() {
   const sectionBg = (i: number) => i % 2 === 0 ? "rgba(0,0,0,0.2)" : "#303030";
 
   return (
-    <div id="how-it-works">
+    <div id="how-it-works" style={{ position: "relative", zIndex: 10 }}>
       <section style={{ padding: "24px 0 64px", backgroundColor: "#2c2c2c", paddingTop: '0px', marginTop: '-100px', overflow: 'visible' }}>
         <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: '40px', overflow: 'visible' }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
