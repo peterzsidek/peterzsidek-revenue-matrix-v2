@@ -466,7 +466,7 @@ function RevenueSystemSection() {
               {/* Top accent line */}
               <div className="revenue-card-top-border" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#4f4c48" }} />
               {/* Large background number */}
-              <div style={{
+              <div className="revenue-card-number" style={{
                 fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
                 fontWeight: 700,
                 fontSize: "clamp(64px, 8vw, 96px)",
@@ -479,7 +479,7 @@ function RevenueSystemSection() {
               }}>{card.num}</div>
               {/* Content */}
               <div style={{ padding: "100px 36px 40px 36px", position: "relative" }}>
-                <div style={{
+                <div className="revenue-card-title" style={{
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 700,
                   fontSize: "15px",

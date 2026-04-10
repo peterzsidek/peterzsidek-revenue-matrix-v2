@@ -227,6 +227,18 @@
 .revenue-card:hover .revenue-card-top-border {
   background-color: #f06f66 !important;
 }
+.revenue-card-number {
+  transition: color 0.22s ease;
+}
+.revenue-card:hover .revenue-card-number {
+  color: rgba(240, 111, 102, 0.35) !important;
+}
+.revenue-card-title {
+  transition: color 0.22s ease;
+}
+.revenue-card:hover .revenue-card-title {
+  color: #f06f66 !important;
+}
 .revenue-card-arrow {
   transition: transform 0.2s ease;
   display: inline-block;
