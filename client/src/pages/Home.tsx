@@ -425,7 +425,7 @@ function RevenueSystemSection() {
         <div style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "28px" }}>
-            Így építjük fel a te bevételi rendszeredet
+            Így építjük fel a bevételi rendszeredet
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.7)", maxWidth: "780px", marginBottom: "20px" }}>
             Ahhoz, hogy valóban működőképes, megalapozott és bevételnövekedést támogató rendszert tudjunk felépíteni, egy átfogó vállalatdiagnosztikai és stratégiai módszertant dolgoztunk ki. Ezt neveztük el Revenue Matrixnak.
