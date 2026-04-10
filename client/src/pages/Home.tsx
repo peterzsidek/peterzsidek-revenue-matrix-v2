@@ -418,8 +418,19 @@ const revenueSystemCards = [
 
 function RevenueSystemSection() {
   return (
-    <section style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px" }}>
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+    <section style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px", position: "relative", overflow: "hidden" }}>
+      {/* Network background image */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter-network_1d4a3054.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        opacity: 0.1,
+        zIndex: 0,
+        pointerEvents: "none",
+      }} />
+      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
         <div style={{ marginBottom: "56px" }}>
@@ -777,9 +788,8 @@ function WhyTrustSection() {
 }
 
 // Implementation section
-function ImplementationSection() {
-  return (
-    <section style={{ padding: "100px 0", backgroundColor: "#303030", borderTop: "1px solid rgba(240,223,200,0.06)" }}>
+function ImplementationSection() {  return (
+    <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
         <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>Ahol a lényeg van</div>
