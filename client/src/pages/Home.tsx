@@ -496,43 +496,39 @@ function RevenueSystemSection() {
                   lineHeight: 1.75,
                 }}>{card.desc}</div>
               </div>
-              {/* Full SVG arrow (shaft + arrowhead) for cards 01–05 */}
+              {/* Small arrow for cards 01–05 */}
               {i < 5 && (
                 <div className="revenue-card-arrow" style={{
                   position: "absolute",
-                  bottom: "22px",
-                  left: "36px",
+                  bottom: "20px",
                   right: "20px",
-                  height: "12px",
-                  pointerEvents: "none",
-                }}>
-                  <svg width="100%" height="12" preserveAspectRatio="none" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* shaft */}
-                    <line x1="0" y1="6" x2="192" y2="6" stroke="rgba(240,223,200,0.22)" strokeWidth="1"/>
-                    {/* arrowhead */}
-                    <polyline points="188,2 196,6 188,10" stroke="rgba(240,223,200,0.35)" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
+                  width: "28px",
+                  height: "28px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "rgba(240,223,200,0.25)",
+                  fontSize: "18px",
+                  fontFamily: "'Poppins', sans-serif",
+                  lineHeight: 1,
+                }}>→</div>
               )}
-              {/* Full SVG arrow (shaft + arrowhead) for card 06 — horizontal shaft meeting down arrowhead */}
+              {/* Small down arrow for card 06 */}
               {i === 5 && (
                 <div className="revenue-card-arrow" style={{
                   position: "absolute",
-                  bottom: "22px",
-                  left: "36px",
+                  bottom: "20px",
                   right: "20px",
-                  height: "12px",
-                  pointerEvents: "none",
-                }}>
-                  <svg width="100%" height="12" preserveAspectRatio="none" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* shaft */}
-                    <line x1="0" y1="6" x2="192" y2="6" stroke="rgba(240,223,200,0.22)" strokeWidth="1"/>
-                    {/* down arrowhead — shaft meets left wing */}
-                    <polyline points="188,2 196,6 188,10" stroke="rgba(240,223,200,0.35)" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                    {/* vertical stem going down from arrowhead tip */}
-                    <line x1="196" y1="6" x2="196" y2="12" stroke="rgba(240,223,200,0.22)" strokeWidth="1"/>
-                  </svg>
-                </div>
+                  width: "28px",
+                  height: "28px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "rgba(240,223,200,0.25)",
+                  fontSize: "18px",
+                  fontFamily: "'Poppins', sans-serif",
+                  lineHeight: 1,
+                }}>↓</div>
               )}
             </div>
           ))}
