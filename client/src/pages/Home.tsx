@@ -447,7 +447,7 @@ function RevenueSystemSection() {
                 backgroundColor: i === 0 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)",
                 position: "relative",
                 overflow: "hidden",
-                borderBottomRightRadius: i === 2 || i === 5 ? "36px" : "0",
+                borderBottomRightRadius: "36px",
                 boxSizing: "border-box" as const,
               }}
             >
