@@ -444,7 +444,7 @@ function RevenueSystemSection() {
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.7)", maxWidth: "780px", marginBottom: "20px" }}>
             A Revenue Matrix egy sokrétegű, strukturált rendszer, amely a céges működés feltárását, a piaci valóság vizsgálatát és az iparág-specifikus bevételi lehetőségek elemzését egyetlen logikába rendezi. A célja, hogy pontosan megmutassa, mire érdemes építeni, milyen sorrendben, és hogyan lesz ebből megvalósítható bevételi rendszer.
           </p>
-          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "15px", color: "rgba(240,223,200,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "36px" }}>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "15px", color: "#f06f66", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "36px" }}>
             A folyamata a következő:
           </p>
         </div>
