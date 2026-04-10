@@ -382,6 +382,125 @@ function DifferentiatorTable() {
   );
 }
 
+// Revenue System Section — replaces RevenueMatrixIntro, HowItWorks, WhatYouGet
+const revenueSystemCards = [
+  {
+    num: "01",
+    title: "Kötetlen feltáró beszélgetés",
+    desc: "Az első lépés egy kötetlen beszélgetés, ahol megértjük a jelenlegi működésedet, a helyzetedet és azt, hogy hol tartasz most.",
+  },
+  {
+    num: "02",
+    title: "Testreszabott céges diagnosztika",
+    desc: "Az első beszélgetés alapján elkészítjük a teljesen testreszabott kérdőívet, amellyel feltárjuk a működésedet — nem csak marketingoldalról, hanem minden olyan terület felől, ami a bevételre hatással van.",
+  },
+  {
+    num: "03",
+    title: "Külső piackutatás",
+    desc: "A belső képet nem önmagában vizsgáljuk. Külső piackutatással is megnézzük, mi történik valójában a piacodon, hogyan látszol kívülről, és milyen mintázatok működnek az iparágadban.",
+  },
+  {
+    num: "04",
+    title: "Összevetés és ütköztetés",
+    desc: "A céges diagnosztika és a külső piaci vizsgálat eredményeit összevetjük, hogy láthatóvá váljanak az eltérések, hiányok, vakfoltok és a valódi növekedési pontok.",
+  },
+  {
+    num: "05",
+    title: "Taxonómiai vizsgálat és priorizált rendszerterv",
+    desc: "Iparág-specifikusan megvizsgáljuk a bevételszerző eszközrendszert, és bizonyítékot keresünk arra, hogy az adott területen mi lehet valóban működőképes. Ezt vetjük össze a céges diagnosztikával, és ebből áll össze a priorizált megvalósítási terv: a helyzetértékelés, a sorrendbe rendezett teendők és a hosszabb távú fejlesztési útvonal.",
+  },
+  {
+    num: "06",
+    title: "Megvalósítás",
+    desc: "A folyamat nem áll meg a tervnél. A koncepcióban meghatározott stratégiai lépések feladat szintű végrehajtásában is részt veszünk, vagyis nem csak megmutatjuk az irányt, hanem segítünk fel is építeni azt a rendszert, ami a gyakorlatban működni fog.",
+  },
+];
+
+function RevenueSystemSection() {
+  return (
+    <section style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px" }}>
+      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+
+        {/* Header */}
+        <div style={{ marginBottom: "56px" }}>
+          <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
+          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "28px" }}>
+            Így építjük fel a te bevételi rendszeredet
+          </h2>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.7)", maxWidth: "780px", marginBottom: "20px" }}>
+            Ahhoz, hogy valóban működőképes, megalapozott és bevételnövekedést támogató rendszert tudjunk felépíteni, egy átfogó vállalatdiagnosztikai és stratégiai módszertant dolgoztunk ki. Ezt neveztük el Revenue Matrixnak.
+          </p>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.7)", maxWidth: "780px", marginBottom: "20px" }}>
+            A Revenue Matrix egy sokrétegű, strukturált rendszer, amely a céges működés feltárását, a piaci valóság vizsgálatát és az iparág-specifikus bevételi lehetőségek elemzését egyetlen logikába rendezi. A célja, hogy pontosan megmutassa, mire érdemes építeni, milyen sorrendben, és hogyan lesz ebből megvalósítható bevételi rendszer.
+          </p>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "15px", color: "rgba(240,223,200,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "36px" }}>
+            A folyamata a következő:
+          </p>
+        </div>
+
+        {/* 6 cards — 3 columns × 2 rows */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
+          {revenueSystemCards.map((card, i) => (
+            <div
+              key={i}
+              style={{
+                backgroundColor: i === 0 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)",
+                position: "relative",
+                overflow: "hidden",
+                borderBottomRightRadius: i === 2 || i === 5 ? "36px" : "0",
+                boxSizing: "border-box" as const,
+              }}
+            >
+              {/* Top accent line */}
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 0 ? "#f06f66" : "rgba(240,223,200,0.15)" }} />
+              {/* Large background number */}
+              <div style={{
+                fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(64px, 8vw, 96px)",
+                color: i === 0 ? "rgba(240,111,102,0.3)" : "rgba(240,223,200,0.08)",
+                lineHeight: 1,
+                position: "absolute",
+                top: "-7px",
+                left: "-2px",
+                userSelect: "none" as const,
+              }}>{card.num}</div>
+              {/* Content */}
+              <div style={{ padding: "100px 36px 40px 36px" }}>
+                <div style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "15px",
+                  color: i === 0 ? "#f06f66" : "#f0dfc8",
+                  textTransform: "uppercase" as const,
+                  letterSpacing: "0.05em",
+                  marginBottom: "12px",
+                }}>{card.title}</div>
+                <div style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 300,
+                  fontSize: "14px",
+                  color: "rgba(240,223,200,0.65)",
+                  lineHeight: 1.75,
+                }}>{card.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Closing statement */}
+        <div style={{ borderLeft: "4px solid #f06f66", paddingLeft: "32px", maxWidth: "860px" }}>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "18px", color: "rgba(240,223,200,0.85)", lineHeight: 1.8 }}>
+            Így nem különálló marketingeszközökben gondolkodsz,<br />
+            hanem egy olyan rendszerben, ahol pontosan látszik, mi működik, mi nem, és mit kell felépíteni ahhoz, hogy a bevétel kiszámíthatóan növekedjen.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 // For Whom section
 function ForWhomSection() {
   const yesItems = [
@@ -443,134 +562,6 @@ function ForWhomSection() {
               Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tud-e segíteni a Revenue Matrix.
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// Revenue Matrix intro section
-function RevenueMatrixIntroSection() {
-  return (
-    <section style={{ padding: "120px 0", backgroundColor: "#2c2c2c", position: "relative", overflow: "visible" }}>
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/QvwZVu498WhwxVrDug5WRT/hatter3_13fbd15f.jpg')", backgroundSize: "cover", backgroundPosition: "center", WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)", maskImage: "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)", zIndex: 0 }} />
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to bottom, #2a2a2a 0%, rgba(42,42,42,0) 100%)", pointerEvents: "none", zIndex: 2 }} />
-      <div style={{ position: "absolute", bottom: "0", right: 0, width: "700px", height: "600px", background: "radial-gradient(ellipse at center, rgba(240,111,102,0.30) 0%, rgba(220,100,90,0.20) 28%, rgba(200,80,70,0.12) 52%, rgba(180,60,50,0.05) 72%, transparent 100%)", pointerEvents: "none", zIndex: 1, borderRadius: "50%", filter: "blur(55px)", transform: "translateX(35%)" }} />
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "center" }}>
-          <div>
-            <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-            <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>A mi rendszerünk</div>
-            <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "28px" }}>Mi a Revenue Matrix?</h2>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.75)", marginBottom: "20px" }}>
-              A Revenue Matrix a Brandfabrik által fejlesztett vállalkozásdiagnosztikai rendszer. Nem tanácsadói vélemény — hanem szisztematikus feltárás: egy általános, 335 eszközt tartalmazó taxonómiából kiindulva, a te vállalkozásod konkrét helyzetére szűrve.
-            </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.75)", marginBottom: "40px" }}>
-              Az eredmény nem általános javaslatok listája. Hanem egy prioritizált, mérhető beavatkozási terv — amelynek minden lépése mögött bizonyított esettanulmány és számszerű hatásbecslés áll.
-            </p>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-            {[
-              { num: "01", title: "Taxonómia-alapú", desc: "Nem az ötleteinktől függ, mit javaslunk. Egy teljes, 335 eszközt tartalmazó rendszerből indul ki minden elemzés." },
-              { num: "02", title: "Kétféle forrás ütköztetése", desc: "Az önbevallás megmutatja, hogyan látod a vállalkozásodat. A piackutatás megmutatja, hogyan látja a piac. A különbség a beavatkozási pont." },
-              { num: "03", title: "Emberi ellenőrzés", desc: "Az elemzést szakértő hitelesíti — nem algoritmus dönt, hanem értelmében vizsgált, összefüggéseiben értett adat." },
-            ].map((item, i) => (
-              <div key={i} style={{ display: "flex", gap: "28px", alignItems: "flex-start", padding: "28px 0", borderBottom: i < 2 ? "1px solid rgba(240,223,200,0.08)" : "none" }}>
-                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "36px", color: "rgba(240,111,102,0.2)", lineHeight: 1, flexShrink: 0, width: "52px" }}>{item.num}</div>
-                <div>
-                  <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "15px", color: "#f0dfc8", marginBottom: "8px" }}>{item.title}</div>
-                  <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.6)", lineHeight: 1.7 }}>{item.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// How it works
-function HowItWorksSection() {
-  const sectionBg = (i: number) => i % 2 === 0 ? "rgba(0,0,0,0.2)" : "#303030";
-
-  return (
-    <div id="how-it-works" style={{ position: "relative", zIndex: 10 }}>
-      <section style={{ padding: "24px 0 64px", backgroundColor: "#2c2c2c", paddingTop: '0px', marginTop: '-100px', overflow: 'visible' }}>
-        <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", marginTop: '40px', overflow: 'visible' }}>
-          <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>A folyamat — lépésről lépésre</h2>
-          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "17px", color: "rgba(240,223,200,0.6)", maxWidth: "640px", lineHeight: 1.8 }}>
-            A Revenue Matrix nem egy kérdőív és egy PDF. Egy strukturált, ismételhető diagnosztikai rendszer — amelynek minden lépése az előzőre épít, és minden állítás mögött forrás áll.
-          </p>
-        </div>
-      </section>
-
-      {[
-        { num: "01", tag: "Az ügyfél szemszögéből", title: "Visszahívás és előkészítés", short: "Rövid egyeztetés — megismerjük a vállalkozásodat. Ez alapján mi összeállítjuk a számodra testreszabott kérdőívet.", long: "Az első lépés nem egy sablon-form kitöltése. Mielőtt bármilyen kérdőívet kapnál, mi elvégezzük az előkészítést: röviden megismerjük a vállalkozásodat, az iparágadat és a jelenlegi helyzetedet. Ez alapján egy értékesítő kollégánk összeállítja a cégadatlapot — ez az a belső dokumentum, amely alapján a kérdőíved testre lesz szabva." },
-        { num: "02", tag: "~20–25 perc", title: "Testreszabott kérdőív", short: "A kérdőív által teljes körűen feltérképezzük a vállalkozás valódi állapotát — a pozicionálástól az ügyfélútig.", long: "A kérdőív 7 területet fed le — nem azért, mert mindent meg akarunk tudni, hanem mert a bevételi problémák ritkán egyetlen területen gyökereznek. A pozicionálás, az árazás, a vásárlói út, a digitális jelenlét és az értékesítési folyamat mind összefügg." },
-        { num: "03", tag: "Párhuzamosan", title: "Független piackutatás", short: "Az önbevallás megmutatja, hogyan látod a vállalkozásodat. A piackutatás megmutatja, hogyan látja a piac.", long: "Miközben te kitöltöd a kérdőívet, mi elvégzünk egy teljesen független, strukturált piackutatást. Ez az elemzés nem a te válaszaidra épít — hanem arra, amit a piac, a versenytársak és a valódi ügyfelek visszajelzései mutatnak." },
-        { num: "04", tag: "A lényeg", title: "Ütköztetés és diagnózis", short: "A két forrást összevetjük: ahol az önkép és a piaci valóság különbözik, ott vannak a legfontosabb beavatkozási pontok.", long: "Ez az a lépés, ahol a valódi diagnózis megszületik. Az elemzés nem általánosít — minden állítás mellé jelöljük a bizonyítottsági szintet. Ezután egy vezető tanácsadó felülvizsgálja az eredményt." },
-        { num: "05", tag: "Személyesen", title: "Személyes eredménybemutatás", short: "Az eredményt nem emailben küldjük el. Személyesen mutatjuk be — mert egy diagnózis értéke a magyarázatban van, nem a dokumentumban.", long: "Az elemzés végén egy személyes bemutatón végigmegyünk az eredményeken. Megmutatjuk, hol tart most a vállalkozásod, melyek a legfontosabb beavatkozási pontok és milyen sorrendben érdemes elindítani a változtatásokat." },
-      ].map((block, idx) => (
-        <section key={idx} style={{ padding: "80px 0", backgroundColor: sectionBg(idx) }}>
-          <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: "64px", alignItems: "start" }}>
-              <div>
-                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: '300px', color: idx % 2 === 0 ? '#303030' : '#363636', lineHeight: 1, marginTop: '-120px', marginLeft: '-60px' }}>{block.num}</div>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "#f06f66" }}>{block.tag}</div>
-              </div>
-              <div>
-                <h3 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(24px, 2.5vw, 38px)", color: "#f0dfc8", lineHeight: 1.25, marginBottom: "24px" }}>{block.title}</h3>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.75)", marginBottom: "28px", maxWidth: "680px" }}>{block.short}</p>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", lineHeight: 1.85, color: "rgba(240,223,200,0.55)", maxWidth: "680px" }}>{block.long}</p>
-                {idx === 1 && <div style={{ gridColumn: "2 / 3", marginTop: "32px" }}><StaggeredAreaGrid /></div>}
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
-// What you get section
-function WhatYouGetSection() {
-  const outputs = [
-    { num: "01", title: "Helyzetértékelés", desc: "A jelenlegi állapot tükre — ítélet nélkül. Megmutatja, hol tart valójában a vállalkozásod, és hol vannak a rések az önkép és a valóság között." },
-    { num: "02", title: "Sorba rendezett teendők", desc: "3–5 konkrét lépés fontossági sorrendben, várható hatással. A döntési térkép azonnal megmutatja, mit érdemes először elindítani." },
-    { num: "03", title: "Fejlesztési útvonal", desc: "Hosszabb távú rendszer, logikus lépésekkel. Az ügyfél pontosan tudja, mit, miért és milyen sorrendben érdemes elindítani." },
-  ];
-
-  return (
-    <section style={{ padding: "64px 0", backgroundColor: "#303030" }}>
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ marginBottom: "72px" }}>
-          <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>Mit kapsz az elemzés után?</h2>
-          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.6)", maxWidth: "520px" }}>
-            Az elemzés a kiindulópont — nem a végpont. Három konkrét eredmény, amelyek alapján azonnal elindulhat a stratégia és a végrehajtás.
-          </p>
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch" }}>
-          {outputs.map((item, i) => (
-            <div key={i} className="card-hover" style={{ backgroundColor: i === 0 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)", position: "relative", overflow: "hidden", borderBottomRightRadius: "36px", height: "100%", boxSizing: "border-box" }}>
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 0 ? "#f06f66" : "rgba(240,223,200,0.2)", zIndex: 2 }} />
-              <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(64px, 8vw, 96px)", color: i === 0 ? "rgba(240,111,102,0.3)" : "rgba(240,223,200,0.1)", lineHeight: 1, position: "absolute", top: "-7px", left: "-2px" }}>{item.num}</div>
-              <div style={{ padding: "100px 36px 36px 36px" }}>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: i === 0 ? "#f06f66" : "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "12px" }}>{item.title}</div>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7 }}>{item.desc}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ marginTop: "64px", borderLeft: "4px solid #f06f66", paddingLeft: "32px" }}>
-          <p style={{ fontFamily: "'Poppins', sans-serif", fontStyle: "italic", fontSize: "20px", fontWeight: 600, color: "#f06f66", lineHeight: 1.5 }}>
-            "Nem eladunk — diagnózist adunk. Az ügyfél maga dönt, hogy folytatni akarja-e velünk."
-          </p>
         </div>
       </div>
     </section>
@@ -911,10 +902,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <DifferentiatorTable />
+      <RevenueSystemSection />
       <ForWhomSection />
-      <RevenueMatrixIntroSection />
-      <HowItWorksSection />
-      <WhatYouGetSection />
       <CaseStudySection />
       <WhyTrustSection />
       <ImplementationSection />
