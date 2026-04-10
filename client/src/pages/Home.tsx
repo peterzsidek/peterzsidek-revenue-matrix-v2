@@ -352,8 +352,7 @@ function DifferentiatorTable() {
             marginBottom: "48px",
           }}>
             Nem ügynökség vagyunk.<br />
-            Nem kampányokat építünk.<br />
-            <span style={{ color: "#f06f66" }}>Bevételi rendszert építünk.</span>
+            <span style={{ color: "#f06f66" }}>A bevételi működést rakjuk rendbe.</span>
           </h2>
         </div>
 
