@@ -329,13 +329,13 @@ function HeroSection() {
 
 // Differentiator Table — static, no scroll animation
 const differentiatorRows = [
-  { aspect: "Megközelítés", agency: "Reaktív — az ügyfél kéri, mi csináljuk", brandfabrik: "Proaktív — szisztematikus feltárás, az ügyfél sem tudja mi hiányzik" },
-  { aspect: "Döntési alap", agency: "Ötletalapú: kampányok, taktikák ad hoc", brandfabrik: "Bizonyítékalapú: minden döntés mögött adat vagy esettanulmány" },
-  { aspect: "Diagnózis", agency: "Rövid briefing, majd ajánlat", brandfabrik: "Mélyinterjú-szintű kérdőív, lefedve a teljes üzleti területet + külső piackutatás az ügyfél önbevallásától függetlenül" },
-  { aspect: "Lefedettség", agency: "Egy-egy kampány, csatorna vagy taktika — a teljes kép nélkül", brandfabrik: "Teljes körű: az összes releváns, bizonyított bevételi lehetőség feltérképezve, cégre adaptálva prioritási sorrendben" },
-  { aspect: "Gondolkodásmód", agency: "Kampányban gondolkodik", brandfabrik: "Rendszerben gondolkodik: az eszközök egymást erősítik" },
-  { aspect: "Siker mérése", agency: "Szubjektív — nincs konkrét mérőszám", brandfabrik: "Mérhető: konkrét mutatókkal, auditált eredményorientált módon" },
-  { aspect: "Szerződés", agency: "Hosszú távú, kötött", brandfabrik: "Kötelezettségmentes kilépési lehetőség" },
+  { aspect: "Megközelítés", agency: "Amit kérsz, arra ad javaslatot", brandfabrik: "A teljes működést végignézi, és azt is feltárja, amit nem látsz" },
+  { aspect: "Döntési alap", agency: "Tapasztalat és vélemény alapján javasol", brandfabrik: "Iparági szinten bizonyított, működő mintákra épít" },
+  { aspect: "Diagnózis", agency: "A felszínen látható problémára reagál", brandfabrik: "Mélyinterjú-szintű feltárás + külső piackutatás, nem csak az ügyfél önbevallása alapján" },
+  { aspect: "Lefedettség", agency: "Egy-egy kampányra vagy csatornára néz rá", brandfabrik: "Minden releváns bevételi lehetőséget egyben vizsgál, cégre szabva és sorrendbe rakva" },
+  { aspect: "Gondolkodásmód", agency: "Kampányokban gondolkodik", brandfabrik: "Az elemek egymásra épülnek és erősítik egymást" },
+  { aspect: "Siker mérése", agency: "Nem látszik pontosan, mi hoz bevételt", brandfabrik: "Pontosan látszik, mi hoz bevételt" },
+  { aspect: "Szerződés", agency: "Hosszú távra leköt", brandfabrik: "Csak akkor maradsz, ha működik" },
 ];
 
 function DifferentiatorTable() {
@@ -360,7 +360,7 @@ function DifferentiatorTable() {
           {/* Header row */}
           <div style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
             <div style={{ padding: "16px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.35)" }}>Szempont</div>
-            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos tanácsadás</div>
+            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos ügynökség</div>
             <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik Revenue Matrix</div>
           </div>
           {differentiatorRows.map((row, i) => (
