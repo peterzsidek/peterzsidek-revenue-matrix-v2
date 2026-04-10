@@ -454,8 +454,9 @@ function RevenueSystemSection() {
           {revenueSystemCards.map((card, i) => (
             <div
               key={i}
+              className="revenue-card"
               style={{
-                backgroundColor: i === 0 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)",
+                backgroundColor: "#333231",
                 position: "relative",
                 overflow: "hidden",
                 borderBottomRightRadius: "36px",
@@ -463,7 +464,7 @@ function RevenueSystemSection() {
               }}
             >
               {/* Top accent line */}
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 0 ? "#f06f66" : "rgba(240,223,200,0.15)" }} />
+              <div className="revenue-card-top-border" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#4f4c48" }} />
               {/* Large background number */}
               <div style={{
                 fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",

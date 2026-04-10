@@ -215,6 +215,19 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
+/* Revenue system process cards hover */
+.revenue-card {
+  cursor: default;
+  transition: background-color 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.revenue-card:hover {
+  background-color: #403433 !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(240, 111, 102, 0.15);
+}
+.revenue-card:hover .revenue-card-top-border {
+  background-color: #f06f66 !important;
+}
+
 /* Staggered card entrance animation — on a wrapper div, not the card itself */
 @keyframes cardSlideIn {
   from {
