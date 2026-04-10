@@ -5,12 +5,18 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import HeroPreview from "./pages/HeroPreview";
+import Adatkezeles from "./pages/Adatkezeles";
+import DifferentiatorPrototype from "./pages/DifferentiatorPrototype";
 
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/differentiator-prototype"} component={DifferentiatorPrototype} />
+      <Route path={"/hero-preview"} component={HeroPreview} />
+      <Route path={"/adatkezeles"} component={Adatkezeles} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -27,7 +33,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
+        defaultTheme="dark"
         // switchable
       >
         <TooltipProvider>
