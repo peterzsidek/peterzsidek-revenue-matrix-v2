@@ -507,7 +507,7 @@ function RevenueSystemSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "rgba(240,223,200,0.65)",
+                  color: "rgba(240,223,200,0.08)",
                   fontSize: "18px",
                   fontFamily: "'Poppins', sans-serif",
                   lineHeight: 1,
