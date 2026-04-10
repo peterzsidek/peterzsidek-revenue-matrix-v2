@@ -423,10 +423,10 @@ function RevenueSystemSection() {
       <div style={{
         position: "absolute",
         inset: 0,
-        backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter-network_1d4a3054.png')",
+        backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter2-network_49bb3b4a.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        opacity: 0.1,
+        opacity: 0.18,
         zIndex: 0,
         pointerEvents: "none",
       }} />
