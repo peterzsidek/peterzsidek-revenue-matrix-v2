@@ -227,6 +227,13 @@
 .revenue-card:hover .revenue-card-top-border {
   background-color: #f06f66 !important;
 }
+.revenue-card-arrow {
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.revenue-card:hover .revenue-card-arrow {
+  transform: translateX(5px);
+}
 
 /* Staggered card entrance animation — on a wrapper div, not the card itself */
 @keyframes cardSlideIn {
