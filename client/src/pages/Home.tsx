@@ -507,11 +507,28 @@ function RevenueSystemSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  color: "rgba(240,223,200,0.08)",
+                  color: "rgba(240,223,200,0.65)",
                   fontSize: "18px",
                   fontFamily: "'Poppins', sans-serif",
                   lineHeight: 1,
                 }}>→</div>
+              )}
+              {/* Downward arrow for card 06 */}
+              {i === 5 && (
+                <div className="revenue-card-arrow" style={{
+                  position: "absolute",
+                  bottom: "20px",
+                  right: "20px",
+                  width: "28px",
+                  height: "28px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "rgba(240,223,200,0.65)",
+                  fontSize: "18px",
+                  fontFamily: "'Poppins', sans-serif",
+                  lineHeight: 1,
+                }}>↓</div>
               )}
             </div>
           ))}
