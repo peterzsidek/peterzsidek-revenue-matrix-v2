@@ -361,7 +361,7 @@ function DifferentiatorTable() {
           <div style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
             <div style={{ padding: "16px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.35)" }}>Szempont</div>
             <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos ügynökség</div>
-            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik Revenue Matrix</div>
+            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik</div>
           </div>
           {differentiatorRows.map((row, i) => (
             <div key={i} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)" }}>
