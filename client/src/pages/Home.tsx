@@ -1059,23 +1059,23 @@ function WhyTrustSection() {
 // Implementation section
 function ImplementationSection() {  return (
     <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
+      {/* Faint PNG overlay — percentage width so hand scales with viewport, always right-anchored */}
+      <img
+        src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png"
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: "58%",
+          height: "auto",
+          opacity: 0.22,
+          pointerEvents: "none",
+          userSelect: "none",
+        }}
+      />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative" }}>
-        {/* Faint PNG overlay — anchored to container right edge so hand stays fixed relative to text */}
-        <img
-          src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png"
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: "-60px",
-            right: "-120px",
-            width: "900px",
-            height: "auto",
-            opacity: 0.22,
-            pointerEvents: "none",
-            userSelect: "none",
-          }}
-        />
         <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
         <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>Ahol a lényeg van</div>
         <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "20px" }}>Stratégia, majd végrehajtás</h2>
