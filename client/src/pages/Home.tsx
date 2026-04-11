@@ -1064,16 +1064,16 @@ function ImplementationSection() {  return (
         <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>Ahol a lényeg van</div>
         <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "20px" }}>Stratégia, majd végrehajtás</h2>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.75)", marginBottom: "16px", maxWidth: "720px" }}>
-          A diagnózis csak a belépő. A Brandfabrik valódi értéke az, ami utána következik: a stratégia felállítása és a végrehajtás — havi együttműködés keretében.
+          A diagnózis nem a folyamat vége, hanem a kezdete. A Revenue Matrix alapján felépítjük a megvalósítás sorrendjét, majd részt is veszünk annak kivitelezésében.
         </p>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", lineHeight: 1.85, color: "rgba(240,223,200,0.55)", maxWidth: "720px", marginBottom: "48px" }}>
-          Az elemzés eredményei alapján felállítjuk a stratégiát három időtávra bontva. A cél egyértelmű: minél hamarabb hozzon kézzelfogható eredményt a megvalósítás.
+          A cél nem egy jól kinéző terv, hanem az, hogy a fontos lépések valóban elinduljanak, a megfelelő időben és a megfelelő sorrendben.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
           {[
-            { label: "Azonnali", timeframe: "1–4 hét", desc: "Kis befektetéssel, gyorsan megvalósítható beavatkozások, amelyek azonnal érezhetővé teszik a változást.", highlight: true },
-            { label: "Középtávú", timeframe: "1–3 hónap", desc: "Rendszerépítés: láthatóság, elérés, ügyfélút optimalizálása — az alapok, amelyekre minden más épül.", highlight: false },
-            { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Skálázható struktúra, automatizált folyamatok, fenntartható növekedési rendszer.", highlight: false },
+            { label: "Azonnali", timeframe: "1–4 hét", desc: "Olyan beavatkozások, amelyek kis ráfordítással gyorsan elindíthatók, és rövid időn belül kézzelfogható eredményt hozhatnak.", highlight: true },
+            { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
+            { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
             <div key={i} className="card-hover" style={{ backgroundColor: item.highlight ? "rgba(240,111,102,0.08)" : "rgba(240,223,200,0.03)", borderTop: `3px solid ${item.highlight ? "#f06f66" : "rgba(240,223,200,0.15)"}`, padding: "28px 24px", borderBottomRightRadius: "30px" }}>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px" }}>{item.label}</div>
