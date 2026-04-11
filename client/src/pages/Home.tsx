@@ -702,6 +702,7 @@ function CaseStudySection() {
               tooltip: {
                 enabled: true,
                 displayColors: false,
+                maxWidth: 200,
                 backgroundColor: "rgba(26,23,20,0.96)",
                 titleColor: "#f06f66",
                 bodyColor: "rgba(240,223,200,0.80)",
@@ -721,16 +722,17 @@ function CaseStudySection() {
                 },
               },
             },
+            layout: { padding: { top: 24, right: 24, bottom: 24, left: 24 } },
             scales: {
               x: {
                 min: 0, max: 10,
-                grid: { color: "rgba(240,223,200,0.06)", lineWidth: 1 },
+                grid: { color: "rgba(240,223,200,0.06)", lineWidth: 1, drawTicks: false, drawBorder: false },
                 ticks: { display: false },
                 border: { display: false },
               },
               y: {
                 min: 0, max: 10,
-                grid: { color: "rgba(240,223,200,0.06)", lineWidth: 1 },
+                grid: { color: "rgba(240,223,200,0.06)", lineWidth: 1, drawTicks: false, drawBorder: false },
                 ticks: { display: false },
                 border: { display: false },
               },
