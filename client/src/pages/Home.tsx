@@ -760,7 +760,7 @@ function CaseStudySection() {
                 external: externalTooltip,
               },
             },
-            layout: { padding: { top: 24, right: 24, bottom: 24, left: 24 } },
+            layout: { padding: { top: 40, right: 40, bottom: 40, left: 40 } },
             scales: {
               x: {
                 min: 0, max: 10,
