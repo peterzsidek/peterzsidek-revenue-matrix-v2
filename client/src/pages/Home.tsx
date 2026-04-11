@@ -948,9 +948,9 @@ export default function Home() {
       <HeroSection />
       <DifferentiatorTable />
       <RevenueSystemSection />
-      <ForWhomSection />
       <CaseStudySection />
       <WhyTrustSection />
+      <ForWhomSection />
       <ImplementationSection />
       <CTASection />
       <Footer />
