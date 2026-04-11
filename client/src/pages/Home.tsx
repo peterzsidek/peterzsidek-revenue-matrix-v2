@@ -1072,7 +1072,7 @@ function ImplementationSection() {  return (
           height: "100%",
           objectFit: "cover",
           objectPosition: "right top",
-          opacity: 0.12,
+          opacity: 0.22,
           pointerEvents: "none",
           userSelect: "none",
         }}
