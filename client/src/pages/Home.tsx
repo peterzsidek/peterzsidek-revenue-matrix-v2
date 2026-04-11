@@ -707,9 +707,9 @@ function CaseStudySection() {
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>335</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>teljes vizsgált kommunikációs eszköztár</div>
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "auto", paddingTop: "16px", alignSelf: "flex-end" }}>
-                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase" }}>részletek</span>
-                  <span className="revenue-card-arrow" style={{ fontSize: "18px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block", marginTop: "0px" }}>→</span>
                 </div>
               </div>
               {/* Back face */}
