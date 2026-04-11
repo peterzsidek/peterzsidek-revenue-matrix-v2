@@ -719,14 +719,60 @@ function CaseStudySection() {
               </div>
             </div>
           </div>
-          {/* Remaining stat cards */}
-          {[{ num: "127", label: "Releváns az ügyfél helyzetére" }, { num: "30", label: "Prioritizált beavatkozás" }, { num: "3", label: "Végrehajtási fázis" }].map((item, i) => (
-            <div key={i} className="card-hover" style={{ backgroundColor: i === 1 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)", position: "relative", overflow: "hidden", borderBottomRightRadius: (i === 0 || i === 2) ? "0" : "20px", borderBottomLeftRadius: (i === 0 || i === 2) ? "20px" : "0", padding: "20px 24px 24px 24px", display: "flex", flexDirection: "column" }}>
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 1 ? "#f06f66" : "rgba(240,223,200,0.12)" }} />
-              <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: i === 1 ? "#f06f66" : "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{item.num}</div>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5 }}>{item.label}</div>
+          {/* Flip card 2: 127 */}
+          <div className="stat-flip-card">
+            <div className="stat-flip-inner">
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
+                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>127</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>iparágra szűrt releváns eszköz</div>
+                <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                </div>
+              </div>
+              <div className="stat-flip-back">
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>A teljes eszköztárból <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi bizonyult relevánsnak</strong> az adott iparág működése és bevételi logikája szempontjából.</p>
+              </div>
             </div>
-          ))}
+          </div>
+          {/* Flip card 3: 30 */}
+          <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
+            <div className="stat-flip-inner">
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
+                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>30</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>a cégre szabott lehetőség</div>
+                <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                </div>
+              </div>
+              <div className="stat-flip-back" style={{ borderBottomLeftRadius: "20px" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>Az iparágra releváns elemek közül <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi maradt</strong>, amely ennél a konkrét cégnél valóban használhatónak bizonyult.</p>
+              </div>
+            </div>
+          </div>
+          {/* Flip card 4: 3 */}
+          <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
+            <div className="stat-flip-inner">
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
+                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>3</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>megvalósítási fázis</div>
+                <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                </div>
+              </div>
+              <div className="stat-flip-back" style={{ borderBottomRightRadius: "20px" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>A végén a kiválasztott lehetőségek nem ömlesztve maradtak, hanem <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>3 világos megvalósítási szakaszba</strong> rendeződtek.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
           <div style={{ display: "flex", flexDirection: "column" }}>
