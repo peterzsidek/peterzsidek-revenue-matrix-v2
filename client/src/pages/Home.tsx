@@ -685,6 +685,7 @@ function CaseStudySection() {
             "white-space:normal",
             "opacity:0",
             "transition:opacity 0.15s",
+            "box-shadow:0 4px 24px rgba(240,111,102,0.25),0 2px 8px rgba(0,0,0,0.5)",
           ].join(";");
           canvas.parentElement?.appendChild(tooltipEl);
         }
@@ -869,8 +870,9 @@ function CaseStudySection() {
           {/* Chart column */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", gap: "0" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "28px", flexShrink: 0 }}>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 500, color: "rgba(240,223,200,0.35)", textTransform: "uppercase", letterSpacing: "2px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block" }}>Várható bevételi hatás →</span>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", width: "28px", flexShrink: 0, paddingTop: "16px", paddingBottom: "16px" }}>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.4)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block" }}>nagyobb hatás</span>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.2)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block" }}>kisebb hatás</span>
               </div>
               <div style={{ flex: 1, aspectRatio: "1 / 1", maxHeight: "560px", backgroundColor: "rgba(255,255,255,0.015)", border: "1px solid rgba(240,223,200,0.12)", borderTopLeftRadius: "20px", overflow: "hidden" }}>
                 <canvas id="caseMatrix" style={{ display: "block", width: "100%", height: "100%" }} />
@@ -887,17 +889,17 @@ function CaseStudySection() {
             <div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "14px", color: "#f0dfc8", marginBottom: "10px" }}>Hogyan olvasd ezt az ábrát?</div>
               <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.65)", lineHeight: 1.7, margin: "0 0 14px 0" }}>A diagram egyszerre három dolgot mutat: mekkora bevételi hatása lehet egy adott eszköznek, mennyire nehéz bevezetni, és melyik fázisban érdemes vele foglalkozni.</p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(240,223,200,0.45)", lineHeight: 1.6 }}>Függőleges tengely: várható bevételi hatás</div>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(240,223,200,0.45)", lineHeight: 1.6 }}>Vízszintes tengely: bevezetés nehézsége</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "6px", borderLeft: "2px solid rgba(240,223,200,0.1)", paddingLeft: "12px" }}>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 400, color: "rgba(240,223,200,0.55)", lineHeight: 1.6 }}>Függőleges tengely: várható bevételi hatás</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 400, color: "rgba(240,223,200,0.55)", lineHeight: 1.6 }}>Vízszintes tengely: bevezetés nehézsége</div>
               </div>
             </div>
             {/* Phase legend */}
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
-                { color: "rgba(240,111,102,0.75)", border: "#f06f66", label: "1. fázis — Azonnali beavatkozások", sub: "0–20 ezer Ft · 1–4. hét" },
-                { color: "rgba(240,223,200,0.45)", border: "rgba(240,223,200,0.65)", label: "2. fázis — Láthatóság és elérés", sub: "30–80 ezer Ft / hó · 1–3. hónap" },
-                { color: "rgba(200,200,200,0.25)", border: "rgba(200,200,200,0.45)", label: "3. fázis — Rendszer és skálázás", sub: "50–120 ezer Ft / hó · 3–6. hónap" },
+                { color: "rgba(240,111,102,0.75)", border: "#f06f66", label: "1. fázis — Azonnali beavatkozások", sub: "Ajánlott költségkeret: 0–20 ezer Ft · Időtáv: 1–4. hét" },
+                { color: "rgba(240,223,200,0.45)", border: "rgba(240,223,200,0.65)", label: "2. fázis — Láthatóság és elérés", sub: "Ajánlott havi költségkeret: 30–80 ezer Ft · Időtáv: 1–3. hónap" },
+                { color: "rgba(200,200,200,0.25)", border: "rgba(200,200,200,0.45)", label: "3. fázis — Rendszer és skálázás", sub: "Ajánlott havi költségkeret: 50–120 ezer Ft · Időtáv: 3–6. hónap" },
               ].map((l, i) => (
                 <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                   <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: l.color, border: `1.5px solid ${l.border}`, flexShrink: 0, marginTop: "3px" }} />
