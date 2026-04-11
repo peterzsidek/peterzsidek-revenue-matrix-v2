@@ -662,11 +662,58 @@ function CaseStudySection() {
         const canvas = document.getElementById("caseMatrix") as HTMLCanvasElement;
         if (!canvas || (canvas as any)._chartInstance) return;
         const BUBBLE_R = 9;
-        const allData = [
-          ...PHASE1_BUBBLES.map(b => ({ ...b, r: BUBBLE_R, phase: 1 })),
-          ...PHASE2_BUBBLES.map(b => ({ ...b, r: BUBBLE_R, phase: 2 })),
-          ...PHASE3_BUBBLES.map(b => ({ ...b, r: BUBBLE_R, phase: 3 })),
-        ];
+        // Custom HTML tooltip
+        let tooltipEl = document.getElementById("chartTooltip");
+        if (!tooltipEl) {
+          tooltipEl = document.createElement("div");
+          tooltipEl.id = "chartTooltip";
+          tooltipEl.style.cssText = [
+            "position:absolute",
+            "pointer-events:none",
+            "z-index:9999",
+            "max-width:200px",
+            "width:200px",
+            "background:rgba(26,23,20,0.96)",
+            "border:1px solid rgba(240,111,102,0.3)",
+            "border-radius:6px",
+            "padding:12px",
+            "font-family:Poppins,sans-serif",
+            "font-size:12px",
+            "line-height:1.55",
+            "color:rgba(240,223,200,0.80)",
+            "word-wrap:break-word",
+            "white-space:normal",
+            "opacity:0",
+            "transition:opacity 0.15s",
+          ].join(";");
+          canvas.parentElement?.appendChild(tooltipEl);
+        }
+        const externalTooltip = (context: any) => {
+          const { chart: ch, tooltip } = context;
+          if (tooltip.opacity === 0) { tooltipEl!.style.opacity = "0"; return; }
+          const raw = tooltip.dataPoints?.[0]?.raw;
+          if (!raw) return;
+          const title = raw.label || "";
+          const line1 = raw.line1 || "";
+          const line2 = raw.line2 || "";
+          tooltipEl!.innerHTML = [
+            `<div style="font-weight:600;font-size:13px;color:#f06f66;margin-bottom:6px;word-wrap:break-word">${title}</div>`,
+            line1 ? `<div style="margin-bottom:4px">${line1}</div>` : "",
+            line2 ? `<div>${line2}</div>` : "",
+          ].join("");
+          const canvasRect = canvas.getBoundingClientRect();
+          const canvasParentRect = canvas.parentElement!.getBoundingClientRect();
+          let left = tooltip.caretX - canvasParentRect.left + canvasRect.left - canvasParentRect.left;
+          let top = tooltip.caretY - canvasParentRect.top + canvasRect.top - canvasParentRect.top;
+          // keep inside parent
+          const tw = 200;
+          const parentW = canvas.parentElement!.offsetWidth;
+          if (left + tw > parentW) left = parentW - tw - 8;
+          if (left < 0) left = 8;
+          tooltipEl!.style.left = left + "px";
+          tooltipEl!.style.top = (top - 8) + "px";
+          tooltipEl!.style.opacity = "1";
+        };
         const chart = new (window as any).Chart(canvas, {
           type: "bubble",
           data: {
@@ -700,26 +747,8 @@ function CaseStudySection() {
             plugins: {
               legend: { display: false },
               tooltip: {
-                enabled: true,
-                displayColors: false,
-                maxWidth: 200,
-                backgroundColor: "rgba(26,23,20,0.96)",
-                titleColor: "#f06f66",
-                bodyColor: "rgba(240,223,200,0.80)",
-                borderColor: "rgba(240,111,102,0.3)",
-                borderWidth: 1,
-                padding: 12,
-                titleFont: { family: "Poppins, sans-serif", size: 13, weight: "600" },
-                bodyFont: { family: "Poppins, sans-serif", size: 12, weight: "300" },
-                callbacks: {
-                  title: (items: any[]) => items[0]?.raw?.label || "",
-                  label: (item: any) => {
-                    const lines = [];
-                    if (item.raw?.line1) lines.push(item.raw.line1);
-                    if (item.raw?.line2) lines.push(item.raw.line2);
-                    return lines;
-                  },
-                },
+                enabled: false,
+                external: externalTooltip,
               },
             },
             layout: { padding: { top: 24, right: 24, bottom: 24, left: 24 } },
