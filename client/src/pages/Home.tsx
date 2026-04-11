@@ -688,9 +688,13 @@ function CaseStudySection() {
           ].join(";");
           canvas.parentElement?.appendChild(tooltipEl);
         }
+        // ensure the parent wrapper is positioned so absolute child works
+        if (canvas.parentElement) {
+          (canvas.parentElement as HTMLElement).style.position = "relative";
+        }
         const externalTooltip = (context: any) => {
-          const { chart: ch, tooltip } = context;
-          if (tooltip.opacity === 0) { tooltipEl!.style.opacity = "0"; return; }
+          const { tooltip } = context;
+          if (!tooltip || tooltip.opacity === 0) { tooltipEl!.style.opacity = "0"; return; }
           const raw = tooltip.dataPoints?.[0]?.raw;
           if (!raw) return;
           const title = raw.label || "";
@@ -701,17 +705,15 @@ function CaseStudySection() {
             line1 ? `<div style="margin-bottom:4px">${line1}</div>` : "",
             line2 ? `<div>${line2}</div>` : "",
           ].join("");
-          const canvasRect = canvas.getBoundingClientRect();
-          const canvasParentRect = canvas.parentElement!.getBoundingClientRect();
-          let left = tooltip.caretX - canvasParentRect.left + canvasRect.left - canvasParentRect.left;
-          let top = tooltip.caretY - canvasParentRect.top + canvasRect.top - canvasParentRect.top;
-          // keep inside parent
+          // caretX/Y are relative to the canvas element itself
           const tw = 200;
           const parentW = canvas.parentElement!.offsetWidth;
-          if (left + tw > parentW) left = parentW - tw - 8;
+          let left = tooltip.caretX + 12;
+          let top = tooltip.caretY - 8;
+          if (left + tw > parentW) left = tooltip.caretX - tw - 12;
           if (left < 0) left = 8;
           tooltipEl!.style.left = left + "px";
-          tooltipEl!.style.top = (top - 8) + "px";
+          tooltipEl!.style.top = top + "px";
           tooltipEl!.style.opacity = "1";
         };
         const chart = new (window as any).Chart(canvas, {
