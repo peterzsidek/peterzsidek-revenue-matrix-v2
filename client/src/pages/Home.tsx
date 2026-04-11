@@ -699,7 +699,7 @@ function CaseStudySection() {
           </p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
-          {[{ num: "335", label: "Általános eszköz a taxonómiában" }, { num: "127", label: "Releváns az ügyfél helyzetére" }, { num: "30", label: "Prioritizált beavatkozás" }, { num: "3", label: "Végrehajtási fázis" }].map((item, i) => (
+          {[{ num: "335", label: "teljes vizsgált kommunikációs eszköztár" }, { num: "127", label: "Releváns az ügyfél helyzetére" }, { num: "30", label: "Prioritizált beavatkozás" }, { num: "3", label: "Végrehajtási fázis" }].map((item, i) => (
             <div key={i} className="card-hover" style={{ backgroundColor: i === 2 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)", position: "relative", overflow: "hidden", borderBottomRightRadius: (i === 1 || i === 3) ? "0" : "20px", borderBottomLeftRadius: (i === 1 || i === 3) ? "20px" : "0", padding: "20px 24px 24px 24px", display: "flex", flexDirection: "column" }}>
               <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 2 ? "#f06f66" : "rgba(240,223,200,0.12)" }} />
               <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: i === 2 ? "#f06f66" : "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{item.num}</div>
