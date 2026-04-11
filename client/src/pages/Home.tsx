@@ -699,10 +699,33 @@ function CaseStudySection() {
           </p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
-          {[{ num: "335", label: "teljes vizsgált kommunikációs eszköztár" }, { num: "127", label: "Releváns az ügyfél helyzetére" }, { num: "30", label: "Prioritizált beavatkozás" }, { num: "3", label: "Végrehajtási fázis" }].map((item, i) => (
-            <div key={i} className="card-hover" style={{ backgroundColor: i === 2 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)", position: "relative", overflow: "hidden", borderBottomRightRadius: (i === 1 || i === 3) ? "0" : "20px", borderBottomLeftRadius: (i === 1 || i === 3) ? "20px" : "0", padding: "20px 24px 24px 24px", display: "flex", flexDirection: "column" }}>
-              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 2 ? "#f06f66" : "rgba(240,223,200,0.12)" }} />
-              <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: i === 2 ? "#f06f66" : "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{item.num}</div>
+          {/* Flip card for the 335 stat */}
+          <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
+            <div className="stat-flip-inner">
+              {/* Front face */}
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
+                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>335</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>teljes vizsgált kommunikációs eszköztár</div>
+                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "auto", paddingTop: "16px", alignSelf: "flex-end" }}>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase" }}>részletek</span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "rgba(240,223,200,0.3)" }}>
+                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              {/* Back face */}
+              <div className="stat-flip-back" style={{ borderBottomRightRadius: "20px" }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>A Revenue Matrix egy <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>335 elemből álló</strong>, teljes kommunikációs eszköztárból indul ki, nem néhány általános marketingötletből.</p>
+              </div>
+            </div>
+          </div>
+          {/* Remaining stat cards */}
+          {[{ num: "127", label: "Releváns az ügyfél helyzetére" }, { num: "30", label: "Prioritizált beavatkozás" }, { num: "3", label: "Végrehajtási fázis" }].map((item, i) => (
+            <div key={i} className="card-hover" style={{ backgroundColor: i === 1 ? "rgba(240,111,102,0.1)" : "rgba(240,223,200,0.03)", position: "relative", overflow: "hidden", borderBottomRightRadius: (i === 0 || i === 2) ? "0" : "20px", borderBottomLeftRadius: (i === 0 || i === 2) ? "20px" : "0", padding: "20px 24px 24px 24px", display: "flex", flexDirection: "column" }}>
+              <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: i === 1 ? "#f06f66" : "rgba(240,223,200,0.12)" }} />
+              <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: i === 1 ? "#f06f66" : "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{item.num}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5 }}>{item.label}</div>
             </div>
           ))}
