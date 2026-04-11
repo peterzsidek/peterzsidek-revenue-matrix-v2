@@ -691,14 +691,14 @@ function CaseStudySection() {
     <section ref={ref} style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.18)" }}>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" async />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ marginBottom: "64px" }}>
+        <div style={{ marginBottom: "24px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(28px, 3vw, 48px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>Így működik a Revenue Matrix<br />egy valós vállalkozásnál</h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.6)", maxWidth: "640px", lineHeight: 1.8 }}>
             Ez egy valós étterem teljes körű vizsgálatának az eredménye. A vége nem egy ötletlista, hanem egy leszűrt, priorizált, azonnal bevethető bevételi rendszer.
           </p>
         </div>
-        <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott, megvalósítható stratégiáig.</p>
+        <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott,<br />megvalósítható stratégiáig.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
           {/* Flip card for the 335 stat */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
