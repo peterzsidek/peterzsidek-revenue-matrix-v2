@@ -1002,11 +1002,16 @@ function WhyTrustSection() {
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", backgroundColor: "rgba(240,223,200,0.08)" }}>
           {reasons.map((item, i) => (
-            <div key={i} className="card-hover" style={{ padding: "48px 40px", backgroundColor: "rgba(240,223,200,0.03)", borderLeft: i % 2 === 0 ? "3px solid #f06f66" : "none", borderRight: i % 2 === 1 ? "3px solid rgba(240,223,200,0.15)" : "none", borderTopRightRadius: i === 0 ? "28px" : "0", borderBottomRightRadius: i === 2 ? "28px" : "0", borderTopLeftRadius: i === 1 ? "28px" : "0", borderBottomLeftRadius: i === 3 ? "28px" : "0" }}>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: i % 2 === 0 ? "#f06f66" : "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px" }}>{item.title}</div>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7 }}>{item.desc}</div>
+            <div
+              key={i}
+              style={{ padding: "48px 40px", backgroundColor: "#2a2a2a", borderTop: "1px solid rgba(240,223,200,0.12)", transition: "background-color 0.25s ease", cursor: "default" }}
+              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#333333")}
+              onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#2a2a2a")}
+            >
+              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "16px" }}>{item.title}</div>
+              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.65)", lineHeight: 1.75 }}>{item.desc}</div>
             </div>
           ))}
         </div>
