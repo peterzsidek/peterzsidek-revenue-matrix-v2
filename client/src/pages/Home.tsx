@@ -1003,12 +1003,51 @@ function WhyTrustSection() {
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
-          {reasons.map((item, i) => (
-            <div key={i} className="card-hover" style={{ padding: "48px 40px", backgroundColor: "rgba(240,223,200,0.03)", borderLeft: i % 2 === 0 ? "3px solid #f06f66" : "none", borderRight: i % 2 === 1 ? "3px solid rgba(240,223,200,0.15)" : "none", borderTopRightRadius: i === 0 ? "28px" : "0", borderBottomRightRadius: i === 2 ? "28px" : "0", borderTopLeftRadius: i === 1 ? "28px" : "0", borderBottomLeftRadius: i === 3 ? "28px" : "0" }}>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: i % 2 === 0 ? "#f06f66" : "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px" }}>{item.title}</div>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7 }}>{item.desc}</div>
-            </div>
-          ))}
+          {reasons.map((item, i) => {
+            const isLeft = i % 2 === 0;
+            const borderRadiusStyle = {
+              borderTopRightRadius: i === 0 ? "28px" : "0",
+              borderBottomRightRadius: i === 2 ? "28px" : "0",
+              borderTopLeftRadius: i === 1 ? "28px" : "0",
+              borderBottomLeftRadius: i === 3 ? "28px" : "0",
+            };
+            const greyBorder = "3px solid rgba(240,223,200,0.15)";
+            const coralBorder = "3px solid #f06f66";
+            return (
+              <div
+                key={i}
+                style={{
+                  padding: "48px 40px",
+                  backgroundColor: "rgba(240,223,200,0.03)",
+                  borderLeft: isLeft ? greyBorder : "none",
+                  borderRight: !isLeft ? greyBorder : "none",
+                  transition: "background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+                  ...borderRadiusStyle,
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget;
+                  el.style.backgroundColor = "rgba(240,111,102,0.07)";
+                  el.style.boxShadow = "0 4px 32px rgba(240,111,102,0.18), 0 2px 8px rgba(0,0,0,0.4)";
+                  if (isLeft) el.style.borderLeft = coralBorder;
+                  else el.style.borderRight = coralBorder;
+                  const title = el.querySelector(".card-title") as HTMLElement | null;
+                  if (title) title.style.color = "#f06f66";
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget;
+                  el.style.backgroundColor = "rgba(240,223,200,0.03)";
+                  el.style.boxShadow = "none";
+                  if (isLeft) el.style.borderLeft = greyBorder;
+                  else el.style.borderRight = greyBorder;
+                  const title = el.querySelector(".card-title") as HTMLElement | null;
+                  if (title) title.style.color = "#f0dfc8";
+                }}
+              >
+                <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease" }}>{item.title}</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7 }}>{item.desc}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
