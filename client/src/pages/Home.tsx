@@ -709,9 +709,7 @@ function CaseStudySection() {
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>teljes vizsgált kommunikációs eszköztár</div>
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "auto", paddingTop: "16px", alignSelf: "flex-end" }}>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase" }}>részletek</span>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ color: "rgba(240,223,200,0.3)" }}>
-                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  <span className="revenue-card-arrow" style={{ fontSize: "18px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
                 </div>
               </div>
               {/* Back face */}
