@@ -701,6 +701,15 @@ function CaseStudySection() {
           const title = raw.label || "";
           const line1 = raw.line1 || "";
           const line2 = raw.line2 || "";
+          // determine phase shadow color from dataset index
+          const dsIndex = tooltip.dataPoints?.[0]?.datasetIndex ?? 0;
+          const shadowColors = [
+            "rgba(240,111,102,0.35)",   // phase 1 — coral
+            "rgba(240,223,200,0.25)",   // phase 2 — off-white
+            "rgba(180,180,180,0.2)",    // phase 3 — grey
+          ];
+          const shadowColor = shadowColors[dsIndex] || shadowColors[0];
+          tooltipEl!.style.boxShadow = `0 4px 24px ${shadowColor}, 0 2px 8px rgba(0,0,0,0.5)`;
           tooltipEl!.innerHTML = [
             `<div style="font-weight:600;font-size:13px;color:#f06f66;margin-bottom:6px;word-wrap:break-word">${title}</div>`,
             line1 ? `<div style="margin-bottom:4px">${line1}</div>` : "",
