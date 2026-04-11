@@ -593,7 +593,7 @@ function ForWhomSection() {
             </div>
           </div>
 
-          <div style={{ border: "1px solid rgba(240,223,200,0.08)", backgroundColor: "rgba(240,223,200,0.02)", borderTopLeftRadius: "40px" }}>
+          <div style={{ border: "1px solid rgba(240,223,200,0.08)", backgroundColor: "rgba(240,223,200,0.02)", borderBottomLeftRadius: "40px" }}>
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,223,200,0.08)", display: "flex", alignItems: "center", gap: "10px" }}>
               <span style={{ color: "rgba(240,223,200,0.35)", fontSize: "16px", fontWeight: 700 }}>✕</span>
               <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(240,223,200,0.35)" }}>Nem neked szól, ha…</span>
