@@ -571,7 +571,7 @@ function ForWhomSection() {
             Kinek szól a diagnosztika alapú szolgáltatásunk?
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.55)", maxWidth: "520px" }}>
-            Nem mindenkinek való. Olvasd át őszintén — ha rád illik, érdemes beszélnünk.
+            Ahol a bevételi működést már nem egyetlen eszközzel, hanem rendszerszinten kell rendbe tenni.
           </p>
         </div>
 
