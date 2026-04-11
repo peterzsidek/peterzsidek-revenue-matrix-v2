@@ -1060,7 +1060,7 @@ function WhyTrustSection() {
 function ImplementationSection() {  return (
     <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative" }}>
       {/* Faint PNG overlay */}
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png')", backgroundSize: "cover", backgroundPosition: "center right", backgroundRepeat: "no-repeat", opacity: 0.12, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png')", backgroundSize: "1920px auto", backgroundPosition: "top right", backgroundRepeat: "no-repeat", opacity: 0.12, pointerEvents: "none" }} />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
         <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>Ahol a lényeg van</div>
