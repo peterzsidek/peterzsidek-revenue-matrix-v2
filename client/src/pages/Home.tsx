@@ -1027,7 +1027,7 @@ function WhyTrustSection() {
                 onMouseEnter={e => {
                   const el = e.currentTarget;
                   el.style.backgroundColor = "rgba(240,111,102,0.07)";
-                  el.style.boxShadow = "0 4px 32px rgba(240,111,102,0.18), 0 2px 8px rgba(0,0,0,0.4)";
+                  el.style.boxShadow = "0 12px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(240,111,102,0.15)";
                   if (isLeft) el.style.borderLeft = coralBorder;
                   else el.style.borderRight = coralBorder;
                   const title = el.querySelector(".card-title") as HTMLElement | null;
