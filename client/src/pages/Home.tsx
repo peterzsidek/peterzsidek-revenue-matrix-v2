@@ -1058,7 +1058,9 @@ function WhyTrustSection() {
 
 // Implementation section
 function ImplementationSection() {  return (
-    <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter5_9fd454d4.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+    <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative" }}>
+      {/* Faint PNG overlay */}
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png')", backgroundSize: "cover", backgroundPosition: "center right", backgroundRepeat: "no-repeat", opacity: 0.12, pointerEvents: "none" }} />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
         <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>Ahol a lényeg van</div>
@@ -1075,7 +1077,7 @@ function ImplementationSection() {  return (
             { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
-            <div key={i} className="card-hover" style={{ backgroundColor: item.highlight ? "rgba(240,111,102,0.08)" : "rgba(240,223,200,0.03)", borderTop: `3px solid ${item.highlight ? "#f06f66" : "rgba(240,223,200,0.15)"}`, padding: "28px 24px", borderBottomRightRadius: "30px" }}>
+            <div key={i} className="revenue-card" style={{ backgroundColor: item.highlight ? "#3d3230" : "#333231", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative" }}>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px" }}>{item.label}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,111,102,0.7)", marginBottom: "14px" }}>{item.timeframe}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.65 }}>{item.desc}</div>
