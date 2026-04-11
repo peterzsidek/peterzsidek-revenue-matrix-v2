@@ -698,6 +698,7 @@ function CaseStudySection() {
             Ez egy valós étterem teljes körű vizsgálatának az eredménye. A vége nem egy ötletlista, hanem egy leszűrt, priorizált, azonnal bevethető bevételi rendszer.
           </p>
         </div>
+        <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott, megvalósítható stratégiáig.</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
           {/* Flip card for the 335 stat */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
