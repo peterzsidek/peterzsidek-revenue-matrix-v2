@@ -989,10 +989,10 @@ function StaggeredAreaGrid() {
 // Why trust section
 function WhyTrustSection() {
   const reasons = [
-    { title: "A te vállalkozásodra szabva", desc: "Nem általános tanácsokat hallasz — hanem azt, ami a te piacodon, a te helyzetedben valóban működik." },
-    { title: "Elvágja a gordiuszi csomót", desc: "Ma már annyi bevételszerző eszköz létezik, hogy a legtöbb vállalkozó nem tudja, melyikbe érdemes időt és pénzt fektetni. A Revenue Matrix ezt a káoszt rendezi." },
-    { title: "Először megmutatjuk, utána segítünk", desc: "A prioritizált lista leveszi rólad a 'mit csináljak először?' terhét. Tiszta cselekvési tervet kapsz — és csak utána kerül szóba, hogy miben segítsünk a kivitelezésben." },
-    { title: "Nem futószalag, hanem műtét", desc: "Egy elemzés elvégzéséhez valóban ismerni kell a vállalkozást. Ezért egyszerre csak néhány ügyféllel dolgozunk — hogy minden diagnózis valóban személyre szabott legyen." },
+    { title: "A TE VÁLLALKOZÁSODRA SZABVA", desc: "Nem általános tanácsokat kapsz, hanem azt, ami a te piacodon, a te helyzetedben és a te működésed mellett lehet valóban releváns." },
+    { title: "RENDET TESZ A LEHETŐSÉGEK KÖZÖTT", desc: "Ma már túl sok bevételre ható eszköz létezik ahhoz, hogy érzésből lehessen jól dönteni. A Revenue Matrix nem mindent akar egyszerre használni, hanem kielemzi, mi maradjon bent, mi essen ki, és mi kövesse egymás után." },
+    { title: "ELŐSZÖR TISZTÁN LÁTSZ, UTÁNA LEHET HALADNI", desc: "A priorizált rendszer leveszi rólad a „mivel érdemes kezdeni?” terhét. Először világos helyzetképet és sorrendet kapsz, és csak utána indulhat el a megvalósítás." },
+    { title: "NEM ÁLL MEG A DIAGNÓZISÁNÁL", desc: "A cél nem az, hogy készüljön egy jó elemzés, hanem az, hogy abból működő rendszer épüljön. Ezért a folyamat nem a felismerésnél ér véget, hanem a kivitelezés irányába megy tovább." },
   ];
 
   return (
@@ -1000,7 +1000,7 @@ function WhyTrustSection() {
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ marginBottom: "72px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Miért nem áll össze a legtöbb cégnél a marketing bevételi rendszerré?</h2>
+          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
           {reasons.map((item, i) => (
