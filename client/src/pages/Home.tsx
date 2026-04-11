@@ -709,10 +709,16 @@ function CaseStudySection() {
           // caretX/Y are relative to the canvas element itself
           const tw = 200;
           const parentW = canvas.parentElement!.offsetWidth;
+          const parentH = canvas.parentElement!.offsetHeight;
+          const tooltipH = tooltipEl!.offsetHeight || 120; // estimated height
           let left = tooltip.caretX + 12;
           let top = tooltip.caretY - 8;
+          // flip horizontally if overflowing right
           if (left + tw > parentW) left = tooltip.caretX - tw - 12;
           if (left < 0) left = 8;
+          // flip vertically if overflowing bottom
+          if (top + tooltipH > parentH) top = tooltip.caretY - tooltipH - 12;
+          if (top < 0) top = 8;
           tooltipEl!.style.left = left + "px";
           tooltipEl!.style.top = top + "px";
           tooltipEl!.style.opacity = "1";
