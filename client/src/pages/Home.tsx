@@ -1164,8 +1164,7 @@ function Footer() {
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <img src={LOGO_URL} alt="Brandfabrik" style={{ height: "28px", objectFit: "contain" }} />
-            <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.25)", letterSpacing: "0.12em", textTransform: "uppercase" }}>bevétel · rendszer · építés</span>
+            <img src={LOGO_URL} alt="Brandfabrik" style={{ height: "38px", objectFit: "contain" }} />
           </div>
           <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)" }}>© {new Date().getFullYear()} Brandfabrik. Minden jog fenntartva.</div>
           <a href="/adatkezeles" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.35)", textDecoration: "none", borderBottom: "1px solid rgba(240,223,200,0.15)", paddingBottom: "1px" }}>Adatkezelési tájékoztató</a>
