@@ -693,9 +693,9 @@ function CaseStudySection() {
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ marginBottom: "64px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(28px, 3vw, 48px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>Így néz ki a Revenue Matrix a gyakorlatban</h2>
+          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(28px, 3vw, 48px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>Így működik a Revenue Matrix<br />egy valós vállalkozásnál</h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.6)", maxWidth: "640px", lineHeight: 1.8 }}>
-            335 általános eszközből kiindulva, a konkrét vállalkozásra szűrve — minden pont egy valódi beavatkozási javaslatot jelöl.
+            Megmutatja, hol vannak a valódi beavatkozási pontok, és mely lépések hatnak azonnal, közép- vagy hosszú távon a bevételre.
           </p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
