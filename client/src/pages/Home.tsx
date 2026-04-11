@@ -550,16 +550,18 @@ function RevenueSystemSection() {
 // For Whom section
 function ForWhomSection() {
   const yesItems = [
-    "Van már működő vállalkozásod, de úgy érzed, a bevétel nem követi az erőfeszítéseidet",
-    "Próbáltál már marketing-megoldásokat, de nem hoztak tartós eredményt",
-    "Nem látod át, hogy pontosan hol szivárog a bevételed",
-    "Szerződnél egy ügynökséggel, de előbb bizonyítékot szeretnél látni",
-    "Fontos neked, hogy ne kössön le hosszú távú szerződés, és csak addig tartson, amíg kézzelfogható hasznot biztosít számodra",
+    "A vállalkozásod évek óta működik, de mostanra azt érzed, hogy a növekedés megtorpant, és ami korábban bevált, az már nem hozza ugyanazt az eredményt.",
+    "Egyre több új eszköz, új platform és új logika jelenik meg körülötted, de nem újabb zajra van szükséged, hanem arra, hogy valaki rendet tegyen bennük.",
+    "Nem akarsz minden új technológiát, kifejezést és működési modellt egyedül megfejteni, csak tisztán szeretnéd látni, hogy a te vállalkozásodnál mi releváns belőle.",
+    "Úgy érzed, nem egyetlen marketingeszközzel van gond, hanem azzal, hogy a bevételi működés már nem áll össze elég tudatos rendszerként.",
+    "Nem újabb ötleteket keresel, hanem megalapozott irányt, világos sorrendet és olyan megvalósítást, ami nem áll meg a felismerésnél.",
   ];
   const noItems = [
-    "Még nem indítottad el a vállalkozásodat",
-    "Gyors, sablon-alapú megoldást keresel",
-    "Nem vagy kész változtatni, ha az elemzés azt javasolja",
+    "Gyors marketingötletet vagy azonnali forgalomnövelő trükköt keresel, mélyebb feltárás és újragondolás nélkül.",
+    "Még csak most indítod a vállalkozásodat, és nincs mögötte működő valóság, amit érdemben vizsgálni lehetne.",
+    "Nem akarsz valódi döntéseket hozni, csak megerősítést keresel arra, hogy minden maradhasson úgy, ahogy eddig volt.",
+    "Kizárólag kivitelezőt keresel, de nem akarsz ránézni arra, hogy valójában min kellene változtatni.",
+    "Nem rendszerszintű rendrakást keresel, hanem még több különálló eszközt, ötletet és próbálkozást.",
   ];
 
   return (
