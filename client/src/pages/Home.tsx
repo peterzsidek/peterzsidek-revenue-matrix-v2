@@ -1058,8 +1058,8 @@ function WhyTrustSection() {
 
 // Implementation section
 function ImplementationSection() {  return (
-    <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative" }}>
-      {/* Faint PNG overlay — anchored to section right edge, scales with section width */}
+    <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
+      {/* Faint PNG overlay — fixed 1920px wide, anchored to right edge so hand never moves */}
       <img
         src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png"
         alt=""
@@ -1068,10 +1068,8 @@ function ImplementationSection() {  return (
           position: "absolute",
           top: 0,
           right: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "right top",
+          width: "1920px",
+          height: "auto",
           opacity: 0.22,
           pointerEvents: "none",
           userSelect: "none",
