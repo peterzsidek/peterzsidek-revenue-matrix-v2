@@ -615,19 +615,45 @@ function ForWhomSection() {
 }
 
 // Case study section
+const PHASE1_BUBBLES = [
+  { x: 1.5, y: 8.5, label: "Google Cégprofil teljes optimalizálása (GBP)", line1: "+40–70% láthatóság várható a Google Térképen.", line2: "0 Ft · A profil rendbetétele segít abban, hogy többen találjanak rá az étteremre a környéken." },
+  { x: 1.2, y: 7.8, label: "QR-kód rendszer bevezetése", line1: "+5–9 új értékelés várható havonta.", line2: "2–5 ezer Ft · A vendég egyetlen beolvasással eljut az értékeléshez, a menühez vagy a profilhoz." },
+  { x: 1.8, y: 8.8, label: "Étlap átalakítása árpszichológiai elvek szerint", line1: "+15–25% kosárérték várható.", line2: "0 Ft · Nem új fogásokat kell kitalálni, hanem úgy kell átrendezni az étlapot, hogy többen válasszanak magasabb értékű opciót." },
+  { x: 2.2, y: 7.2, label: "Utcai tábla optimalizálása (A-tábla)", line1: "+5–10% esti vendég várható.", line2: "0 Ft · A járókelőnek gyorsan értenie kell, miért érdemes most bemenni." },
+  { x: 1.0, y: 7.5, label: "Pultosi kommunikációs tréning", line1: "+10–15% kosárérték várható.", line2: "0 Ft · Néhány jól betanított mondat is növelheti, hogy a vendég mit és mennyit rendel." },
+  { x: 2.8, y: 6.5, label: "WhatsApp Business beállítása", line1: "0 Ft · közvetlen üzleti kapcsolatépítés indulhat.", line2: "A napi menü és a gyors válaszok egyszerűbbé teszik a kapcsolatot a céges partnerekkel." },
+  { x: 1.5, y: 6.2, label: "TripAdvisor profil aktiválása", line1: "Cél: 2 értékelésről 50+ értékelés felé elindulni.", line2: "0 Ft · A turista gyakran ott dönt, ahol több és jobb értékelést lát." },
+  { x: 2.5, y: 5.8, label: "Apple Térkép üzleti profil beállítása (Apple Maps Business Connect)", line1: "0 Ft · külön elérés az iPhone-t használó turistáknál.", line2: "Egy rövid beállítással olyan vendégeket is el lehet érni, akik eddig nem találták meg a helyet." },
+  { x: 1.8, y: 7.0, label: "Bélyegzőkártya bevezetése", line1: "+20–30% visszatérés várható.", line2: "3–5 ezer Ft · Egyszerű eszköz arra, hogy a környéken dolgozók újra és újra visszajöjjenek." },
+  { x: 2.0, y: 8.0, label: "Napi csomagajánlat bevezetése", line1: "+15–25% kosárérték várható.", line2: "0 Ft · Ha a leves, főétel és ital együtt jobban megéri, a vendég könnyebben dönt és többet költ." },
+];
+const PHASE2_BUBBLES = [
+  { x: 5.5, y: 8.5, label: "Helyi célzású Meta-hirdetés (Meta Ads)", line1: "+15–30 esti vendég várható hetente.", line2: "30–60 ezer Ft / hó · A hirdetés a közelben lévő és releváns embereket éri el, főleg az esti forgalom erősítésére." },
+  { x: 6.2, y: 7.8, label: "Google helyi keresési hirdetés (Google Local Search Ads)", line1: "+10–20 turista várható hetente.", line2: "20–40 ezer Ft / hó · Akkor jelenik meg, amikor valaki már konkrétan éttermet keres a környéken." },
+  { x: 4.5, y: 7.2, label: "Környékbeli irodák személyes felkeresése", line1: "+2–5 irodai megállapodás várható.", line2: "0 Ft · Egy egyszeri személyes körből később rendszeres ebédrendelések jöhetnek." },
+  { x: 4.8, y: 8.2, label: "Szállodai recepciós együttmlűködések (concierge megállapodás)", line1: "+5–15 turista várható hetente, tartósan.", line2: "0 Ft · A recepciós ajánlás közvetlenül a döntés pillanatában hozhat vendéget." },
+  { x: 3.8, y: 6.5, label: "Instagram aktív használata", line1: "0 Ft · a nem fizetett elérésből is jöhet turista forgalom.", line2: "A rendszeres ételfotók és történetek segítének abban, hogy az étterem könnyebben felfedezhető legyen." },
+  { x: 5.0, y: 7.0, label: "Szerkesztői meghívás budapesti portáloknak", line1: "5–10 ezer Ft · egy megjelelés hosszabb távon is hozhat keresésből érkező forgalmat.", line2: "Ez nem hirdetés, hanem külső ajánlás, ami hitelesebbnek hat." },
+  { x: 4.2, y: 7.8, label: "Kisebb influencerek meghívása (nano / mikro-influencer)", line1: "+20–40% kampányhatás várható az adott időszakban.", line2: "5–15 ezer Ft · Rövid távon gyors figyelmet tud hozni, főleg célzott közönségnél." },
+  { x: 3.5, y: 6.8, label: "Kora esti kedvezmény bevezetése", line1: "17:00 után 15–20% kedvezmény.", line2: "0 Ft · Az üresebb esti órákat segít megtölteni, nem az egész napot árazza le." },
+  { x: 5.8, y: 6.2, label: "Kétnyelvű szórólap terjesztése", line1: "+5–10 új vendég várható hetente.", line2: "8–15 ezer Ft · A magyar és angol anyag egyszerre szól a helyiekhez és a turistákhoz." },
+  { x: 4.5, y: 5.8, label: "Külső platformokon való megjelelés", line1: "0 Ft · több alkalmazásban és keresési felületen jelenhet meg az étterem.", line2: "Az egyszeri profilfeltöltés később több helyen is visszahozhatja a nevet és az adatokat." },
+];
+const PHASE3_BUBBLES = [
+  { x: 7.5, y: 8.8, label: "Egyszerű kétnyelvű weboldal", line1: "A többi digitális eszköz hatása akár 2×-esére erősödhet.", line2: "20–40 ezer Ft egyszeri · Nem dísznek kell, hanem stabil alapnak, ahová minden csatorna vissza tud vezetni." },
+  { x: 6.8, y: 7.5, label: "Weboldal keresőbarát rendbetétele és a Google Cégprofil megerősítése (on-page SEO + GBP)", line1: "0 Ft a weboldal után · nőhet a keresésből érkező turista forgalom.", line2: "A cél, hogy az étterem ne csak hirdetésből, hanem sima keresésből is jobban megtalálható legyen." },
+  { x: 7.2, y: 6.8, label: "TripAdvisor Travelers' Choice megszerzése", line1: "Cél: 50+ értékelés elérése.", line2: "0 Ft · Ez egy kívülről látható bizalmi jel, ami segíthet a döntésnél." },
+  { x: 8.0, y: 7.8, label: "Étlap elemzése nyereség és népszerűség alapján (Kasavana–Smith)", line1: "+8–15% profitmarzs várható.", line2: "0 Ft · Megmutatja, mely fogásokat érdemes jobban előtérbe tolni, és melyek viszik el a hasznot." },
+  { x: 7.8, y: 8.2, label: "Meglévő vendégekhez hasonló közönség célzása (Meta Custom + Lookalike Audience)", line1: "15–30 ezer Ft / hó · várhatóan ez adja a leghatékonyabb Meta-célzást.", line2: "Nem teljesen idegen emberekre céloz, hanem a mostani vendégekhez hasonló közönségre." },
+  { x: 8.5, y: 6.5, label: "Ajándékkártya bevezetése", line1: "A beváltók átlagosan 61%-kal többet költenek.", line2: "5–10 ezer Ft egyszeri · Előre hoz bevételt, és új vendéget is be tud húzni." },
+  { x: 7.0, y: 6.2, label: "Email- és WhatsApp-lista építése", line1: "50+ kontakt után heti kommunikáció indulhat.", line2: "0 Ft · Így a kapcsolat nem ér véget a fizetésnél, később is vissza lehet hívni a vendéget." },
+  { x: 8.8, y: 7.2, label: "Strukturált adatjelölés és AI-találati alapok (schema markup, AEO)", line1: "0 Ft a weboldal után · alapot ad ahhoz, hogy az étterem AI-ajánlásokban is megjelenjen.", line2: "Ez technikai előkészítés arra, hogy a keresők és az új ajánlófelületek jobban értsék a helyet." },
+  { x: 7.5, y: 5.8, label: "Tematikus esti események bevezetése", line1: "Kéthetente ismételhető forgalomépítő alkalom.", line2: "5–10 ezer Ft / alkalom · Konkrét okot ad arra, hogy valaki ne csak véletlenül térjen be este." },
+  { x: 6.5, y: 5.5, label: "Helyi célzású Spotify-hirdetés", line1: "10–20 ezer Ft / hó · kiegészítő turistaelérés építhető vele.", line2: "Nem fő csatorna, hanem ráerősítés a már működő online jelenlétre." },
+];
+
 function CaseStudySection() {
   const { ref, inView } = useInView(0.15);
-  const rightPanelRef = useRef<HTMLDivElement>(null);
-  const [chartHeight, setChartHeight] = useState(520);
-
-  useEffect(() => {
-    const el = rightPanelRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver(() => setChartHeight(el.offsetHeight));
-    ro.observe(el);
-    setChartHeight(el.offsetHeight);
-    return () => ro.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!inView) return;
@@ -635,51 +661,80 @@ function CaseStudySection() {
       if (typeof window !== "undefined" && (window as any).Chart) {
         const canvas = document.getElementById("caseMatrix") as HTMLCanvasElement;
         if (!canvas || (canvas as any)._chartInstance) return;
-        const quadrantPlugin = {
-          id: "quadrantBg",
-          beforeDraw(chart: any) {
-            const { ctx, chartArea, scales } = chart;
-            if (!chartArea) return;
-            const { left, right, top, bottom } = chartArea;
-            const midX = scales.x.getPixelForValue(5);
-            const midY = scales.y.getPixelForValue(5);
-            ctx.fillStyle = "rgba(240,111,102,0.10)"; ctx.fillRect(left, top, midX - left, midY - top);
-            ctx.fillStyle = "rgba(240,223,200,0.03)"; ctx.fillRect(midX, top, right - midX, midY - top);
-            ctx.fillStyle = "rgba(240,223,200,0.02)"; ctx.fillRect(midX, midY, right - midX, bottom - midY);
-            ctx.fillStyle = "rgba(0,0,0,0.15)"; ctx.fillRect(left, midY, midX - left, bottom - midY);
-            ctx.strokeStyle = "rgba(240,223,200,0.1)"; ctx.lineWidth = 1; ctx.setLineDash([4, 6]);
-            ctx.beginPath(); ctx.moveTo(midX, top); ctx.lineTo(midX, bottom); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(left, midY); ctx.lineTo(right, midY); ctx.stroke();
-            ctx.setLineDash([]);
-          },
-          afterDraw(chart: any) {
-            const { ctx, chartArea, scales } = chart;
-            if (!chartArea) return;
-            const { left, right, top, bottom } = chartArea;
-            const midX = scales.x.getPixelForValue(5);
-            const midY = scales.y.getPixelForValue(5);
-            ctx.font = "600 10px Poppins, sans-serif"; ctx.textAlign = "center";
-            ctx.fillStyle = "rgba(240,111,102,0.65)"; ctx.fillText("AZONNALI BEAVATKOZÁSOK", (left + midX) / 2, top + 16);
-            ctx.fillStyle = "rgba(240,223,200,0.28)"; ctx.fillText("NAGYOBB PROJEKTEK", (midX + right) / 2, top + 16);
-            ctx.fillStyle = "rgba(240,223,200,0.22)"; ctx.fillText("KISEBB KIEGÉSZÍTŐK", (midX + right) / 2, bottom - 8);
-            ctx.fillStyle = "rgba(240,223,200,0.15)"; ctx.fillText("KERÜLENDŐK", (left + midX) / 2, bottom - 8);
-          },
-        };
+        const BUBBLE_R = 9;
+        const allData = [
+          ...PHASE1_BUBBLES.map(b => ({ ...b, r: BUBBLE_R, phase: 1 })),
+          ...PHASE2_BUBBLES.map(b => ({ ...b, r: BUBBLE_R, phase: 2 })),
+          ...PHASE3_BUBBLES.map(b => ({ ...b, r: BUBBLE_R, phase: 3 })),
+        ];
         const chart = new (window as any).Chart(canvas, {
           type: "bubble",
           data: {
             datasets: [
-              { label: "Azonnali beavatkozások — 1. fázis", data: [{ x: 1.5, y: 8.5, r: 12, label: "Árlélektani étlapépítés", growth: "+15–25% kosárérték" }, { x: 2.0, y: 7.8, r: 10, label: "Google Business Profile", growth: "+40–70% Maps láthatóság" }, { x: 1.2, y: 8.0, r: 9, label: "Felszolgálói tréning", growth: "+10–15% kosárérték" }, { x: 2.5, y: 7.5, r: 9, label: "Vendégvélemény-kezelés", growth: "+50+ értékelés" }, { x: 1.8, y: 6.8, r: 8, label: "Digitális menü (QR)", growth: "+5–9 értékelés/hó" }], backgroundColor: "rgba(240,111,102,0.80)", borderColor: "#f06f66", borderWidth: 1 },
-              { label: "Nagyobb projektek — 2. fázis", data: [{ x: 5.5, y: 8.8, r: 11, label: "Meta Ads", growth: "+15–30 esti vendég/hét" }, { x: 6.0, y: 8.2, r: 10, label: "Google Local Ads", growth: "+10–20 turista/hét" }, { x: 5.2, y: 7.5, r: 8, label: "Szálloda-portás megállapodás", growth: "+5–15 turista/hét" }], backgroundColor: "rgba(240,223,200,0.50)", borderColor: "rgba(240,223,200,0.75)", borderWidth: 1 },
-              { label: "Rendszer és skálázás — 3. fázis", data: [{ x: 8.5, y: 9.0, r: 12, label: "Weboldal és foglalási rendszer", growth: "Minden digitális eszköz ×2" }, { x: 7.5, y: 8.5, r: 10, label: "Remarketing", growth: "Legjobb Meta ROI" }], backgroundColor: "rgba(240,223,200,0.22)", borderColor: "rgba(240,223,200,0.35)", borderWidth: 1 },
+              {
+                label: "1. fázis — Azonnali beavatkozások",
+                data: PHASE1_BUBBLES.map(b => ({ x: b.x, y: b.y, r: BUBBLE_R, label: b.label, line1: b.line1, line2: b.line2 })),
+                backgroundColor: "rgba(240,111,102,0.75)",
+                borderColor: "#f06f66",
+                borderWidth: 1.5,
+              },
+              {
+                label: "2. fázis — Láthatóság és elérés",
+                data: PHASE2_BUBBLES.map(b => ({ x: b.x, y: b.y, r: BUBBLE_R, label: b.label, line1: b.line1, line2: b.line2 })),
+                backgroundColor: "rgba(240,223,200,0.45)",
+                borderColor: "rgba(240,223,200,0.65)",
+                borderWidth: 1.5,
+              },
+              {
+                label: "3. fázis — Rendszer és skálázás",
+                data: PHASE3_BUBBLES.map(b => ({ x: b.x, y: b.y, r: BUBBLE_R, label: b.label, line1: b.line1, line2: b.line2 })),
+                backgroundColor: "rgba(200,200,200,0.25)",
+                borderColor: "rgba(200,200,200,0.45)",
+                borderWidth: 1.5,
+              },
             ],
           },
           options: {
-            responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { display: false }, tooltip: { enabled: true, backgroundColor: "rgba(30,20,20,0.92)", titleColor: "#f06f66", bodyColor: "rgba(240,223,200,0.8)", callbacks: { title: (items: any[]) => items[0]?.raw?.label || "", label: (item: any) => item.raw?.growth ? [" ▶ " + item.raw.growth] : [] } } },
-            scales: { x: { min: 0, max: 10, grid: { color: "rgba(240,223,200,0.04)" }, ticks: { display: false }, border: { display: false } }, y: { min: 0, max: 10, grid: { color: "rgba(240,223,200,0.04)" }, ticks: { display: false }, border: { display: false } } },
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: true,
+                backgroundColor: "rgba(26,23,20,0.96)",
+                titleColor: "#f06f66",
+                bodyColor: "rgba(240,223,200,0.80)",
+                borderColor: "rgba(240,111,102,0.3)",
+                borderWidth: 1,
+                padding: 12,
+                titleFont: { family: "Poppins, sans-serif", size: 13, weight: "600" },
+                bodyFont: { family: "Poppins, sans-serif", size: 12, weight: "300" },
+                callbacks: {
+                  title: (items: any[]) => items[0]?.raw?.label || "",
+                  label: (item: any) => {
+                    const lines = [];
+                    if (item.raw?.line1) lines.push(item.raw.line1);
+                    if (item.raw?.line2) lines.push(item.raw.line2);
+                    return lines;
+                  },
+                },
+              },
+            },
+            scales: {
+              x: {
+                min: 0, max: 10,
+                grid: { color: "rgba(240,223,200,0.06)", lineWidth: 1 },
+                ticks: { display: false },
+                border: { display: false },
+              },
+              y: {
+                min: 0, max: 10,
+                grid: { color: "rgba(240,223,200,0.06)", lineWidth: 1 },
+                ticks: { display: false },
+                border: { display: false },
+              },
+            },
           },
-          plugins: [quadrantPlugin],
         });
         (canvas as any)._chartInstance = chart;
       }
@@ -775,25 +830,43 @@ function CaseStudySection() {
             </div>
           </div>
         </div>
+        <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}>Minden buborék egy bevételre ható eszközt jelöl.</p>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
+          {/* Chart column */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", gap: "0" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "28px", flexShrink: 0 }}>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 500, color: "rgba(240,223,200,0.35)", textTransform: "uppercase", letterSpacing: "2px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block" }}>Bevételnövelő hatás →</span>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 500, color: "rgba(240,223,200,0.35)", textTransform: "uppercase", letterSpacing: "2px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block" }}>Várható bevételi hatás →</span>
               </div>
-              <div style={{ flex: 1, height: `${chartHeight}px`, backgroundColor: "rgba(255,255,255,0.015)", border: "1px solid rgba(240,223,200,0.12)", borderTopLeftRadius: "20px", overflow: "hidden" }}>
+              <div style={{ flex: 1, aspectRatio: "1 / 1", maxHeight: "560px", backgroundColor: "rgba(255,255,255,0.015)", border: "1px solid rgba(240,223,200,0.12)", borderTopLeftRadius: "20px", overflow: "hidden" }}>
                 <canvas id="caseMatrix" style={{ display: "block", width: "100%", height: "100%" }} />
               </div>
             </div>
-            <div style={{ marginLeft: "28px", textAlign: "center", paddingTop: "10px" }}>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 500, color: "rgba(240,223,200,0.35)", textTransform: "uppercase", letterSpacing: "2px" }}>← Könnyebb megvalósítani &nbsp;&nbsp; Nehezebb →</span>
+            <div style={{ marginLeft: "28px", display: "flex", justifyContent: "space-between", paddingTop: "10px", paddingRight: "4px" }}>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px" }}>könnyebben bevezethő</span>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px" }}>nehezebben bevezethő</span>
             </div>
           </div>
-          <div ref={rightPanelRef} style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "8px" }}>
-              {[{ color: "#f06f66", label: "1. fázis — Azonnali beavatkozások", sub: "0–20 ezer Ft · 1–4. hét" }, { color: "rgba(240,223,200,0.7)", label: "2. fázis — Láthatóság és elérés", sub: "30–80 ezer Ft/hó · 1–3. hónap" }, { color: "rgba(240,223,200,0.3)", label: "3. fázis — Rendszer és skálázás", sub: "50–120 ezer Ft/hó · 3–6. hónap" }].map((l, i) => (
+          {/* Right panel */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+            {/* How to read */}
+            <div>
+              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "14px", color: "#f0dfc8", marginBottom: "10px" }}>Hogyan olvasd ezt az ábrát?</div>
+              <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.65)", lineHeight: 1.7, margin: "0 0 14px 0" }}>A diagram egyszerre három dolgot mutat: mekkora bevételi hatása lehet egy adott eszköznek, mennyire nehéz bevezetni, és melyik fázisban érdemes vele foglalkozni.</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(240,223,200,0.45)", lineHeight: 1.6 }}>Függőleges tengely: várható bevételi hatás</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(240,223,200,0.45)", lineHeight: 1.6 }}>Vízszintes tengely: bevezetés nehézsége</div>
+              </div>
+            </div>
+            {/* Phase legend */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              {[
+                { color: "rgba(240,111,102,0.75)", border: "#f06f66", label: "1. fázis — Azonnali beavatkozások", sub: "0–20 ezer Ft · 1–4. hét" },
+                { color: "rgba(240,223,200,0.45)", border: "rgba(240,223,200,0.65)", label: "2. fázis — Láthatóság és elérés", sub: "30–80 ezer Ft / hó · 1–3. hónap" },
+                { color: "rgba(200,200,200,0.25)", border: "rgba(200,200,200,0.45)", label: "3. fázis — Rendszer és skálázás", sub: "50–120 ezer Ft / hó · 3–6. hónap" },
+              ].map((l, i) => (
                 <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: l.color, flexShrink: 0, marginTop: "3px" }} />
+                  <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: l.color, border: `1.5px solid ${l.border}`, flexShrink: 0, marginTop: "3px" }} />
                   <div>
                     <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "13px", color: "#f0dfc8", marginBottom: "2px" }}>{l.label}</div>
                     <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,223,200,0.45)" }}>{l.sub}</div>
@@ -801,9 +874,10 @@ function CaseStudySection() {
                 </div>
               ))}
             </div>
-            <div className="card-hover" style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px" }}>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "6px" }}>1. fázis — összesített hatás</div>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.6 }}>Az 1. fázis beavatkozásai együttesen +20–35% havi bevételnövekedést realizálhatnak — 1–4 hetes megtérülési idő mellett.</div>
+            {/* Summary box */}
+            <div style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px" }}>
+              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "8px" }}>1. fázis — Összesített hatás</div>
+              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.65 }}>Az 1. fázis beavatkozásai együttesen <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>+20–35% havi bevételnövekedést</strong> realizálhatnak 1–4 hetes megtérülési idő mellett.</div>
             </div>
           </div>
         </div>
