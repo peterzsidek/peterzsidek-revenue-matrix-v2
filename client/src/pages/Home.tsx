@@ -715,7 +715,7 @@ function CaseStudySection() {
               {/* Back face */}
               <div className="stat-flip-back" style={{ borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>A Revenue Matrix egy <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>335 elemből álló</strong>, teljes kommunikációs eszköztárból indul ki, nem néhány általános marketingötletből.</p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>A Revenue Matrix egy <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>335 elemből álló</strong>, teljes kommunikációs eszköztárból indul ki, nem néhány általános marketingötletből.</p>
               </div>
             </div>
           </div>
@@ -733,7 +733,7 @@ function CaseStudySection() {
               </div>
               <div className="stat-flip-back">
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>A teljes eszköztárból <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi bizonyult relevánsnak</strong> az adott iparág működése és bevételi logikája szempontjából.</p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>A teljes eszköztárból <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi bizonyult relevánsnak</strong> az adott iparág működése és bevételi logikája szempontjából.</p>
               </div>
             </div>
           </div>
@@ -751,7 +751,7 @@ function CaseStudySection() {
               </div>
               <div className="stat-flip-back" style={{ borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>Az iparágra releváns elemek közül <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi maradt</strong>, amely ennél a konkrét cégnél valóban használhatónak bizonyult.</p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>Az iparágra releváns elemek közül <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi maradt</strong>, amely ennél a konkrét cégnél valóban használhatónak bizonyult.</p>
               </div>
             </div>
           </div>
@@ -769,7 +769,7 @@ function CaseStudySection() {
               </div>
               <div className="stat-flip-back" style={{ borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#f06f66" }} />
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "14px", color: "rgba(240,223,200,0.85)", lineHeight: 1.75, margin: 0 }}>A végén a kiválasztott lehetőségek nem ömlesztve maradtak, hanem <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>3 világos megvalósítási szakaszba</strong> rendeződtek.</p>
+                <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>A végén a kiválasztott lehetőségek nem ömlesztve maradtak, hanem <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>3 világos megvalósítási szakaszba</strong> rendeződtek.</p>
               </div>
             </div>
           </div>
