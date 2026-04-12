@@ -1066,10 +1066,10 @@ function WhyTrustSection() {
                   <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(225deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 1 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(315deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(225deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 3 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(45deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease", position: "relative" }}>{item.title}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7, position: "relative" }}>{item.desc}</div>
