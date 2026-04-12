@@ -835,7 +835,7 @@ function CaseStudySection() {
           {/* Flip card 2: 127 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>127</div>
@@ -873,7 +873,7 @@ function CaseStudySection() {
           {/* Flip card 4: 3 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>3</div>
