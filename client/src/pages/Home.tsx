@@ -1026,13 +1026,7 @@ function WhyTrustSection() {
                   transition: "background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
                   position: "relative",
                   overflow: "hidden",
-                  ...(i === 0 ? {
-                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    backgroundBlendMode: "screen",
-                  } : {}),
+
 
                   ...borderRadiusStyle,
                 }}
@@ -1055,6 +1049,19 @@ function WhyTrustSection() {
                   if (title) title.style.color = "#f0dfc8";
                 }}
               >
+                {i === 0 && (
+                  <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat",
+                    mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
+                    transform: "scale(-1, -1)",
+                    pointerEvents: "none",
+                  }} />
+                )}
                 {i === 2 && (
                   <div aria-hidden="true" style={{
                     position: "absolute",
