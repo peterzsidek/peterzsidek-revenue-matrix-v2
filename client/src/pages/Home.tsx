@@ -937,7 +937,7 @@ function CaseStudySection() {
             </div>
             {/* Summary box */}
             <div style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px", position: "relative", overflow: "hidden" }}>
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(225deg, rgba(240,111,102,0.35), transparent 60%)", opacity: 1.0, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(225deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "8px" }}>1. fázis — Összesített hatás</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.65 }}>Az 1. fázis beavatkozásai együttesen <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>+20–35% havi bevételnövekedést</strong> realizálhatnak 1–4 hetes megtérülési idő mellett.</div>
             </div>
@@ -978,7 +978,7 @@ function StaggeredAreaGrid() {
       {AREA_ITEMS.map((area, i) => (
         <div key={i} className={triggered ? "card-anim-wrap triggered" : "card-anim-wrap"} style={{ animationDelay: `${i * 80}ms` }}>
           <div className="card-hover" style={{ height: "100%", backgroundColor: "rgba(240,223,200,0.03)", borderRight: i % 2 === 1 ? "3px solid rgba(240,111,102,0.12)" : "none", borderLeft: i % 2 === 0 ? "3px solid rgba(240,111,102,0.12)" : "none", padding: "16px 20px", position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(315deg, rgba(240,111,102,0.35), transparent 60%)", opacity: 1.0, pointerEvents: "none" }} />
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(315deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "10px", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(240,111,102,0.6)", marginBottom: "6px" }}>{area.num}. terület</div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "14px", color: "#f0dfc8", marginBottom: "6px", lineHeight: 1.3 }}>{area.title}</div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,223,200,0.5)", lineHeight: 1.5 }}>{area.sub}</div>
@@ -1060,16 +1060,16 @@ function WhyTrustSection() {
                 }}
               >
                 {i === 0 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(240,111,102,0.35), transparent 60%)", opacity: 1.0, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(225deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 2 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(45deg, rgba(240,111,102,0.35), transparent 60%)", opacity: 1.0, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 1 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 50%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(315deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 3 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 50%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(45deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease", position: "relative" }}>{item.title}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7, position: "relative" }}>{item.desc}</div>
