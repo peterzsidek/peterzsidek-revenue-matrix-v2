@@ -1033,6 +1033,7 @@ function WhyTrustSection() {
                     backgroundRepeat: "no-repeat",
                     backgroundBlendMode: "screen",
                   } : {}),
+
                   ...borderRadiusStyle,
                 }}
                 onMouseEnter={e => {
@@ -1054,8 +1055,21 @@ function WhyTrustSection() {
                   if (title) title.style.color = "#f0dfc8";
                 }}
               >
-                <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease" }}>{item.title}</div>
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7 }}>{item.desc}</div>
+                {i === 2 && (
+                  <div aria-hidden="true" style={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    backgroundRepeat: "no-repeat",
+                    mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
+                    transform: "scaleX(-1)",
+                    pointerEvents: "none",
+                  }} />
+                )}
+                <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease", position: "relative" }}>{item.title}</div>
+                <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7, position: "relative" }}>{item.desc}</div>
               </div>
             );
           })}
