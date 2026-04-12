@@ -290,6 +290,12 @@
   transform: translateX(5px);
 }
 
+/* Implementation section cards 2+3: grey hover instead of coral */
+.impl-card-grey:hover {
+  background-color: #3d3d3d !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
 /* Staggered card entrance animation — on a wrapper div, not the card itself */
 @keyframes cardSlideIn {
   from {
