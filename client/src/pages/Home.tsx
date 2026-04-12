@@ -1065,11 +1065,11 @@ function ImplementationSection() {  return (
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter4_908edf7e.png')",
+          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter5_1a9ad927.png')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
           backgroundSize: "cover",
-          opacity: 0.18,
+          opacity: 0.12,
           mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
           pointerEvents: "none",
         }}
