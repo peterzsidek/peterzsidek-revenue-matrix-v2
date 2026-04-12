@@ -464,7 +464,7 @@ function RevenueSystemSection() {
               }}
             >
               {/* hatter6 overlay */}
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: i % 2 === 0 ? "scale(-1,-1)" : "scaleY(-1)", opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scaleX(-1)", opacity: 0.5, pointerEvents: "none" }} />
               {/* Top accent line */}
               <div className="revenue-card-top-border" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#4f4c48" }} />
               {/* Large background number */}
