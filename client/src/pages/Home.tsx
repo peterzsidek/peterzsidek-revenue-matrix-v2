@@ -1063,7 +1063,7 @@ function WhyTrustSection() {
                   <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(315deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 2 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(225deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 1 && (
                   <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(315deg, rgba(240,111,102,0.12), transparent 60%)", opacity: 0.85, pointerEvents: "none" }} />
