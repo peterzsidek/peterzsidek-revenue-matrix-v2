@@ -464,7 +464,7 @@ function RevenueSystemSection() {
               }}
             >
               {/* hatter6 overlay */}
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scaleX(-1)", opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               {/* Top accent line */}
               <div className="revenue-card-top-border" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#4f4c48" }} />
               {/* Large background number */}
@@ -581,7 +581,7 @@ function ForWhomSection() {
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
           <div style={{ border: "1px solid rgba(240,111,102,0.2)", backgroundColor: "rgba(240,111,102,0.04)", borderBottomRightRadius: "40px", position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scaleX(-1)", opacity: 0.85, pointerEvents: "none" }} />
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,111,102,0.15)", display: "flex", alignItems: "center", gap: "10px" }}>
               <span style={{ color: "#f06f66", fontSize: "16px", fontWeight: 700 }}>✓</span>
               <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "#f06f66" }}>Neked szól, ha…</span>
@@ -597,7 +597,7 @@ function ForWhomSection() {
           </div>
 
           <div style={{ border: "1px solid rgba(240,223,200,0.08)", backgroundColor: "rgba(240,223,200,0.02)", borderBottomLeftRadius: "40px", position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "multiply" as React.CSSProperties["mixBlendMode"], opacity: 0.95, pointerEvents: "none" }} />
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.6, pointerEvents: "none" }} />
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,223,200,0.08)", display: "flex", alignItems: "center", gap: "10px" }}>
               <span style={{ color: "rgba(240,223,200,0.35)", fontSize: "16px", fontWeight: 700 }}>✕</span>
               <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(240,223,200,0.35)" }}>Nem neked szól, ha…</span>
@@ -814,7 +814,7 @@ function CaseStudySection() {
           {/* Flip card for the 335 stat */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scaleX(-1)", opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               {/* Front face */}
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
@@ -835,7 +835,7 @@ function CaseStudySection() {
           {/* Flip card 2: 127 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>127</div>
@@ -854,7 +854,7 @@ function CaseStudySection() {
           {/* Flip card 3: 30 */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scaleX(-1)", opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>30</div>
@@ -873,7 +873,7 @@ function CaseStudySection() {
           {/* Flip card 4: 3 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>3</div>
@@ -937,7 +937,7 @@ function CaseStudySection() {
             </div>
             {/* Summary box */}
             <div style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px", position: "relative", overflow: "hidden" }}>
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scale(-1,-1)", opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "8px" }}>1. fázis — Összesített hatás</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.65 }}>Az 1. fázis beavatkozásai együttesen <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>+20–35% havi bevételnövekedést</strong> realizálhatnak 1–4 hetes megtérülési idő mellett.</div>
             </div>
@@ -978,7 +978,7 @@ function StaggeredAreaGrid() {
       {AREA_ITEMS.map((area, i) => (
         <div key={i} className={triggered ? "card-anim-wrap triggered" : "card-anim-wrap"} style={{ animationDelay: `${i * 80}ms` }}>
           <div className="card-hover" style={{ height: "100%", backgroundColor: "rgba(240,223,200,0.03)", borderRight: i % 2 === 1 ? "3px solid rgba(240,111,102,0.25)" : "none", borderLeft: i % 2 === 0 ? "3px solid rgba(240,111,102,0.25)" : "none", padding: "16px 20px", position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: i % 2 === 0 ? "scale(-1,-1)" : "scaleX(-1)", opacity: 0.5, pointerEvents: "none" }} />
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "10px", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(240,111,102,0.6)", marginBottom: "6px" }}>{area.num}. terület</div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "14px", color: "#f0dfc8", marginBottom: "6px", lineHeight: 1.3 }}>{area.title}</div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,223,200,0.5)", lineHeight: 1.5 }}>{area.sub}</div>
@@ -1060,63 +1060,16 @@ function WhyTrustSection() {
                 }}
               >
                 {i === 0 && (
-                  <div aria-hidden="true" style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)",
-                    mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
-                    transform: "scale(-1, -1)",
-                    opacity: 0.5,
-                    pointerEvents: "none",
-                  }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 2 && (
-                  <div aria-hidden="true" style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)",
-                    mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
-                    transform: "scaleX(-1)",
-                    opacity: 0.5,
-                    pointerEvents: "none",
-                  }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 1 && (
-                  <div aria-hidden="true" style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)",
-                    mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
-                    transform: "scaleY(-1)",
-                    opacity: 0.5,
-                    pointerEvents: "none",
-                  }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 100%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 3 && (
-                  <div aria-hidden="true" style={{
-                    position: "absolute",
-                    inset: 0,
-                    backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    backgroundRepeat: "no-repeat",
-                    filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)",
-                    mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
-                    opacity: 0.5,
-                    pointerEvents: "none",
-                  }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease", position: "relative" }}>{item.title}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7, position: "relative" }}>{item.desc}</div>
@@ -1164,7 +1117,7 @@ function ImplementationSection() {  return (
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
             <div key={i} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}>
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", filter: "hue-rotate(-8deg) saturate(1.15) brightness(1.29)", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scale(-1,-1)", opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.45) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px", position: "relative" }}>{item.label}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,111,102,0.7)", marginBottom: "14px" }}>{item.timeframe}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.65 }}>{item.desc}</div>
