@@ -1059,6 +1059,7 @@ function WhyTrustSection() {
                     backgroundRepeat: "no-repeat",
                     mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
                     transform: "scale(-1, -1)",
+                    opacity: 0.85,
                     pointerEvents: "none",
                   }} />
                 )}
@@ -1072,6 +1073,7 @@ function WhyTrustSection() {
                     backgroundRepeat: "no-repeat",
                     mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
                     transform: "scaleX(-1)",
+                    opacity: 0.85,
                     pointerEvents: "none",
                   }} />
                 )}
@@ -1085,6 +1087,7 @@ function WhyTrustSection() {
                     backgroundRepeat: "no-repeat",
                     mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
                     transform: "scaleY(-1)",
+                    opacity: 0.85,
                     pointerEvents: "none",
                   }} />
                 )}
@@ -1097,6 +1100,7 @@ function WhyTrustSection() {
                     backgroundPosition: "center center",
                     backgroundRepeat: "no-repeat",
                     mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
+                    opacity: 0.85,
                     pointerEvents: "none",
                   }} />
                 )}
