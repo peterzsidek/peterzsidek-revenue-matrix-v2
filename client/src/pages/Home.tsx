@@ -814,9 +814,9 @@ function CaseStudySection() {
           {/* Flip card for the 335 stat */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               {/* Front face */}
-              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px", position: "relative", overflow: "hidden" }}>
-                <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none" }} />
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>335</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>teljes vizsgált kommunikációs eszköztár</div>
@@ -835,8 +835,8 @@ function CaseStudySection() {
           {/* Flip card 2: 127 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px", position: "relative", overflow: "hidden" }}>
-                <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>127</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>iparágra szűrt releváns eszköz</div>
@@ -854,8 +854,8 @@ function CaseStudySection() {
           {/* Flip card 3: 30 */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px", position: "relative", overflow: "hidden" }}>
-                <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>30</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>a cégre szabott lehetőség</div>
@@ -873,8 +873,8 @@ function CaseStudySection() {
           {/* Flip card 4: 3 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px", position: "relative", overflow: "hidden" }}>
-                <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], opacity: 0.5, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>3</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>megvalósítási fázis</div>
