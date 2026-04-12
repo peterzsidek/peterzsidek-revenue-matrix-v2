@@ -1059,20 +1059,19 @@ function WhyTrustSection() {
 // Implementation section
 function ImplementationSection() {  return (
     <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
-      {/* Faint PNG overlay — percentage width so hand scales with viewport, always right-anchored */}
-      <img
-        src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter3_fb9d4154.png"
-        alt=""
+      {/* Halftone dot pattern — centered, mix-blend-mode:multiply makes white areas transparent */}
+      <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          top: 0,
-          right: 0,
-          width: "58%",
-          height: "auto",
-          opacity: 0.22,
+          inset: 0,
+          backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter4_908edf7e.png')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          opacity: 0.18,
+          mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
           pointerEvents: "none",
-          userSelect: "none",
         }}
       />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative" }}>
