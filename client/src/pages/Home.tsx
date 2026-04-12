@@ -1138,7 +1138,7 @@ function ImplementationSection() {  return (
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
           backgroundSize: "cover",
-          opacity: 0.12,
+          opacity: 0.07,
           mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"],
           pointerEvents: "none",
         }}
