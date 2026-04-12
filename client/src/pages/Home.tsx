@@ -936,7 +936,8 @@ function CaseStudySection() {
               ))}
             </div>
             {/* Summary box */}
-            <div style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px" }}>
+            <div style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px", position: "relative", overflow: "hidden" }}>
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scale(-1,-1)", opacity: 0.5, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "8px" }}>1. fázis — Összesített hatás</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.65 }}>Az 1. fázis beavatkozásai együttesen <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>+20–35% havi bevételnövekedést</strong> realizálhatnak 1–4 hetes megtérülési idő mellett.</div>
             </div>
@@ -1158,8 +1159,9 @@ function ImplementationSection() {  return (
             { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
-            <div key={i} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative" }}>
-              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px" }}>{item.label}</div>
+            <div key={i} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}>
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/SwAx7y8KtAtYGdCgPrByVF/hatter6_fce1e30c.png')", backgroundSize: "cover", backgroundPosition: "center center", backgroundRepeat: "no-repeat", mixBlendMode: "screen" as React.CSSProperties["mixBlendMode"], transform: "scale(-1,-1)", opacity: 0.5, pointerEvents: "none" }} />
+              <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px", position: "relative" }}>{item.label}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,111,102,0.7)", marginBottom: "14px" }}>{item.timeframe}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.65 }}>{item.desc}</div>
             </div>
