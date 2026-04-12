@@ -814,7 +814,7 @@ function CaseStudySection() {
           {/* Flip card for the 335 stat */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               {/* Front face */}
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
@@ -835,7 +835,7 @@ function CaseStudySection() {
           {/* Flip card 2: 127 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>127</div>
@@ -854,7 +854,7 @@ function CaseStudySection() {
           {/* Flip card 3: 30 */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>30</div>
@@ -873,7 +873,7 @@ function CaseStudySection() {
           {/* Flip card 4: 3 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
                 <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>3</div>
@@ -937,7 +937,7 @@ function CaseStudySection() {
             </div>
             {/* Summary box */}
             <div style={{ backgroundColor: "rgba(240,111,102,0.08)", borderLeft: "3px solid #f06f66", padding: "16px 20px", borderBottomRightRadius: "16px", position: "relative", overflow: "hidden" }}>
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "8px" }}>1. fázis — Összesített hatás</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.65 }}>Az 1. fázis beavatkozásai együttesen <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>+20–35% havi bevételnövekedést</strong> realizálhatnak 1–4 hetes megtérülési idő mellett.</div>
             </div>
@@ -978,7 +978,7 @@ function StaggeredAreaGrid() {
       {AREA_ITEMS.map((area, i) => (
         <div key={i} className={triggered ? "card-anim-wrap triggered" : "card-anim-wrap"} style={{ animationDelay: `${i * 80}ms` }}>
           <div className="card-hover" style={{ height: "100%", backgroundColor: "rgba(240,223,200,0.03)", borderRight: i % 2 === 1 ? "3px solid rgba(240,111,102,0.12)" : "none", borderLeft: i % 2 === 0 ? "3px solid rgba(240,111,102,0.12)" : "none", padding: "16px 20px", position: "relative", overflow: "hidden" }}>
-            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+            <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "10px", textTransform: "uppercase", letterSpacing: "2px", color: "rgba(240,111,102,0.6)", marginBottom: "6px" }}>{area.num}. terület</div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "14px", color: "#f0dfc8", marginBottom: "6px", lineHeight: 1.3 }}>{area.title}</div>
             <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,223,200,0.5)", lineHeight: 1.5 }}>{area.sub}</div>
@@ -1060,16 +1060,16 @@ function WhyTrustSection() {
                 }}
               >
                 {i === 0 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 2 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 1 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 {i === 3 && (
-                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+                  <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
                 )}
                 <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease", position: "relative" }}>{item.title}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7, position: "relative" }}>{item.desc}</div>
@@ -1117,7 +1117,7 @@ function ImplementationSection() {  return (
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
             <div key={i} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}>
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.12) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px", position: "relative" }}>{item.label}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,111,102,0.7)", marginBottom: "14px" }}>{item.timeframe}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.65 }}>{item.desc}</div>
