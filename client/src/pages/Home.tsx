@@ -1126,10 +1126,10 @@ function CTASection() {
             <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
             <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "24px" }}>Elemzés. Stratégia. Végrehajtás.</h2>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.8, color: "rgba(240,223,200,0.7)", marginBottom: "40px" }}>
-              A Revenue Matrix diagnózis kötelezettségmentes — de nem öncélú. Az eredmények alapján felállítjuk a stratégiát, és havi együttműködés keretében végrehajtjuk.
+              A Revenue Matrix feltárása kötelezettségmentes. Ha van értelme továbblépni, az eredményeiből stratégia, majd megvalósítás épülhet.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-              {["Kötelezettségmentes — semmilyen kötöttség nélkül", "Személyre szabott, nem sablon", "Az eredményt személyesen mutatjuk be", "Komoly vállalkozásoknak — nem mindenkinek"].map((item, i) => (
+              {["Kötelezettségmentes indulás — rejtett költségek nélkül", "Személyre szabott irány — nem sablonos javaslatok", "Az eredményeket személyesen mutatjuk be", "Olyan cégeknek, akik valódi döntésekre készek"].map((item, i) => (
                 <div key={i} style={{ display: "flex", gap: "14px", alignItems: "center" }}>
                   <div style={{ width: "20px", height: "20px", backgroundColor: "rgba(240,111,102,0.15)", border: "1px solid rgba(240,111,102,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderBottomRightRadius: "6px" }}>
                     <span style={{ color: "#f06f66", fontSize: "11px" }}>✓</span>
