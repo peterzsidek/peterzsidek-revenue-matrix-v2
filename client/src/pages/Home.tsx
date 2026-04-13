@@ -457,7 +457,7 @@ function DifferentiatorTable() {
   const headerRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
-  const tableInView = useFramerInView(tableRef, { once: true, margin: "0px 0px -300px 0px" });
+  const tableInView = useFramerInView(tableRef, { once: true, margin: "0px 0px -400px 0px" });
   return (
     <section style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
@@ -721,7 +721,7 @@ function ForWhomSection() {
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
   // cards: negative bottom margin means the element must be at least 300px
   // above the bottom edge of the viewport before it triggers — i.e. clearly on screen
-  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -300px 0px" });
+  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -400px 0px" });
 
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
