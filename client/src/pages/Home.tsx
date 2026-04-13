@@ -873,6 +873,9 @@ const PHASE3_BUBBLES = [
 
 function CaseStudySection() {
   const { ref, inView } = useInView(0.15);
+  // Separate ref for the stat cards — fires much later so cards are clearly visible
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -400px 0px" });
 
   useEffect(() => {
     if (!inView) return;
@@ -1025,7 +1028,7 @@ function CaseStudySection() {
         <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={1}>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott,<br />megvalósítható stratégiáig.</p>
         </motion.div>
-        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
+        <motion.div ref={cardsRef} variants={staggerContainer} initial="hidden" animate={cardsInView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
           {/* Flip card for the 335 stat */}
           <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
