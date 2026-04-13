@@ -1387,6 +1387,9 @@ function WhyTrustSection() {
 function ImplementationSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -350px 0px" });
+  const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
       {/* Halftone dot pattern — centered, mix-blend-mode:multiply makes white areas transparent */}
@@ -1416,20 +1419,27 @@ function ImplementationSection() {
           A cél nem egy jól kinéző terv, hanem az, hogy a fontos lépések valóban elinduljanak, a megfelelő időben és a megfelelő sorrendben.
         </p>
         </motion.div>
-        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
+        <div ref={cardsRef} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
           {[
             { label: "Azonnali", timeframe: "1–4 hét", desc: "Olyan beavatkozások, amelyek gyorsan elindíthatók, és rövid időn belül kézzelfogható eredményt hozhatnak.", highlight: true },
             { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
-            <motion.div key={i} variants={staggerItem} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -56 }}
+              animate={cardsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -56 }}
+              transition={{ duration: 0.9, ease: EASE, delay: i * 0.18 }}
+              className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`}
+              style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}
+            >
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px", position: "relative" }}>{item.label}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,111,102,0.7)", marginBottom: "14px" }}>{item.timeframe}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.65 }}>{item.desc}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
