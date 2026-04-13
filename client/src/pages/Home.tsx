@@ -1370,11 +1370,11 @@ function WhyTrustSection() {
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
         </motion.div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
-          <div ref={row1Ref} style={{ display: "contents" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+          <div ref={row1Ref} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
             {reasons.slice(0, 2).map((item, i) => renderCard(item, i, row1InView))}
           </div>
-          <div ref={row2Ref} style={{ display: "contents" }}>
+          <div ref={row2Ref} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
             {reasons.slice(2, 4).map((item, i) => renderCard(item, i + 2, row2InView))}
           </div>
         </div>
