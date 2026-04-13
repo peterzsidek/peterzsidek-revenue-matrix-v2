@@ -2,6 +2,45 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView as useFramerInView } from "framer-motion";
 
 // Animation variants
+
+// Hero: slow, weighty reveal — each element "arrives" with intention
+const heroH1Variants = {
+  hidden: { opacity: 0, y: 48, filter: "blur(4px)" },
+  visible: {
+    opacity: 1, y: 0, filter: "blur(0px)",
+    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] as const }
+  },
+};
+const heroSubtitleVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.9, ease: "easeOut" as const, delay: 0.55 }
+  },
+};
+const heroLeftPanelVariants = {
+  hidden: { opacity: 0, x: -28 },
+  visible: {
+    opacity: 1, x: 0,
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as const, delay: 0.85 }
+  },
+};
+const heroBtnVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1, y: 0,
+    transition: { duration: 0.55, ease: "easeOut" as const, delay: 1.15 }
+  },
+};
+const heroRightPanelVariants = {
+  hidden: { opacity: 0, x: 28 },
+  visible: {
+    opacity: 1, x: 0,
+    transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as const, delay: 0.85 }
+  },
+};
+
+// Scroll sections: purposeful fade-up
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 32 },
   visible: (delay: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" as const, delay } }),
@@ -12,7 +51,7 @@ const fadeInVariants = {
 };
 const staggerContainer = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
 };
 const staggerItem = {
   hidden: { opacity: 0, y: 28 },
@@ -257,12 +296,11 @@ function HeroSection() {
           width: '100%',
         }}
       >
-        {/* H1 */}
+        {/* H1 — slow blur+lift reveal, the anchor of the page */}
         <motion.h1
-          variants={fadeUpVariants}
+          variants={heroH1Variants}
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
-          custom={0}
           style={{
             fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
             fontWeight: 200,
@@ -281,12 +319,11 @@ function HeroSection() {
           <span style={{ color: '#f06f66' }}>az asztalon.</span>
         </motion.h1>
 
-        {/* Tagline */}
+        {/* Tagline — pure opacity fade, quieter than the h1 */}
         <motion.p
-          variants={fadeUpVariants}
+          variants={heroSubtitleVariants}
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
-          custom={1}
           style={{
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 300,
@@ -304,7 +341,7 @@ function HeroSection() {
           A Revenue Matrix diagnosztikával feltárjuk, hol akad el az ügyfélszerzés, a kommunikáció és a bevételi működés — majd ezek alapján felépítjük azt a rendszert, ami a te piacodon bizonyítottan működik.
         </motion.p>
 
-        {/* Two-column panels */}
+        {/* Two-column panels — open symmetrically from center */}
         <div
           style={{
             display: 'grid',
@@ -316,23 +353,40 @@ function HeroSection() {
             marginRight: 'auto',
           }}
         >
-          {/* Left panel */}
-          <div style={{ textAlign: 'right' }}>
+          {/* Left panel — slides in from left */}
+          <motion.div
+            variants={heroLeftPanelVariants}
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            style={{ textAlign: 'right' }}
+          >
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '15px', lineHeight: 1.5, color: 'rgba(240,223,200,0.85)', marginBottom: '8px' }}>
               Az első kötelezettségmentes beszélgetés célja:
             </p>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: '15px', lineHeight: 1.6, color: 'rgba(240,223,200,0.75)', marginBottom: '32px' }}>
               megnézni, hol van valódi növekedési lehetőség a cégedben,<br />és van-e értelme rendszert építeni rá.
             </p>
-            <a href="#cta" className="btn-coral" style={{ backgroundColor: '#f06f66', color: '#303030', padding: '18px 36px', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.12em', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', borderRadius: '0', borderBottomRightRadius: '12px' }}>
+            {/* CTA button — delayed slightly after panel, draws the eye last */}
+            <motion.a
+              href="#cta"
+              variants={heroBtnVariants}
+              initial="hidden"
+              animate={heroInView ? "visible" : "hidden"}
+              className="btn-coral"
+              style={{ backgroundColor: '#f06f66', color: '#303030', padding: '18px 36px', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.12em', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', borderRadius: '0', borderBottomRightRadius: '12px' }}
+            >
               Visszahívást kérek <span className="btn-arrow">→</span>
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
 
-          {/* Right panel */}
-          <div>
+          {/* Right panel — slides in from right, mirrors left */}
+          <motion.div
+            variants={heroRightPanelVariants}
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+          >
             <HeroDifferentiatorTabs />
-          </div>
+          </motion.div>
         </div>
       </div>
 
