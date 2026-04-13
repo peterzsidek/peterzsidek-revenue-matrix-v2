@@ -930,9 +930,9 @@ function CaseStudySection() {
             {/* Phase legend */}
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
-                { color: "rgba(240,111,102,0.75)", border: "#f06f66", label: "1. fázis — Azonnali beavatkozások", sub: "Ajánlott költségkeret: 0–20 ezer Ft · Időtáv: 1–4. hét" },
-                { color: "rgba(240,223,200,0.45)", border: "rgba(240,223,200,0.65)", label: "2. fázis — Láthatóság és elérés", sub: "Ajánlott havi költségkeret: 30–80 ezer Ft · Időtáv: 1–3. hónap" },
-                { color: "rgba(200,200,200,0.25)", border: "rgba(200,200,200,0.45)", label: "3. fázis — Rendszer és skálázás", sub: "Ajánlott havi költségkeret: 50–120 ezer Ft · Időtáv: 3–6. hónap" },
+                { color: "rgba(240,111,102,0.75)", border: "#f06f66", label: "1. fázis — Azonnali beavatkozások", sub: "Időtáv: 1–4. hét" },
+                { color: "rgba(240,223,200,0.45)", border: "rgba(240,223,200,0.65)", label: "2. fázis — Láthatóság és elérés", sub: "Időtáv: 1–3. hónap" },
+                { color: "rgba(200,200,200,0.25)", border: "rgba(200,200,200,0.45)", label: "3. fázis — Rendszer és skálázás", sub: "Időtáv: 3–6. hónap" },
               ].map((l, i) => (
                 <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                   <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: l.color, border: `1.5px solid ${l.border}`, flexShrink: 0, marginTop: "3px" }} />
