@@ -222,8 +222,10 @@ function Navbar() {
   );
 }
 
-// ─── HERO SECTION — static, no scroll animation ───────────────────────────────
+// ─── HERO SECTION ─────────────────────────────────────────────────────────────
 function HeroSection() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const heroInView = useFramerInView(heroRef, { once: true, margin: "0px" });
   return (
     <section
       style={{
@@ -243,6 +245,7 @@ function HeroSection() {
 
       {/* Content */}
       <div
+        ref={heroRef}
         style={{
           position: 'relative',
           zIndex: 2,
@@ -255,7 +258,11 @@ function HeroSection() {
         }}
       >
         {/* H1 */}
-        <h1
+        <motion.h1
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate={heroInView ? "visible" : "hidden"}
+          custom={0}
           style={{
             fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
             fontWeight: 200,
@@ -272,10 +279,14 @@ function HeroSection() {
         >
           A legtöbb cégvezető nem tudja, mennyi pénzt hagy{' '}
           <span style={{ color: '#f06f66' }}>az asztalon.</span>
-        </h1>
+        </motion.h1>
 
         {/* Tagline */}
-        <p
+        <motion.p
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate={heroInView ? "visible" : "hidden"}
+          custom={1}
           style={{
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 300,
@@ -291,7 +302,7 @@ function HeroSection() {
           }}
         >
           A Revenue Matrix diagnosztikával feltárjuk, hol akad el az ügyfélszerzés, a kommunikáció és a bevételi működés — majd ezek alapján felépítjük azt a rendszert, ami a te piacodon bizonyítottan működik.
-        </p>
+        </motion.p>
 
         {/* Two-column panels */}
         <div
@@ -840,17 +851,18 @@ function CaseStudySection() {
     <section ref={ref} style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.18)" }}>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" async />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ marginBottom: "24px" }}>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "24px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(28px, 3vw, 48px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>Így működik a Revenue Matrix<br />egy valós vállalkozásnál</h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.6)", maxWidth: "640px", lineHeight: 1.8 }}>
             Ez egy működő gyorsétterem teljes körű vizsgálatának az eredménye. A vége nem egy ötletlista, hanem egy leszűrt, prioritizált, azonnal bevethető bevételi rendszer.
           </p>
-        </div>
+        </motion.div>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={1}>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott,<br />megvalósítható stratégiáig.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
+        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
           {/* Flip card for the 335 stat */}
-          <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
+          <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               {/* Front face */}
@@ -869,9 +881,9 @@ function CaseStudySection() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>A Revenue Matrix egy <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>335 elemből álló</strong>, teljes kommunikációs eszköztárból indul ki, nem néhány általános marketingötletből.</p>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Flip card 2: 127 */}
-          <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
+          <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
@@ -888,7 +900,7 @@ function CaseStudySection() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>A teljes eszköztárból <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi bizonyult relevánsnak</strong> az adott iparág működése és bevételi logikája szempontjából.</p>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Flip card 3: 30 */}
           <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
@@ -907,7 +919,7 @@ function CaseStudySection() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>Az iparágra releváns elemek közül <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>ennyi maradt</strong>, amely ennél a konkrét cégnél valóban használhatónak bizonyult.</p>
               </div>
             </div>
-          </div>
+          </motion.div>
           {/* Flip card 4: 3 */}
           <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
@@ -926,8 +938,8 @@ function CaseStudySection() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.85)", lineHeight: 1.7, margin: 0 }}>A végén a kiválasztott lehetőségek nem ömlesztve maradtak, hanem <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>3 világos megvalósítási szakaszba</strong> rendeződtek.</p>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}>Minden buborék egy bevételre ható eszközt jelöl.</p>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
           {/* Chart column */}
