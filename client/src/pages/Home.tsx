@@ -575,7 +575,7 @@ function ForWhomSection() {
             Amikor a régi működés már nem elég.
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.55)", maxWidth: "720px" }}>
-            Nem újabb marketingötleteket adunk, hanem segítünk tisztán látni, mi akad el a bevételszerzésben, és milyen rendszerre van valóban szüksége a vállalkozásodnak.
+            Ilyenkor már nem újabb marketingötletekre van szükség, hanem arra, hogy tisztán lásd, mi akad el a bevételszerzésben, és mihez érdemes valóban hozzányúlni.
           </p>
         </div>
 
