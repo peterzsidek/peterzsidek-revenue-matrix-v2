@@ -284,7 +284,7 @@ function HeroSection() {
             marginRight: 'auto',
           }}
         >
-          A Revenue Matrix diagnosztikával feltárjuk, hol akad el az ügyfélszerzés, a kommunikáció és a bevételi működés —<br />majd ezek alapján felépítjük azt a rendszert, ami a te piacodon bizonyítottan működik.
+          A Revenue Matrix diagnosztikával feltárjuk, hol akad el az ügyfélszerzés, a kommunikáció és a bevételi működés — majd ezek alapján felépítjük azt a rendszert, ami a te piacodon bizonyítottan működik.
         </p>
 
         {/* Two-column panels */}
