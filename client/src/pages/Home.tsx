@@ -40,26 +40,62 @@ const heroRightPanelVariants = {
   },
 };
 
-// Scroll sections: purposeful fade-up
+// Scroll sections — same dignified character as the hero
+// Shared easing: custom cubic-bezier for soft, weighty motion
+const EASE_SOFT = [0.16, 1, 0.3, 1] as const;
+
 const fadeUpVariants = {
-  hidden: { opacity: 0, y: 32 },
-  visible: (delay: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" as const, delay } }),
+  hidden: { opacity: 0, y: 36, filter: "blur(3px)" },
+  visible: (delay: number = 0) => ({
+    opacity: 1, y: 0, filter: "blur(0px)",
+    transition: { duration: 0.85, ease: EASE_SOFT, delay }
+  }),
 };
 const fadeInVariants = {
   hidden: { opacity: 0 },
-  visible: (delay: number = 0) => ({ opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const, delay } }),
+  visible: (delay: number = 0) => ({ opacity: 1, transition: { duration: 0.75, ease: "easeOut" as const, delay } }),
 };
+// Stagger container for card grids — slower children for a more deliberate feel
 const staggerContainer = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.18, delayChildren: 0.1 } },
 };
+// Each stagger item: blur+lift, matching the hero language
 const staggerItem = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
+  hidden: { opacity: 0, y: 32, filter: "blur(3px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.75, ease: EASE_SOFT } },
 };
+// Row reveal for table rows — subtle, left-to-right
 const rowReveal = {
-  hidden: { opacity: 0, x: -16 },
-  visible: (delay: number = 0) => ({ opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut" as const, delay } }),
+  hidden: { opacity: 0, x: -20, filter: "blur(2px)" },
+  visible: (delay: number = 0) => ({
+    opacity: 1, x: 0, filter: "blur(0px)",
+    transition: { duration: 0.6, ease: EASE_SOFT, delay }
+  }),
+};
+// Slide from left/right for symmetric card pairs
+const slideFromLeft = {
+  hidden: { opacity: 0, x: -40, filter: "blur(3px)" },
+  visible: {
+    opacity: 1, x: 0, filter: "blur(0px)",
+    transition: { duration: 0.85, ease: EASE_SOFT }
+  },
+};
+const slideFromRight = {
+  hidden: { opacity: 0, x: 40, filter: "blur(3px)" },
+  visible: {
+    opacity: 1, x: 0, filter: "blur(0px)",
+    transition: { duration: 0.85, ease: EASE_SOFT }
+  },
+};
+// Stagger for list items inside cards — very soft, cascading
+const listItemVariants = {
+  hidden: { opacity: 0, y: 14, filter: "blur(2px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.55, ease: EASE_SOFT } },
+};
+const listStaggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.15 } },
 };
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/QvwZVu498WhwxVrDug5WRT/brandfabrik-logo_a07a612a.png";
@@ -682,42 +718,64 @@ function ForWhomSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
-          <div style={{ border: "1px solid rgba(240,111,102,0.2)", backgroundColor: "rgba(240,111,102,0.04)", borderBottomRightRadius: "40px", position: "relative", overflow: "hidden" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+          {/* Left card — slides in from left, list items cascade */}
+          <motion.div
+            variants={slideFromLeft}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            style={{ border: "1px solid rgba(240,111,102,0.2)", backgroundColor: "rgba(240,111,102,0.04)", borderBottomRightRadius: "40px", position: "relative", overflow: "hidden" }}
+          >
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,111,102,0.15)", display: "flex", alignItems: "center", gap: "10px" }}>
               <span style={{ color: "#f06f66", fontSize: "16px", fontWeight: 700 }}>✓</span>
               <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "#f06f66" }}>Neked szól, ha…</span>
             </div>
-            <div style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            <motion.div
+              variants={listStaggerContainer}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: "20px" }}
+            >
               {yesItems.map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+                <motion.div key={i} variants={listItemVariants} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
                   <span style={{ color: "#f06f66", fontSize: "18px", lineHeight: 1, marginTop: "2px", flexShrink: 0 }}>→</span>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.85)", lineHeight: 1.65 }}>{item}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div style={{ border: "1px solid rgba(240,223,200,0.08)", backgroundColor: "rgba(240,223,200,0.02)", borderBottomLeftRadius: "40px", position: "relative", overflow: "hidden" }}>
+          {/* Right card — slides in from right, list items cascade slightly slower */}
+          <motion.div
+            variants={slideFromRight}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            style={{ border: "1px solid rgba(240,223,200,0.08)", backgroundColor: "rgba(240,223,200,0.02)", borderBottomLeftRadius: "40px", position: "relative", overflow: "hidden" }}
+          >
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.6, pointerEvents: "none" }} />
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,223,200,0.08)", display: "flex", alignItems: "center", gap: "10px" }}>
               <span style={{ color: "rgba(240,223,200,0.35)", fontSize: "16px", fontWeight: 700 }}>✕</span>
               <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(240,223,200,0.35)" }}>Nem neked szól, ha…</span>
             </div>
-            <div style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: "20px" }}>
+            <motion.div
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: "20px" }}
+            >
               {noItems.map((item, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+                <motion.div key={i} variants={listItemVariants} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
                   <span style={{ color: "rgba(240,223,200,0.25)", fontSize: "18px", lineHeight: 1, marginTop: "2px", flexShrink: 0 }}>—</span>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.45)", lineHeight: 1.65 }}>{item}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
             <div style={{ padding: "20px 24px", borderTop: "1px solid rgba(240,223,200,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "13px", color: "rgba(240,223,200,0.3)", fontStyle: "italic", lineHeight: 1.6 }}>
               Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tudunk-e valóban segíteni.
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -1262,27 +1320,34 @@ function CTASection() {
 
   return (
     <section id="cta" style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.25)" }}>
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }}>
-          <div>
+          {/* Left column — blur+lift fade-up */}
+          <motion.div variants={slideFromLeft} initial="hidden" animate={inView ? "visible" : "hidden"}>
             <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
             <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "24px" }}>Elemzés. Stratégia. Végrehajtás.</h2>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.8, color: "rgba(240,223,200,0.7)", marginBottom: "40px" }}>
               A Revenue Matrix feltárása kötelezettségmentes. Ha van értelme tovább lépni, az eredményeiből stratégia, majd megvalósítás épülhet.
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <motion.div
+              variants={listStaggerContainer}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
+            >
               {["Kötelezettségmentes indulás — rejtett költségek nélkül", "Személyre szabott irány — nem sablonos javaslatok", "Az eredményeket személyesen mutatjuk be", "Olyan cégeknek, akik valódi döntésekre készek"].map((item, i) => (
-                <div key={i} style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                <motion.div key={i} variants={listItemVariants} style={{ display: "flex", gap: "14px", alignItems: "center" }}>
                   <div style={{ width: "20px", height: "20px", backgroundColor: "rgba(240,111,102,0.15)", border: "1px solid rgba(240,111,102,0.3)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, borderBottomRightRadius: "6px" }}>
                     <span style={{ color: "#f06f66", fontSize: "11px" }}>✓</span>
                   </div>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "15px", fontWeight: 400, color: "rgba(240,223,200,0.8)" }}>{item}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div>
+          {/* Right column — form slides in from right */}
+          <motion.div variants={slideFromRight} initial="hidden" animate={inView ? "visible" : "hidden"}>
             {submitted ? (
               <div style={{ backgroundColor: "rgba(240,111,102,0.1)", border: "1px solid rgba(240,111,102,0.3)", padding: "48px 40px", textAlign: "center", borderBottomRightRadius: "40px" }}>
                 <div style={{ fontSize: "48px", marginBottom: "24px" }}>✓</div>
@@ -1303,7 +1368,7 @@ function CTASection() {
                 <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)", lineHeight: 1.6 }}>* Kötelező mezők.<br />Az adataidat bizalmasan kezeljük, harmadik félnek nem adjuk át. A „visszahívást kérek" gombra kattintva hozzájárulsz adataid GDPR-megfelelő kezeléséhez.{" "}<a href="/adatkezeles" style={{ color: "rgba(240,111,102,0.6)", textDecoration: "underline" }}>Adatkezelési tájékoztató</a></p>
               </form>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
