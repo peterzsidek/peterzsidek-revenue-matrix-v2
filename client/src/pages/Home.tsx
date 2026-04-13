@@ -305,7 +305,7 @@ function HeroSection() {
               Az első kötelezettségmentes beszélgetés célja:
             </p>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: '15px', lineHeight: 1.6, color: 'rgba(240,223,200,0.75)', marginBottom: '32px' }}>
-              megnézni, hol van valódi növekedési lehetőség —<br />és van-e értelme rendszert építeni rá.
+              megnézni, hol van valódi növekedési lehetőség a cégedben,<br />és van-e értelme rendszert építeni rá.
             </p>
             <a href="#cta" className="btn-coral" style={{ backgroundColor: '#f06f66', color: '#303030', padding: '18px 36px', fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.12em', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', borderRadius: '0', borderBottomRightRadius: '12px' }}>
               Visszahívást kérek <span className="btn-arrow">→</span>
