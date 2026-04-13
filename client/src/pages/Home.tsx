@@ -548,8 +548,7 @@ function RevenueSystemSection() {
         {/* Closing statement */}
         <div style={{ borderLeft: "4px solid #f06f66", paddingLeft: "32px", maxWidth: "860px" }}>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "18px", color: "#f06f66", lineHeight: 1.8 }}>
-            Így nem különálló marketingeszközökben gondolkodsz,<br />
-            hanem egy olyan rendszerben, ahol pontosan látszik, mi működik, mi nem, és mit kell felépíteni ahhoz, hogy a bevétel kiszámíthatóan növekedjen.
+            Nem különálló marketingeszközökben gondolkodunk, hanem olyan rendszerben, ahol pontosan látszik, mi működik, mi nem, és mit kell felépíteni a kiszámíthatóbb bevételnövekedéshez.
           </p>
         </div>
 
