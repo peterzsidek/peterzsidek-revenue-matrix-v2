@@ -1141,10 +1141,22 @@ function CaseStudySection() {
             </div>
           </motion.div>
         </motion.div>
-        <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}>Minden buborék egy bevételre ható eszközt jelöl.</p>
+        <motion.p
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate={chartInView ? "visible" : "hidden"}
+          custom={0}
+          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}
+        >Minden buborék egy bevételre ható eszközt jelöl.</motion.p>
         <div ref={chartRef} style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
           {/* Chart column */}
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <motion.div
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate={chartInView ? "visible" : "hidden"}
+            custom={0.1}
+            style={{ display: "flex", flexDirection: "column" }}
+          >
             <div style={{ display: "flex", gap: "0" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", width: "28px", flexShrink: 0, paddingTop: "16px", paddingBottom: "16px" }}>
                 <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.4)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block", marginTop: "50px" }}>nagyobb hatás</span>
@@ -1158,9 +1170,15 @@ function CaseStudySection() {
               <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginLeft: "25px" }}>könnyebben bevezethő</span>
               <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginRight: "23px" }}>nehezebben bevezethő</span>
             </div>
-          </div>
+          </motion.div>
           {/* Right panel */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+          <motion.div
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate={chartInView ? "visible" : "hidden"}
+            custom={0.3}
+            style={{ display: "flex", flexDirection: "column", gap: "28px" }}
+          >
             {/* How to read */}
             <div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "14px", color: "#f0dfc8", marginBottom: "10px" }}>Hogyan olvasd ezt az ábrát?</div>
@@ -1192,7 +1210,7 @@ function CaseStudySection() {
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "13px", color: "#f06f66", marginBottom: "8px" }}>1. fázis — Összesített hatás</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.75)", lineHeight: 1.65 }}>Az 1. fázis beavatkozásai együttesen <strong style={{ color: "#f0dfc8", fontWeight: 500 }}>+20–35% havi bevételnövekedést</strong> realizálhatnak 1–4 hetes megtérülési idő mellett.</div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
