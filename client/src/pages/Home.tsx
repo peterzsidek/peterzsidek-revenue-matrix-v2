@@ -1,9 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView as useFramerInView } from "framer-motion";
+
+// Animation variants
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (delay: number = 0) => ({ opacity: 1, y: 0, transition: { duration: 0.65, ease: "easeOut" as const, delay } }),
+};
+const fadeInVariants = {
+  hidden: { opacity: 0 },
+  visible: (delay: number = 0) => ({ opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const, delay } }),
+};
+const staggerContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+};
+const staggerItem = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" as const } },
+};
+const rowReveal = {
+  hidden: { opacity: 0, x: -16 },
+  visible: (delay: number = 0) => ({ opacity: 1, x: 0, transition: { duration: 0.45, ease: "easeOut" as const, delay } }),
+};
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/QvwZVu498WhwxVrDug5WRT/brandfabrik-logo_a07a612a.png";
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/QvwZVu498WhwxVrDug5WRT/hero-bg-WtqreeCZ7YEA9bixUDG9YN.webp";
 
-// Staggered grid observer: watches a container, adds .card-stagger class with animationDelay
+// Legacy hook kept for CaseStudy (uses its own useInView)
 function useStaggerInView(count: number, threshold = 0.05) {
   const ref = useRef<HTMLDivElement>(null);
   const [triggered, setTriggered] = useState(false);
@@ -11,32 +34,15 @@ function useStaggerInView(count: number, threshold = 0.05) {
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      setTriggered(true);
-      return;
-    }
+    if (rect.top < window.innerHeight) { setTriggered(true); return; }
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTriggered(true);
-          observer.disconnect();
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) { setTriggered(true); observer.disconnect(); } },
       { threshold, rootMargin: '0px 0px -40px 0px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, [threshold]);
   return { ref, triggered };
-}
-
-// Simple wrapper — no animation, just renders children
-function FadeUp({ children, className = "", style = {} }: { children: React.ReactNode; delay?: number; className?: string; style?: React.CSSProperties }) {
-  return (
-    <div className={className} style={{ opacity: 1, ...style }}>
-      {children}
-    </div>
-  );
 }
 
 // Hero Guarantee Panel
@@ -340,10 +346,18 @@ const differentiatorRows = [
 ];
 
 function DifferentiatorTable() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
   return (
     <section style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ marginBottom: "48px" }}>
+      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+        <motion.div
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          custom={0}
+          style={{ marginBottom: "48px" }}
+        >
           <h2 style={{
             fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
             fontWeight: 300,
@@ -358,9 +372,14 @@ function DifferentiatorTable() {
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.55)", maxWidth: "720px", lineHeight: 1.75 }}>
             A legtöbb ügynökség eszközöket, kampányokat vagy kivitelezést ad el. Mi először azt vizsgáljuk meg, hogy a vállalkozásodban hol akad el a bevételszerzés, és csak ezután építünk rá olyan rendszert, ami üzletileg is indokolható.
           </p>
-        </div>
+        </motion.div>
 
-        <div style={{ border: "1px solid rgba(240,223,200,0.1)", overflow: "hidden", borderTopLeftRadius: "20px" }}>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          style={{ border: "1px solid rgba(240,223,200,0.1)", overflow: "hidden", borderTopLeftRadius: "20px" }}
+        >
           {/* Header row */}
           <div style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
             <div style={{ padding: "16px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.7)" }}>Szempont</div>
@@ -368,7 +387,7 @@ function DifferentiatorTable() {
             <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik megközelítés</div>
           </div>
           {differentiatorRows.map((row, i) => (
-            <div key={i} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)" }}>
+            <motion.div key={i} variants={rowReveal} custom={i * 0.05} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)" }}>
               <div style={{ padding: "20px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 600, color: "#f0dfc8", letterSpacing: "0.03em", display: "flex", alignItems: "center" }}>{row.aspect}</div>
               <div style={{ padding: "20px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", display: "flex", alignItems: "center", gap: "10px" }}>
                 <span style={{ color: "rgba(240,111,102,0.45)", fontSize: "15px", flexShrink: 0 }}>✕</span>
@@ -378,14 +397,20 @@ function DifferentiatorTable() {
                 <span style={{ color: "#f06f66", fontSize: "15px", flexShrink: 0 }}>✓</span>
                 <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 500, color: "#f0dfc8", lineHeight: 1.5 }}>{row.brandfabrik}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <div style={{ marginTop: "40px", borderLeft: "4px solid #f06f66", paddingLeft: "24px", maxWidth: "720px" }}>
+        </motion.div>
+        <motion.div
+          variants={fadeUpVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          custom={0.4}
+          style={{ marginTop: "40px", borderLeft: "4px solid #f06f66", paddingLeft: "24px", maxWidth: "720px" }}
+        >
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.75, fontStyle: "italic" }}>
             Nem azt keressük, mit lehetne még rátenni a cégedre. Hanem azt, hogy mitől fog stabilabban működni a bevételszerzés.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -426,6 +451,8 @@ const revenueSystemCards = [
 ];
 
 function RevenueSystemSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
   return (
     <section style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px", position: "relative", overflow: "hidden" }}>
       {/* Network background image */}
@@ -439,10 +466,10 @@ function RevenueSystemSection() {
         zIndex: 0,
         pointerEvents: "none",
       }} />
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
+      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
-        <div style={{ marginBottom: "56px" }}>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "28px" }}>
             Így építjük fel a bevételi<br />rendszeredet
@@ -456,12 +483,12 @@ function RevenueSystemSection() {
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "15px", color: "#f06f66", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "36px" }}>
             A folyamata a következő:
           </p>
-        </div>
+        </motion.div>
 
         {/* 6 cards — 3 columns × 2 rows */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
+        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
           {revenueSystemCards.map((card, i) => (
-            <div
+            <motion.div variants={staggerItem}
               key={i}
               className="revenue-card"
               style={{
@@ -541,16 +568,16 @@ function RevenueSystemSection() {
                   lineHeight: 1,
                 }}>↓</div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Closing statement */}
-        <div style={{ borderLeft: "4px solid #f06f66", paddingLeft: "32px", maxWidth: "860px" }}>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={1} style={{ borderLeft: "4px solid #f06f66", paddingLeft: "32px", maxWidth: "860px" }}>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "18px", color: "#f06f66", lineHeight: 1.8 }}>
             Nem különálló marketingeszközökben gondolkodunk, hanem olyan rendszerben, ahol pontosan látszik, mi működik, mi nem, és mit kell felépíteni a kiszámíthatóbb bevételnövekedéshez.
           </p>
-        </div>
+        </motion.div>
 
       </div>
     </section>
@@ -574,10 +601,13 @@ function ForWhomSection() {
     "Még több különálló eszközt, ötletet és próbálkozást akarsz, nem pedig világos sorrendet és rendszerszintű rendet.",
   ];
 
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ marginBottom: "56px" }}>
+      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>
             Amikor a régi működés már nem elég.
@@ -585,9 +615,9 @@ function ForWhomSection() {
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.55)", maxWidth: "720px" }}>
             Ilyenkor már nem újabb marketingötletekre van szükség, hanem arra, hogy tisztán lásd, mi akad el a bevételszerzésben, és mihez érdemes valóban hozzányúlni.
           </p>
-        </div>
+        </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
           <div style={{ border: "1px solid rgba(240,111,102,0.2)", backgroundColor: "rgba(240,111,102,0.04)", borderBottomRightRadius: "40px", position: "relative", overflow: "hidden" }}>
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,111,102,0.15)", display: "flex", alignItems: "center", gap: "10px" }}>
@@ -622,7 +652,7 @@ function ForWhomSection() {
               Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tudunk-e valóban segíteni.
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -1008,6 +1038,8 @@ function StaggeredAreaGrid() {
 
 // Why trust section
 function WhyTrustSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
   const reasons = [
     { title: "A TE VÁLLALKOZÁSODRA SZABVA", desc: "Nem általános tanácsokat kapsz, hanem azt, ami a te piacodon, a te helyzetedben és a te működésed mellett lehet valóban releváns." },
     { title: "RENDET TESZ A LEHETŐSÉGEK KÖZÖTT", desc: "Ma már túl sok bevételre ható eszköz létezik ahhoz, hogy érzésből lehessen jól dönteni. A Revenue Matrix nem mindent akar egyszerre használni, hanem kijelöli, mi maradjon bent, mi essen ki, és hogyan erősítsék egymást rendszerben a megtartott elemek." },
@@ -1017,12 +1049,12 @@ function WhyTrustSection() {
 
   return (
     <section style={{ padding: "120px 0", backgroundColor: "#303030" }}>
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ marginBottom: "72px" }}>
+      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "72px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
+        </motion.div>
+        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
           {reasons.map((item, i) => {
             const isLeft = i % 2 === 0;
             const borderRadiusStyle = {
@@ -1034,8 +1066,9 @@ function WhyTrustSection() {
             const greyBorder = "3px solid rgba(240,223,200,0.15)";
             const coralBorder = "3px solid #f06f66";
             return (
-              <div
+              <motion.div
                 key={i}
+                variants={staggerItem}
                 style={{
                   padding: "48px 40px",
                   backgroundColor: "rgba(240,223,200,0.03)",
@@ -1081,17 +1114,20 @@ function WhyTrustSection() {
                 )}
                 <div className="card-title" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "20px", color: "#f0dfc8", textTransform: "uppercase", letterSpacing: "0.05em", marginBottom: "16px", transition: "color 0.25s ease", position: "relative" }}>{item.title}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.7, position: "relative" }}>{item.desc}</div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
 // Implementation section
-function ImplementationSection() {  return (
+function ImplementationSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+  return (
     <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
       {/* Halftone dot pattern — centered, mix-blend-mode:multiply makes white areas transparent */}
       <div
@@ -1108,7 +1144,8 @@ function ImplementationSection() {  return (
           pointerEvents: "none",
         }}
       />
-      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative" }}>
+      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative" }}>
+        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0}>
         <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
         <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "3px", color: "rgba(240,111,102,0.7)", marginBottom: "16px" }}>Ahol a lényeg van</div>
         <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "20px" }}>Stratégia, majd végrehajtás</h2>
@@ -1118,20 +1155,21 @@ function ImplementationSection() {  return (
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", lineHeight: 1.85, color: "rgba(240,223,200,0.55)", maxWidth: "720px", marginBottom: "48px" }}>
           A cél nem egy jól kinéző terv, hanem az, hogy a fontos lépések valóban elinduljanak, a megfelelő időben és a megfelelő sorrendben.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
+        </motion.div>
+        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
           {[
             { label: "Azonnali", timeframe: "1–4 hét", desc: "Olyan beavatkozások, amelyek gyorsan elindíthatók, és rövid időn belül kézzelfogható eredményt hozhatnak.", highlight: true },
             { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
-            <div key={i} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}>
+            <motion.div key={i} variants={staggerItem} className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`} style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}>
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", color: item.highlight ? "#f06f66" : "#f0dfc8", marginBottom: "4px", textTransform: "uppercase", letterSpacing: "1.5px", position: "relative" }}>{item.label}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,111,102,0.7)", marginBottom: "14px" }}>{item.timeframe}</div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.65 }}>{item.desc}</div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -1139,6 +1177,8 @@ function ImplementationSection() {  return (
 
 // CTA section
 function CTASection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
   const [formData, setFormData] = useState({ name: "", company: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const FORMSPREE_DIAG_ID = "YOUR_FORM_ID";
