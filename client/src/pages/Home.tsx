@@ -905,9 +905,13 @@ function CaseStudySection() {
   const count127 = useCountUp(127, cardsInView, 1400, 120);
   const count30  = useCountUp(30,  cardsInView, 1200, 240);
   const count3   = useCountUp(3,   cardsInView, 900,  360);
+  // Chart gets its own ref — fires even later than the cards so the diagram
+  // only draws when the user has scrolled well past the stat cards
+  const chartRef = useRef<HTMLDivElement>(null);
+  const chartInView = useFramerInView(chartRef, { once: true, margin: "0px 0px -300px 0px" });
 
   useEffect(() => {
-    if (!inView) return;
+    if (!chartInView) return;
     const timeout = setTimeout(() => {
       if (typeof window !== "undefined" && (window as any).Chart) {
         const canvas = document.getElementById("caseMatrix") as HTMLCanvasElement;
@@ -1041,7 +1045,7 @@ function CaseStudySection() {
       }
     }, 400);
     return () => clearTimeout(timeout);
-  }, [inView]);
+  }, [chartInView]);
 
   return (
     <section ref={ref} style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.18)" }}>
@@ -1138,7 +1142,7 @@ function CaseStudySection() {
           </motion.div>
         </motion.div>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}>Minden buborék egy bevételre ható eszközt jelöl.</p>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
+        <div ref={chartRef} style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
           {/* Chart column */}
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ display: "flex", gap: "0" }}>
