@@ -702,13 +702,17 @@ function ForWhomSection() {
     "Még több különálló eszközt, ötletet és próbálkozást akarsz, nem pedig világos sorrendet és rendszerszintű rendet.",
   ];
 
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+  // Two separate refs: header triggers when section top enters view,
+  // cards trigger only when the cards themselves are visible
+  const headerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+  const headerInView = useFramerInView(headerRef, { once: true, amount: 0.4 });
+  const cardsInView = useFramerInView(cardsRef, { once: true, amount: 0.15 });
 
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
-      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
+      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+        <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>
             Amikor a régi működés már nem elég.
@@ -718,12 +722,12 @@ function ForWhomSection() {
           </p>
         </motion.div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+        <div ref={cardsRef} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
           {/* Left card — slides in from left, list items cascade */}
           <motion.div
             variants={slideFromLeft}
             initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+            animate={cardsInView ? "visible" : "hidden"}
             style={{ border: "1px solid rgba(240,111,102,0.2)", backgroundColor: "rgba(240,111,102,0.04)", borderBottomRightRadius: "40px", position: "relative", overflow: "hidden" }}
           >
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
@@ -734,7 +738,7 @@ function ForWhomSection() {
             <motion.div
               variants={listStaggerContainer}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"}
+              animate={cardsInView ? "visible" : "hidden"}
               style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: "20px" }}
             >
               {yesItems.map((item, i) => (
@@ -750,7 +754,7 @@ function ForWhomSection() {
           <motion.div
             variants={slideFromRight}
             initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+            animate={cardsInView ? "visible" : "hidden"}
             style={{ border: "1px solid rgba(240,223,200,0.08)", backgroundColor: "rgba(240,223,200,0.02)", borderBottomLeftRadius: "40px", position: "relative", overflow: "hidden" }}
           >
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.6, pointerEvents: "none" }} />
@@ -761,7 +765,7 @@ function ForWhomSection() {
             <motion.div
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
               initial="hidden"
-              animate={inView ? "visible" : "hidden"}
+              animate={cardsInView ? "visible" : "hidden"}
               style={{ padding: "28px 24px", display: "flex", flexDirection: "column", gap: "20px" }}
             >
               {noItems.map((item, i) => (
