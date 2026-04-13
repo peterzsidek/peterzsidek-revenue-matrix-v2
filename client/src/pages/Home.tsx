@@ -1120,7 +1120,7 @@ function ImplementationSection() {  return (
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
           {[
-            { label: "Azonnali", timeframe: "1–4 hét", desc: "Olyan beavatkozások, amelyek kis ráfordítással gyorsan elindíthatók, és rövid időn belül kézzelfogható eredményt hozhatnak.", highlight: true },
+            { label: "Azonnali", timeframe: "1–4 hét", desc: "Olyan beavatkozások, amelyek gyorsan elindíthatók, és rövid időn belül kézzelfogható eredményt hozhatnak.", highlight: true },
             { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
             { label: "Hosszabb távú", timeframe: "3–12 hónap", desc: "Azok a fejlesztések, amelyek stabilabb működést, jobb skálázhatóságot és fenntarthatóbb növekedést tesznek lehetővé.", highlight: false },
           ].map((item, i) => (
