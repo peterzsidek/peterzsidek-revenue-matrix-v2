@@ -860,6 +860,7 @@ function CaseStudySection() {
         </motion.div>
         <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={1}>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott,<br />megvalósítható stratégiáig.</p>
+        </motion.div>
         <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
           {/* Flip card for the 335 stat */}
           <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
@@ -902,7 +903,7 @@ function CaseStudySection() {
             </div>
           </motion.div>
           {/* Flip card 3: 30 */}
-          <div className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
+          <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
@@ -921,7 +922,7 @@ function CaseStudySection() {
             </div>
           </motion.div>
           {/* Flip card 4: 3 */}
-          <div className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
+          <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomLeftRadius: "20px" }}>
             <div className="stat-flip-inner">
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
