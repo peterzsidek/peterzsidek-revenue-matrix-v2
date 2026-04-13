@@ -99,7 +99,7 @@ function HeroDifferentiatorTabs() {
             Amit javaslunk, azért felelősséget is vállalunk — és végig is visszük.
           </div>
           <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "13px", color: "#f06f66", lineHeight: 1.4 }}>
-            Nem megérzésre dolgozunk, hanem bizonyított működésre építünk.
+            Nem megérzésre dolgozunk, hanem bizonyított<br />működésre építünk.
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
