@@ -329,39 +329,43 @@ function HeroSection() {
 
 // Differentiator Table — static, no scroll animation
 const differentiatorRows = [
-  { aspect: "Megközelítés", agency: "Amit kérsz, arra ad javaslatot", brandfabrik: "A teljes működést végignézi, és azt is feltárja, amit nem látsz" },
-  { aspect: "Döntési alap", agency: "Tapasztalat és vélemény alapján javasol", brandfabrik: "Iparági szinten bizonyított, működő mintákra épít" },
-  { aspect: "Diagnózis", agency: "A felszínen látható problémára reagál", brandfabrik: "Mélyinterjú-szintű feltárás + külső piackutatás, nem csak az ügyfél önbevallása alapján" },
-  { aspect: "Lefedettség", agency: "Egy-egy kampányra vagy csatornára néz rá", brandfabrik: "Minden releváns bevételi lehetőséget egyben vizsgál, cégre szabva és sorrendbe rakva" },
-  { aspect: "Gondolkodásmód", agency: "Kampányokban gondolkodik", brandfabrik: "Az elemek egymásra épülnek és erősítik egymást" },
-  { aspect: "Siker mérése", agency: "Nem látszik pontosan, mi hoz bevételt", brandfabrik: "Pontosan látszik, mi hoz bevételt" },
-  { aspect: "Szerződés", agency: "Hosszú távra leköt", brandfabrik: "Csak akkor maradsz, ha működik" },
+  { aspect: "Kiindulópont", agency: "Előre kialakított szolgáltatásokból indul ki", brandfabrik: "A vállalkozásod valós helyzetéből indul ki" },
+  { aspect: "Első lépés", agency: "Kivitelezést ajánl", brandfabrik: "Először átvizsgálja, hol akad el a bevételszerzés" },
+  { aspect: "Fókusz", agency: "Különálló marketingeszközök", brandfabrik: "A teljes bevételszerző működés" },
+  { aspect: "Gondolkodásmód", agency: "Kampányokban és csatornákban gondolkodik", brandfabrik: "Rendszerben, prioritásban és üzleti logikában gondolkodik" },
+  { aspect: "Javaslat alapja", agency: "Általános best practice-ek", brandfabrik: "A te piacod, a te működésed és a te elakadásaid" },
+  { aspect: "Cél", agency: "Több marketingaktivitás", brandfabrik: "Jobban működő bevételi rendszer" },
+  { aspect: "Kivitelezés szerepe", agency: "Gyakran előbb jön, mint a tisztán látható diagnózis", brandfabrik: "Csak azután indul, hogy látszik, mire van valóban szükség" },
+  { aspect: "Eredmény", agency: "Több eszköz, több zaj, több bizonytalanság", brandfabrik: "Tisztább irány, jobb sorrend és indokolhatóbb döntések" },
 ];
 
 function DifferentiatorTable() {
   return (
-    <section style={{ backgroundColor: "#2a2a2a", padding: "100px 0" }}>
+    <section style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+        <div style={{ marginBottom: "48px" }}>
           <h2 style={{
             fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
             fontWeight: 300,
-            fontSize: "clamp(32px, 3.5vw, 52px)",
+            fontSize: "clamp(28px, 3vw, 44px)",
             color: "#f0dfc8",
             lineHeight: 1.2,
-            marginBottom: "48px",
+            marginBottom: "16px",
           }}>
             Nem ügynökség vagyunk.<br />
             <span style={{ color: "#f06f66" }}>A bevételi működést rakjuk rendbe.</span>
           </h2>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.55)", maxWidth: "720px", lineHeight: 1.75 }}>
+            A legtöbb ügynökség eszközöket, kampányokat vagy kivitelezést ad el. Mi először azt vizsgáljuk meg, hogy a vállalkozásodban hol akad el a bevételszerzés, és csak ezután építünk rá olyan rendszert, ami üzletileg is indokolható.
+          </p>
         </div>
 
         <div style={{ border: "1px solid rgba(240,223,200,0.1)", overflow: "hidden", borderTopLeftRadius: "20px" }}>
           {/* Header row */}
           <div style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
             <div style={{ padding: "16px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.35)" }}>Szempont</div>
-            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos ügynökség</div>
-            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik</div>
+            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos ügynökségi működés</div>
+            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik megközelítés</div>
           </div>
           {differentiatorRows.map((row, i) => (
             <div key={i} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)" }}>
@@ -376,6 +380,11 @@ function DifferentiatorTable() {
               </div>
             </div>
           ))}
+        </div>
+        <div style={{ marginTop: "40px", borderLeft: "4px solid #f06f66", paddingLeft: "24px", maxWidth: "720px" }}>
+          <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.7)", lineHeight: 1.75, fontStyle: "italic" }}>
+            Nem azt keressük, mit lehetne még rátenni a cégedre. Hanem azt, hogy mitől fog stabilabban működni a bevételszerzés.
+          </p>
         </div>
       </div>
     </section>
