@@ -4,12 +4,14 @@ import { motion, useInView as useFramerInView } from "framer-motion";
 // Animation variants
 
 // Hero: slow, weighty reveal — each element "arrives" with intention
-// blur kept at 2px (not 4px) for GPU-smooth rendering; will-change on the element handles the rest
+// Smooth ease: [0.22, 1, 0.36, 1] is a gentle ease-out with no spring/bounce.
+// y kept at 32px — large y + fast-start easing causes visible "jump"; smaller y + slow ease = dignified drift.
+// blur removed from h1 entirely — animating filter on large text is the #1 cause of jank in Chrome.
 const heroH1Variants = {
-  hidden: { opacity: 0, y: 80, filter: "blur(2px)" },
+  hidden: { opacity: 0, y: 32 },
   visible: {
-    opacity: 1, y: 0, filter: "blur(0px)",
-    transition: { duration: 2.0, ease: [0.16, 1, 0.3, 1] as const }
+    opacity: 1, y: 0,
+    transition: { duration: 2.2, ease: [0.22, 1, 0.36, 1] as const }
   },
 };
 const heroSubtitleVariants = {
@@ -350,7 +352,7 @@ function HeroSection() {
             maxWidth: '900px',
             marginLeft: 'auto',
             marginRight: 'auto',
-            willChange: 'transform, opacity, filter',
+            willChange: 'transform, opacity',
           }}
         >
           A legtöbb cégvezető nem tudja, mennyi pénzt hagy{' '}
