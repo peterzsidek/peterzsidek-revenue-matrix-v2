@@ -572,10 +572,10 @@ function ForWhomSection() {
         <div style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "16px" }}>
-            Kinek szól a diagnosztika alapú szolgáltatásunk?
+            Amikor a régi működés már nem elég.
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", color: "rgba(240,223,200,0.55)", maxWidth: "520px" }}>
-            Ahol a bevételi működést már nem egyetlen eszközzel, hanem rendszerszinten kell rendbe tenni.
+            Nem újabb marketingötleteket adunk, hanem segítünk tisztán látni, mi akad el a bevételszerzésben, és milyen rendszerre van valóban szüksége a vállalkozásodnak.
           </p>
         </div>
 
