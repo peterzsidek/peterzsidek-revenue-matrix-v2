@@ -1221,11 +1221,11 @@ export default function Home() {
     <div style={{ backgroundColor: "#303030", minHeight: "100vh" }}>
       <Navbar />
       <HeroSection />
+      <ForWhomSection />
       <DifferentiatorTable />
       <RevenueSystemSection />
       <CaseStudySection />
       <WhyTrustSection />
-      <ForWhomSection />
       <ImplementationSection />
       <CTASection />
       <Footer />
