@@ -1161,7 +1161,7 @@ function CTASection() {
             <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
             <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "24px" }}>Elemzés. Stratégia. Végrehajtás.</h2>
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.8, color: "rgba(240,223,200,0.7)", marginBottom: "40px" }}>
-              A Revenue Matrix feltárása kötelezettségmentes. Ha van értelme továbblépni, az eredményeiből stratégia, majd megvalósítás épülhet.
+              A Revenue Matrix feltárása kötelezettségmentes. Ha van értelme tovább lépni, az eredményeiből stratégia, majd megvalósítás épülhet.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {["Kötelezettségmentes indulás — rejtett költségek nélkül", "Személyre szabott irány — nem sablonos javaslatok", "Az eredményeket személyesen mutatjuk be", "Olyan cégeknek, akik valódi döntésekre készek"].map((item, i) => (
