@@ -4,11 +4,12 @@ import { motion, useInView as useFramerInView } from "framer-motion";
 // Animation variants
 
 // Hero: slow, weighty reveal — each element "arrives" with intention
+// blur kept at 2px (not 4px) for GPU-smooth rendering; will-change on the element handles the rest
 const heroH1Variants = {
-  hidden: { opacity: 0, y: 48, filter: "blur(4px)" },
+  hidden: { opacity: 0, y: 80, filter: "blur(2px)" },
   visible: {
     opacity: 1, y: 0, filter: "blur(0px)",
-    transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] as const }
+    transition: { duration: 2.0, ease: [0.16, 1, 0.3, 1] as const }
   },
 };
 const heroSubtitleVariants = {
@@ -349,6 +350,7 @@ function HeroSection() {
             maxWidth: '900px',
             marginLeft: 'auto',
             marginRight: 'auto',
+            willChange: 'transform, opacity, filter',
           }}
         >
           A legtöbb cégvezető nem tudja, mennyi pénzt hagy{' '}
