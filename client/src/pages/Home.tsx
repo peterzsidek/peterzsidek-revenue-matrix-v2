@@ -562,9 +562,118 @@ const revenueSystemCards = [
   },
 ];
 
+// Revenue card left-slide variant — each card slides in from the left with a per-card delay
+// No blur on cards (same reason as h1: blur on many elements causes jank)
+const revenueCardVariant = {
+  hidden: { opacity: 0, x: -56 },
+  visible: (delay: number = 0) => ({
+    opacity: 1, x: 0,
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const, delay }
+  }),
+};
+
 function RevenueSystemSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+  // Header: fires when heading is 30% visible
+  const headerRef = useRef<HTMLDivElement>(null);
+  const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
+  // Row 1 (cards 1-2-3): fires when row 1 is clearly on screen
+  const row1Ref = useRef<HTMLDivElement>(null);
+  const row1InView = useFramerInView(row1Ref, { once: true, margin: "0px 0px -400px 0px" });
+  // Row 2 (cards 4-5-6): fires when row 2 is clearly on screen (deeper trigger)
+  const row2Ref = useRef<HTMLDivElement>(null);
+  const row2InView = useFramerInView(row2Ref, { once: true, margin: "0px 0px -400px 0px" });
+  // Closing statement: fires after row 2
+  const closingRef = useRef<HTMLDivElement>(null);
+  const closingInView = useFramerInView(closingRef, { once: true, margin: "0px 0px -200px 0px" });
+
+  const cardJSX = (card: typeof revenueSystemCards[0], i: number) => (
+    <motion.div
+      key={i}
+      variants={revenueCardVariant}
+      custom={i % 3 * 0.18}
+      initial="hidden"
+      animate={i < 3 ? (row1InView ? "visible" : "hidden") : (row2InView ? "visible" : "hidden")}
+      className="revenue-card"
+      style={{
+        backgroundColor: "#333231",
+        position: "relative",
+        overflow: "hidden",
+        borderBottomRightRadius: "36px",
+        boxSizing: "border-box" as const,
+      }}
+    >
+      {/* hatter6 overlay */}
+      <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
+      {/* Top accent line */}
+      <div className="revenue-card-top-border" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#4f4c48" }} />
+      {/* Large background number */}
+      <div className="revenue-card-number" style={{
+        fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
+        fontWeight: 700,
+        fontSize: "clamp(64px, 8vw, 96px)",
+        color: "rgba(240,223,200,0.08)",
+        lineHeight: 1,
+        position: "absolute",
+        top: "-7px",
+        left: "-2px",
+        userSelect: "none" as const,
+      }}>{card.num}</div>
+      {/* Content */}
+      <div style={{ padding: "100px 36px 56px 36px", position: "relative" }}>
+        <div className="revenue-card-title" style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontWeight: 700,
+          fontSize: "15px",
+          color: "#f0dfc8",
+          textTransform: "uppercase" as const,
+          letterSpacing: "0.05em",
+          marginBottom: "12px",
+        }}>{card.title}</div>
+        <div style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontWeight: 300,
+          fontSize: "14px",
+          color: "rgba(240,223,200,0.65)",
+          lineHeight: 1.75,
+        }}>{card.desc}</div>
+      </div>
+      {/* Small arrow for cards 01–05 */}
+      {i < 5 && (
+        <div className="revenue-card-arrow" style={{
+          position: "absolute",
+          bottom: "20px",
+          right: "20px",
+          width: "28px",
+          height: "28px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "rgba(240,223,200,0.25)",
+          fontSize: "18px",
+          fontFamily: "'Poppins', sans-serif",
+          lineHeight: 1,
+        }}>→</div>
+      )}
+      {/* Small down arrow for card 06 */}
+      {i === 5 && (
+        <div className="revenue-card-arrow" style={{
+          position: "absolute",
+          bottom: "20px",
+          right: "20px",
+          width: "28px",
+          height: "28px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "rgba(240,223,200,0.25)",
+          fontSize: "18px",
+          fontFamily: "'Poppins', sans-serif",
+          lineHeight: 1,
+        }}>↓</div>
+      )}
+    </motion.div>
+  );
+
   return (
     <section style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px", position: "relative", overflow: "hidden" }}>
       {/* Network background image */}
@@ -578,10 +687,10 @@ function RevenueSystemSection() {
         zIndex: 0,
         pointerEvents: "none",
       }} />
-      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
+      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
-        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
+        <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "28px" }}>
             Így építjük fel a bevételi<br />rendszeredet
@@ -597,95 +706,18 @@ function RevenueSystemSection() {
           </p>
         </motion.div>
 
-        {/* 6 cards — 3 columns × 2 rows */}
-        <motion.div variants={staggerContainer} initial="hidden" animate={inView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
-          {revenueSystemCards.map((card, i) => (
-            <motion.div variants={staggerItem}
-              key={i}
-              className="revenue-card"
-              style={{
-                backgroundColor: "#333231",
-                position: "relative",
-                overflow: "hidden",
-                borderBottomRightRadius: "36px",
-                boxSizing: "border-box" as const,
-              }}
-            >
-              {/* hatter6 overlay */}
-              <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none" }} />
-              {/* Top accent line */}
-              <div className="revenue-card-top-border" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "#4f4c48" }} />
-              {/* Large background number */}
-              <div className="revenue-card-number" style={{
-                fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
-                fontWeight: 700,
-                fontSize: "clamp(64px, 8vw, 96px)",
-                color: "rgba(240,223,200,0.08)",
-                lineHeight: 1,
-                position: "absolute",
-                top: "-7px",
-                left: "-2px",
-                userSelect: "none" as const,
-              }}>{card.num}</div>
-              {/* Content */}
-              <div style={{ padding: "100px 36px 56px 36px", position: "relative" }}>
-                <div className="revenue-card-title" style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "15px",
-                  color: "#f0dfc8",
-                  textTransform: "uppercase" as const,
-                  letterSpacing: "0.05em",
-                  marginBottom: "12px",
-                }}>{card.title}</div>
-                <div style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontWeight: 300,
-                  fontSize: "14px",
-                  color: "rgba(240,223,200,0.65)",
-                  lineHeight: 1.75,
-                }}>{card.desc}</div>
-              </div>
-              {/* Small arrow for cards 01–05 */}
-              {i < 5 && (
-                <div className="revenue-card-arrow" style={{
-                  position: "absolute",
-                  bottom: "20px",
-                  right: "20px",
-                  width: "28px",
-                  height: "28px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "rgba(240,223,200,0.25)",
-                  fontSize: "18px",
-                  fontFamily: "'Poppins', sans-serif",
-                  lineHeight: 1,
-                }}>→</div>
-              )}
-              {/* Small down arrow for card 06 */}
-              {i === 5 && (
-                <div className="revenue-card-arrow" style={{
-                  position: "absolute",
-                  bottom: "20px",
-                  right: "20px",
-                  width: "28px",
-                  height: "28px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "rgba(240,223,200,0.25)",
-                  fontSize: "18px",
-                  fontFamily: "'Poppins', sans-serif",
-                  lineHeight: 1,
-                }}>↓</div>
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Row 1: cards 1-2-3 — slide in from left, staggered */}
+        <div ref={row1Ref} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "2px" }}>
+          {revenueSystemCards.slice(0, 3).map((card, i) => cardJSX(card, i))}
+        </div>
+
+        {/* Row 2: cards 4-5-6 — same left-slide, triggered separately */}
+        <div ref={row2Ref} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
+          {revenueSystemCards.slice(3).map((card, i) => cardJSX(card, i + 3))}
+        </div>
 
         {/* Closing statement */}
-        <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={1} style={{ borderLeft: "4px solid #f06f66", paddingLeft: "32px", maxWidth: "860px" }}>
+        <motion.div ref={closingRef} variants={fadeUpVariants} initial="hidden" animate={closingInView ? "visible" : "hidden"} custom={0} style={{ borderLeft: "4px solid #f06f66", paddingLeft: "32px", maxWidth: "860px" }}>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "18px", color: "#f06f66", lineHeight: 1.8 }}>
             Nem különálló marketingeszközökben gondolkodunk, hanem olyan rendszerben, ahol pontosan látszik, mi működik, mi nem, és mit kell felépíteni a kiszámíthatóbb bevételnövekedéshez.
           </p>
