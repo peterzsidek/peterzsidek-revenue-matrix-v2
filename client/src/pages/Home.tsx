@@ -80,15 +80,15 @@ function HeroDifferentiatorTabs() {
 
   const checklistItems = [
     { text: "Először feltárjuk, hol van nálad valódi növekedési lehetőség", asterisk: false },
-    { text: "A teljes kommunikációs eszköztárat végigvizsgáljuk", asterisk: true },
+    { text: "A teljes bevételszerző működést átvizsgáljuk ", asterisk: true },
     { text: "Bizonyított elemekből, prioritás mentén építünk rendszert", asterisk: false },
-    { text: "Amit javaslunk, azért felelősséget vállalunk a megvalósításig", asterisk: false },
+    { text: "Amit javaslunk, azért a megvalósításig felelősséget vállalunk", asterisk: false },
   ];
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "0", border: "1px solid rgba(240,223,200,0.1)", backgroundColor: "rgba(48,48,48,0.6)", backdropFilter: "blur(8px)", borderTopLeftRadius: "20px" }}>
       <div style={{ padding: "14px 20px", borderBottom: "1px solid rgba(240,223,200,0.1)" }}>
-        <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "3px", color: "#f06f66" }}>A mi garanciánk</div>
+        <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "3px", color: "#f06f66" }}>A MI HOZZÁÁLLÁSUNK</div>
       </div>
       <div style={{ padding: "24px 20px", display: "flex", flexDirection: "column", gap: "20px" }}>
         <div style={{ borderLeft: "3px solid #f06f66", paddingLeft: "20px" }}>
