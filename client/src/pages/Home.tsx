@@ -552,18 +552,18 @@ function RevenueSystemSection() {
 // For Whom section
 function ForWhomSection() {
   const yesItems = [
-    "A vállalkozásod évek óta működik, de mostanra azt érzed, hogy a növekedés megtorpant, és ami korábban bevált, az már nem hozza ugyanazt az eredményt.",
-    "Egyre több új eszköz, új platform és új logika jelenik meg körülötted, de nem újabb zajra van szükséged, hanem arra, hogy valaki rendet tegyen bennük.",
-    "Nem akarsz minden új technológiát, kifejezést és működési modellt egyedül megfejteni, csak tisztán szeretnéd látni, hogy a te vállalkozásodnál mi releváns belőle.",
-    "Úgy érzed, nem egyetlen marketingeszközzel van gond, hanem azzal, hogy a bevételi működés már nem áll össze elég tudatos rendszerként.",
-    "Nem újabb ötleteket keresel, hanem megalapozott irányt, világos sorrendet és olyan megvalósítást, ami nem áll meg a felismerésnél.",
+    "A vállalkozásod működik, de egyre erősebben érzed, hogy ami eddig elhozott idáig, az a következő években már nem lesz elég.",
+    "Látod, hogy a piac, a technológia és a vevői szokások változnak, de nem akarsz minden új hullám után rohanni.",
+    "Nem újabb marketingeszközöket keresel, hanem azt akarod tisztán látni, hogy nálad mi termel valóban bevételt, és mi nem.",
+    "Zavar, hogy egyre nehezebb eldönteni, mire érdemes figyelni, és mi az, ami csak zaj.",
+    "Nem egy újabb kampányötletre van szükséged, hanem arra, hogy a bevételszerző működésed végre átlátható és tudatos rendszerben működjön.",
   ];
   const noItems = [
-    "Gyors marketingötletet vagy azonnali forgalomnövelő trükköt keresel, mélyebb feltárás és újragondolás nélkül.",
-    "Még csak most indítod a vállalkozásodat, és nincs mögötte működő valóság, amit érdemben vizsgálni lehetne.",
-    "Nem akarsz valódi döntéseket hozni, csak megerősítést keresel arra, hogy minden maradhasson úgy, ahogy eddig volt.",
-    "Kizárólag kivitelezőt keresel, de nem akarsz ránézni arra, hogy valójában min kellene változtatni.",
-    "Nem rendszerszintű rendrakást keresel, hanem még több különálló eszközt, ötletet és próbálkozást.",
+    "Gyors marketingtrükköt vagy azonnali csodamegoldást keresel, feltárás és valós döntések nélkül.",
+    "Még csak most indítod a vállalkozásodat, és nincs mögötte működő üzleti alap, amit érdemben át lehet vizsgálni.",
+    "Nem akarsz ránézni arra, hogy a jelenlegi működésedben min kellene változtatni, csak megerősítést keresel arra, hogy minden maradhasson ugyanúgy.",
+    "Kizárólag kivitelezőt keresel, de nem akarsz előtte tisztán látni abban, hogy valójában mihez érdemes hozzányúlni.",
+    "Még több különálló eszközt, ötletet és próbálkozást akarsz, nem pedig világos sorrendet és rendszerszintű rendet.",
   ];
 
   return (
@@ -611,7 +611,7 @@ function ForWhomSection() {
               ))}
             </div>
             <div style={{ padding: "20px 24px", borderTop: "1px solid rgba(240,223,200,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "13px", color: "rgba(240,223,200,0.3)", fontStyle: "italic", lineHeight: 1.6 }}>
-              Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tud-e segíteni a Revenue Matrix.
+              Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tudunk-e valóban segíteni.
             </div>
           </div>
         </div>
