@@ -448,10 +448,10 @@ function RevenueSystemSection() {
             Így építjük fel a bevételi<br />rendszeredet
           </h2>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.7)", maxWidth: "780px", marginBottom: "20px" }}>
-            Ahhoz, hogy valóban működőképes, megalapozott és bevételnövekedést támogató rendszert tudjunk felépíteni, egy átfogó vállalatdiagnosztikai és stratégiai módszertant dolgoztunk ki. Ezt neveztük el Revenue Matrixnak.
+            Ahhoz, hogy valóban működő, megalapozott és a bevételi növekedést támogató rendszert tudjunk felépíteni, nem ötletekből indulunk ki, hanem feltárásból, diagnosztikából és világos stratégiai sorrendből.
           </p>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.7)", maxWidth: "780px", marginBottom: "20px" }}>
-            A Revenue Matrix egy sokrétegű, strukturált rendszer, amely a céges működés feltárását, a piaci valóság vizsgálatát és az iparág-specifikus bevételi lehetőségek elemzését egyetlen logikába rendezi. A célja, hogy pontosan megmutassa, mire érdemes építeni, milyen sorrendben, és hogyan lesz ebből megvalósítható bevételi rendszer.
+            A Revenue Matrix a Brandfabrik saját fejlesztésű módszertana. Ennek segítségével a céged jelenlegi működését, a piaci valóságot és a növekedési lehetőségeket egyetlen logikában nézzük végig. Így nemcsak az derül ki, hol akad el most a bevételszerzés, hanem az is, hogy mihez érdemes hozzányúlni, milyen sorrendben, és mit kell valóban felépíteni ahhoz, hogy a bevételi működés stabilabban növekedjen.
           </p>
           <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "15px", color: "#f06f66", textTransform: "uppercase", letterSpacing: "0.1em", marginTop: "36px" }}>
             A folyamata a következő:
