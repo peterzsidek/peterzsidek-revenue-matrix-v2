@@ -451,15 +451,21 @@ const differentiatorRows = [
 ];
 
 function DifferentiatorTable() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+  // Same split-ref pattern as ForWhom:
+  // headerRef fires when the heading is 30% visible;
+  // tableRef fires only when the table itself is clearly on screen (-300px margin)
+  const headerRef = useRef<HTMLDivElement>(null);
+  const tableRef = useRef<HTMLDivElement>(null);
+  const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
+  const tableInView = useFramerInView(tableRef, { once: true, margin: "0px 0px -300px 0px" });
   return (
     <section style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
-      <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
+      <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div
+          ref={headerRef}
           variants={fadeUpVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={headerInView ? "visible" : "hidden"}
           custom={0}
           style={{ marginBottom: "48px" }}
         >
@@ -480,9 +486,10 @@ function DifferentiatorTable() {
         </motion.div>
 
         <motion.div
+          ref={tableRef}
           variants={staggerContainer}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={tableInView ? "visible" : "hidden"}
           style={{ border: "1px solid rgba(240,223,200,0.1)", overflow: "hidden", borderTopLeftRadius: "20px" }}
         >
           {/* Header row */}
@@ -508,7 +515,7 @@ function DifferentiatorTable() {
         <motion.div
           variants={fadeUpVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={tableInView ? "visible" : "hidden"}
           custom={0.4}
           style={{ marginTop: "40px", borderLeft: "4px solid #f06f66", paddingLeft: "24px", maxWidth: "720px" }}
         >
