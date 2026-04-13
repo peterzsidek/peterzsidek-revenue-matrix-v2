@@ -706,8 +706,11 @@ function ForWhomSection() {
   // cards trigger only when the cards themselves are visible
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const headerInView = useFramerInView(headerRef, { once: true, amount: 0.4 });
-  const cardsInView = useFramerInView(cardsRef, { once: true, amount: 0.15 });
+  // header: fires when header itself is 30% visible
+  const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
+  // cards: negative bottom margin means the element must be at least 300px
+  // above the bottom edge of the viewport before it triggers — i.e. clearly on screen
+  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -300px 0px" });
 
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
