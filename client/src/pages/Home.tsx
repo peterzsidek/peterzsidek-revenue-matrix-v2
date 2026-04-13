@@ -485,10 +485,13 @@ function DifferentiatorTable() {
           </p>
         </motion.div>
 
-        {/* Wrapper is a plain div — the border must not animate separately from the rows.
-             Each row animates individually via rowReveal. tableRef sits here for the inView trigger. */}
-        <div
+        {/* Wrapper fades in together with the rows — opacity only, no y/blur so it doesn’t
+             fight with the individual row animations. overflow:hidden kept for rounded corners. */}
+        <motion.div
           ref={tableRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: tableInView ? 1 : 0 }}
+          transition={{ duration: 0.01, delay: 0 }}
           style={{ border: "1px solid rgba(240,223,200,0.1)", overflow: "hidden", borderTopLeftRadius: "20px" }}
         >
           {/* Header row — animated as first stagger item */}
@@ -510,7 +513,7 @@ function DifferentiatorTable() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
         <motion.div
           variants={fadeUpVariants}
           initial="hidden"
