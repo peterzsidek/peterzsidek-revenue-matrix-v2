@@ -369,10 +369,10 @@ function DifferentiatorTable() {
           </div>
           {differentiatorRows.map((row, i) => (
             <div key={i} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)" }}>
-              <div style={{ padding: "20px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 600, color: "rgba(240,223,200,0.5)", letterSpacing: "0.03em", display: "flex", alignItems: "center" }}>{row.aspect}</div>
+              <div style={{ padding: "20px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 600, color: "#f0dfc8", letterSpacing: "0.03em", display: "flex", alignItems: "center" }}>{row.aspect}</div>
               <div style={{ padding: "20px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", display: "flex", alignItems: "center", gap: "10px" }}>
-                <span style={{ color: "rgba(240,111,102,0.12)", fontSize: "15px", flexShrink: 0 }}>✕</span>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 300, color: "rgba(240,223,200,0.4)", lineHeight: 1.5 }}>{row.agency}</span>
+                <span style={{ color: "rgba(240,111,102,0.45)", fontSize: "15px", flexShrink: 0 }}>✕</span>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 300, color: "rgba(240,223,200,0.6)", lineHeight: 1.5 }}>{row.agency}</span>
               </div>
               <div style={{ padding: "20px 24px", borderLeft: "1px solid rgba(240,111,102,0.2)", backgroundColor: "rgba(240,111,102,0.04)", display: "flex", alignItems: "center", gap: "10px" }}>
                 <span style={{ color: "#f06f66", fontSize: "15px", flexShrink: 0 }}>✓</span>
