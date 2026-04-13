@@ -401,27 +401,27 @@ const revenueSystemCards = [
   {
     num: "02",
     title: "Testreszabott céges diagnosztika",
-    desc: "Az első beszélgetés alapján elkészítjük a teljesen testreszabott kérdőívet, amellyel feltárjuk a működésedet — nem csak marketingoldalról, hanem minden olyan terület felől, ami a bevételre hatással van.",
+    desc: "A beszélgetés alapján elindítjuk a teljes testreszabott diagnosztikát, amellyel feltárjuk a működésedben azokat a pontokat, amelyek a bevételszerzést és a növekedést ma leginkább visszafogják.",
   },
   {
     num: "03",
     title: "Külső piackutatás",
-    desc: "A belső képet nem önmagában vizsgáljuk. Külső piackutatással is megnézzük, mi történik valójában a piacodon, hogyan látszol kívülről, és milyen mintázatok működnek az iparágadban.",
+    desc: "A belső képet nem önmagában vizsgáljuk. Külső piackutatással is megnézzük, mi történik a piacodon, hogyan látszol kívülről, és mit csinálnak jól azok a versenytársaid, akik egyre sikeresebbek az online térben.",
   },
   {
     num: "04",
     title: "Összevetés és ütköztetés",
-    desc: "A céges diagnosztika és a külső piaci vizsgálat eredményeit összevetjük, hogy láthatóvá váljanak az eltérések, hiányok, vakfoltok és a valódi növekedési pontok.",
+    desc: "A belső diagnosztika és a külső piaci vizsgálat eredményeit összevetjük, hogy láthatóvá váljanak az eltérések, a hiányok, a vakfoltok és a valódi növekedési pontok.",
   },
   {
     num: "05",
     title: "Taxonómiai vizsgálat és priorizált rendszerterv",
-    desc: "Iparág-specifikusan megvizsgáljuk a bevételszerző eszközrendszert, és bizonyítékot keresünk arra, hogy az adott területen mi lehet valóban működőképes. Ezt vetjük össze a céges diagnosztikával, és ebből áll össze a priorizált megvalósítási terv: a helyzetértékelés, a sorrendbe rendezett teendők és a hosszabb távú fejlesztési útvonal.",
+    desc: "Iparág-specifikusan megvizsgáljuk a bevételszerző eszközrendszert, és bizonyítékot keresünk arra, hogy vállalkozásod tekintetében mi lehet valóban működőképes. Ezt vetjük össze a céges diagnosztikával, és ebből áll össze a priorizált megvalósítási terv: a helyzetértékelés, a sorrendbe rendezett teendők és a hosszabb távú fejlesztési útvonal.",
   },
   {
     num: "06",
     title: "Megvalósítás",
-    desc: "A folyamat nem áll meg a tervnél. A koncepcióban meghatározott stratégiai lépések feladat szintű végrehajtásában is részt veszünk, vagyis nem csak megmutatjuk az irányt, hanem segítünk fel is építeni azt a rendszert, ami a gyakorlatban működni fog.",
+    desc: "A folyamat nem áll meg a felismerésnél vagy a stratégiánál. A meghatározott lépések alapján veled együtt felépítjük azt a bevételi rendszert, amely nem papíron működik jól, hanem a gyakorlatban is.",
   },
 ];
 
