@@ -1010,7 +1010,7 @@ function StaggeredAreaGrid() {
 function WhyTrustSection() {
   const reasons = [
     { title: "A TE VÁLLALKOZÁSODRA SZABVA", desc: "Nem általános tanácsokat kapsz, hanem azt, ami a te piacodon, a te helyzetedben és a te működésed mellett lehet valóban releváns." },
-    { title: "RENDET TESZ A LEHETŐSÉGEK KÖZÖTT", desc: "Ma már túl sok bevételre ható eszköz létezik ahhoz, hogy érzésből lehessen jól dönteni. A Revenue Matrix nem mindent akar egyszerre használni, hanem kielemzi, mi maradjon bent, mi essen ki, és mi kövesse egymás után." },
+    { title: "RENDET TESZ A LEHETŐSÉGEK KÖZÖTT", desc: "Ma már túl sok bevételre ható eszköz létezik ahhoz, hogy érzésből lehessen jól dönteni. A Revenue Matrix nem mindent akar egyszerre használni, hanem kijelöli, mi maradjon bent, mi essen ki, és hogyan erősítsék egymást rendszerben a megtartott elemek." },
     { title: "ELŐSZÖR TISZTÁN LÁTSZ, UTÁNA LEHET HALADNI", desc: "A priorizált rendszer leveszi rólad a „mivel érdemes kezdeni?” terhét. Először világos helyzetképet és sorrendet kapsz, és csak utána indulhat el a megvalósítás." },
     { title: "NEM ÁLL MEG A DIAGNÓZISÁNÁL", desc: "A cél nem az, hogy készüljön egy jó elemzés, hanem az, hogy abból működő rendszer épüljön. Ezért a folyamat nem a felismerésnél ér véget, hanem a kivitelezés irányába megy tovább." },
   ];
