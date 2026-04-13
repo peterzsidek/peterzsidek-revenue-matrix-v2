@@ -1295,10 +1295,10 @@ function WhyTrustSection() {
   };
 
   const reasons = [
-    { title: "A TE V\u00c1LLALKOZ\u00c1SODRA SZABVA", desc: "Nem \u00e1ltal\u00e1nos tan\u00e1csokat kapsz, hanem azt, ami a te piacodon, a te helyzetedben \u00e9s a te m\u0171k\u00f6d\u00e9sed mellett lehet val\u00f3ban relev\u00e1ns." },
-    { title: "RENDET TESZ A LEHET\u0150S\u00c9GEK K\u00d6Z\u00d6TT", desc: "Ma m\u00e1r t\u00fal sok bev\u00e9telre hat\u00f3 eszk\u00f6z l\u00e9tezik ahhoz, hogy \u00e9rz\u00e9sb\u0151l lehessen j\u00f3l d\u00f6nteni. A Revenue Matrix nem mindent akar egyszerre haszn\u00e1lni, hanem kijel\u00f6li, mi maradjon bent, mi essen ki, \u00e9s hogyan er\u0151s\u00edts\u00e9k egym\u00e1st rendszerben a megtartott elemek." },
-    { title: "EL\u0150SZ\u00d6R TISZST\u00c1N L\u00c1TSZ, UT\u00c1NA LEHET HALADNI", desc: "A prioritiz\u00e1lt rendszer leveszi r\u00f3lad a \u201emivel \u00e9rdemes kezdeni?\u201d terh\u00e9t. El\u0151sz\u00f6r vil\u00e1gos helyzetk\u00e9pet \u00e9s sorrendet kapsz, \u00e9s csak ut\u00e1na indulhat el a megval\u00f3s\u00edt\u00e1s." },
-    { title: "NEM \u00c1LL MEG A DIAGN\u00d3Z IS\u00c1N\u00c1L", desc: "A c\u00e9l nem az, hogy k\u00e9sz\u00fclj\u00f6n egy j\u00f3 elemz\u00e9s, hanem az, hogy abb\u00f3l m\u0171k\u00f6d\u0151 rendszer \u00e9p\u00fclj\u00f6n. Ez\u00e9rt a folyamat nem a felismer\u00e9sn\u00e9l \u00e9r v\u00e9get, hanem a kivitelez\u00e9s ir\u00e1ny\u00e1ba megy tov\u00e1bb." },
+    { title: "A TE VÁLLALKOZÁSODRA SZABVA", desc: "Nem általános tanácsokat kapsz, hanem azt, ami a te piacodon, a te helyzetedben és a te működésed mellett lehet valóban releváns." },
+    { title: "RENDET TESZ A LEHETŐSÉGEK KÖZÖTT", desc: "Ma már túl sok bevételre ható eszköz létezik ahhoz, hogy érzésből lehessen jól dönteni. A Revenue Matrix nem mindent akar egyszerre használni, hanem kijelöli, mi maradjon bent, mi essen ki, és hogyan erősítsék egymást rendszerben a megtartott elemek." },
+    { title: "ELŐSZÖR TISZSTÁN LÁTSZ, UTÁNA LEHET HALADNI", desc: "A prioritizált rendszer leveszi rólad a „mivel érdemes kezdeni?” terhét. Először világos helyzetképet és sorrendet kapsz, és csak utána indulhat el a megvalósítás." },
+    { title: "NEM ÁLL MEG A DIAGNÓZ ISÁNÁL", desc: "A cél nem az, hogy készüljön egy jó elemzés, hanem az, hogy abból működő rendszer épüljön. Ezért a folyamat nem a felismerésnél ér véget, hanem a kivitelezés irányába megy tovább." },
   ];
 
   const renderCard = (item: { title: string; desc: string }, i: number, rowInView: boolean) => {
@@ -1368,7 +1368,7 @@ function WhyTrustSection() {
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "72px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mitt\u0151l lesz ebb\u0151l val\u00f3ban m\u0171k\u00f6d\u0151 rendszer?</h2>
+          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
         </motion.div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", columnGap: "2px", rowGap: "2px" }}>
           <div ref={row1Ref} style={{ display: "contents" }}>
