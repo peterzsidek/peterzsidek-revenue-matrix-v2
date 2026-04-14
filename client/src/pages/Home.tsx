@@ -1448,9 +1448,12 @@ function ImplementationSection() {
 // CTA section
 function CTASection() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useFramerInView(ref, { once: true, margin: "-80px" });
+  const inView = useFramerInView(ref, { once: true, margin: "0px 0px -200px 0px" });
+  const formRef = useRef<HTMLDivElement>(null);
+  const formInView = useFramerInView(formRef, { once: true, margin: "0px 0px -250px 0px" });
   const [formData, setFormData] = useState({ name: "", company: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   const FORMSPREE_DIAG_ID = "YOUR_FORM_ID";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -1492,7 +1495,7 @@ function CTASection() {
           </motion.div>
 
           {/* Right column — form slides in from right */}
-          <motion.div variants={slideFromRight} initial="hidden" animate={inView ? "visible" : "hidden"}>
+          <motion.div ref={formRef} variants={slideFromRight} initial="hidden" animate={formInView ? "visible" : "hidden"}>
             {submitted ? (
               <div style={{ backgroundColor: "rgba(240,111,102,0.1)", border: "1px solid rgba(240,111,102,0.3)", padding: "48px 40px", textAlign: "center", borderBottomRightRadius: "40px" }}>
                 <div style={{ fontSize: "48px", marginBottom: "24px" }}>✓</div>
@@ -1501,16 +1504,39 @@ function CTASection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <input style={inputStyle} type="text" placeholder="Neved *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
-                <input style={inputStyle} type="text" placeholder="Vállalkozás neve *" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} />
-                <input style={inputStyle} type="email" placeholder="Email cím *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
-                <input style={inputStyle} type="tel" placeholder="Telefonszám *" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
-                <textarea style={{ ...inputStyle, minHeight: "100px", resize: "vertical" }} placeholder="Röviden: mi a legnagyobb kihívásod most? (nem kötelező)" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
-                <button type="submit" className="btn-coral" style={{ backgroundColor: "#f06f66", color: "#303030", padding: "18px 32px", fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.1em", border: "none", cursor: "pointer", marginTop: "8px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "0", borderBottomRightRadius: "12px" }}>
-                  Visszahívást kérek <span className="btn-arrow">→</span>
-                </button>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(240,223,200,0.5)", lineHeight: 1.5, textAlign: "center", marginTop: "4px" }}>Kötelezettség nélkül. Emberi nyelven.</p>
-                <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)", lineHeight: 1.6 }}>* Kötelező mezők.<br />Az adataidat bizalmasan kezeljük, harmadik félnek nem adjuk át. A „visszahívást kérek" gombra kattintva hozzájárulsz adataid GDPR-megfelelő kezeléséhez.{" "}<a href="/adatkezeles" style={{ color: "rgba(240,111,102,0.6)", textDecoration: "underline" }}>Adatkezelési tájékoztató</a></p>
+                {[
+                  <input key="name" style={inputStyle} type="text" placeholder="Neved *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />,
+                  <input key="company" style={inputStyle} type="text" placeholder="Vállalkozás neve *" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} />,
+                  <input key="email" style={inputStyle} type="email" placeholder="Email cím *" required value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />,
+                  <input key="phone" style={inputStyle} type="tel" placeholder="Telefonszám *" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />,
+                  <textarea key="msg" style={{ ...inputStyle, minHeight: "100px", resize: "vertical" }} placeholder="Röviden: mi a legnagyobb kihívásod most? (nem kötelező)" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />,
+                ].map((field, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+                    transition={{ duration: 0.7, ease: EASE, delay: 0.2 + i * 0.1 }}
+                  >
+                    {field}
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 18 }}
+                  animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+                  transition={{ duration: 0.7, ease: EASE, delay: 0.7 }}
+                >
+                  <button type="submit" className="btn-coral" style={{ width: "100%", backgroundColor: "#f06f66", color: "#303030", padding: "18px 32px", fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.1em", border: "none", cursor: "pointer", marginTop: "8px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "0", borderBottomRightRadius: "12px" }}>
+                    Visszahívást kérek <span className="btn-arrow">→</span>
+                  </button>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={formInView ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.6, ease: EASE, delay: 0.9 }}
+                >
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(240,223,200,0.5)", lineHeight: 1.5, textAlign: "center", marginTop: "4px" }}>Kötelezettség nélkül. Emberi nyelven.</p>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)", lineHeight: 1.6 }}>* Kötelező mezők.<br />Az adataidat bizalmasan kezeljük, harmadik félnek nem adjuk át. A „visszahívást kérek" gombra kattintva hozzájárulsz adataid GDPR-megfelelő kezeléséhez.{" "}<a href="/adatkezeles" style={{ color: "rgba(240,111,102,0.6)", textDecoration: "underline" }}>Adatkezelési tájékoztató</a></p>
+                </motion.div>
               </form>
             )}
           </motion.div>
