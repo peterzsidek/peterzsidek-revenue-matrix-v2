@@ -496,8 +496,11 @@ function DifferentiatorTable() {
   // tableRef fires only when the table itself is clearly on screen (-300px margin)
   const headerRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);
+  const mobileCardsRef = useRef<HTMLDivElement>(null);
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
   const tableInView = useResponsiveInView(0.35, tableRef as React.RefObject<HTMLElement | null>);
+  const mobileCardsInView = useResponsiveInView(0.35, mobileCardsRef as React.RefObject<HTMLElement | null>);
+  const anyTableInView = tableInView || mobileCardsInView;
   return (
     <section className="mobile-section-pad" style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
@@ -560,7 +563,7 @@ function DifferentiatorTable() {
         </div>{/* /diff-table-desktop */}
 
         {/* Mobile card list — shown on mobile via CSS, hidden on desktop */}
-        <div className="diff-cards-mobile">
+        <div className="diff-cards-mobile" ref={mobileCardsRef}>
           {/* Column header strip */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", marginBottom: "2px" }}>
             <div style={{ padding: "10px 14px", backgroundColor: "rgba(240,223,200,0.04)", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Ügynökség</div>
@@ -572,7 +575,7 @@ function DifferentiatorTable() {
               variants={rowReveal}
               custom={(i + 1) * 0.08}
               initial="hidden"
-              animate={tableInView ? "visible" : "hidden"}
+              animate={anyTableInView ? "visible" : "hidden"}
               style={{ backgroundColor: i % 2 === 0 ? "rgba(255,255,255,0.015)" : "transparent", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none" }}
             >
               {/* Aspect label */}
