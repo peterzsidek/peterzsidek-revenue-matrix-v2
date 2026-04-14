@@ -522,7 +522,7 @@ h1, h2, h3, h4, h5, h6 {
   .cta-left-col { padding: 40px 0 0 0 !important; }
 
   /* Stat flip cards — fixed height on mobile */
-  .stat-flip-card { height: 160px !important; }
+  .stat-flip-card { height: 220px !important; }
   .stat-flip-front, .stat-flip-back { padding: 20px 16px !important; }
 
   /* Chart section: hide right panel on mobile (too narrow) */
