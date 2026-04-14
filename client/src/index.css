@@ -380,6 +380,7 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
