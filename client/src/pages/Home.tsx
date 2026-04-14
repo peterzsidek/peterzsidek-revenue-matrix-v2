@@ -565,10 +565,16 @@ function DifferentiatorTable() {
         {/* Mobile card list — shown on mobile via CSS, hidden on desktop */}
         <div className="diff-cards-mobile" ref={mobileCardsRef}>
           {/* Column header strip */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", marginBottom: "2px" }}>
+          <motion.div
+            variants={fadeUpVariants}
+            initial="hidden"
+            animate={anyTableInView ? "visible" : "hidden"}
+            custom={0}
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", marginBottom: "2px" }}
+          >
             <div style={{ padding: "10px 14px", backgroundColor: "rgba(240,223,200,0.04)", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Ügynökség</div>
             <div style={{ padding: "10px 14px", backgroundColor: "rgba(240,111,102,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66", borderLeft: "2px solid rgba(240,111,102,0.3)" }}>Brandfabrik</div>
-          </div>
+          </motion.div>
           {differentiatorRows.map((row, i) => (
             <motion.div
               key={i}
