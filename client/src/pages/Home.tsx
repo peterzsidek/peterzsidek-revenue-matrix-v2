@@ -696,7 +696,7 @@ function RevenueSystemSection() {
         color: "rgba(240,223,200,0.08)",
         lineHeight: 1,
         position: "absolute",
-        top: "-7px",
+        top: "6px",
         left: "-2px",
         userSelect: "none" as const,
       }}>{card.num}</div>
