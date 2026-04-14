@@ -317,3 +317,175 @@
 .card-anim-wrap.triggered {
   animation: cardSlideIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+/* ============================================================
+   RESPONSIVE LAYOUT UTILITIES
+   Breakpoints: tablet ≤ 900px, mobile ≤ 600px
+   ============================================================ */
+
+/* --- Generic responsive grid helpers --- */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  align-items: stretch;
+}
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.grid-chart {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: start;
+}
+.grid-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* --- Section padding helpers --- */
+.section-pad {
+  padding: 100px 0;
+}
+.section-pad-lg {
+  padding: 100px 0 80px;
+}
+
+/* --- Navbar --- */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+}
+
+/* --- Hero --- */
+.hero-panels {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --- DifferentiatorTable scroll wrapper --- */
+.diff-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.diff-table-inner {
+  min-width: 600px;
+}
+
+/* ============================================================
+   TABLET  ≤ 900px
+   ============================================================ */
+@media (max-width: 900px) {
+  .section-pad { padding: 72px 0; }
+  .section-pad-lg { padding: 72px 0 56px; }
+
+  .grid-2col { grid-template-columns: 1fr; gap: 24px; }
+  .grid-3col { grid-template-columns: 1fr 1fr; }
+  .grid-4col { grid-template-columns: repeat(2, 1fr); }
+  .grid-chart { grid-template-columns: 1fr; }
+  .grid-cta   { grid-template-columns: 1fr; gap: 48px; }
+
+  .navbar-inner { padding: 0 24px; }
+  .hero-panels { gap: 8px; }
+}
+
+/* ============================================================
+   MOBILE  ≤ 600px
+   ============================================================ */
+@media (max-width: 600px) {
+  .section-pad { padding: 56px 0; }
+  .section-pad-lg { padding: 56px 0 40px; }
+
+  .grid-2col { grid-template-columns: 1fr; gap: 16px; }
+  .grid-3col { grid-template-columns: 1fr; }
+  .grid-4col { grid-template-columns: 1fr 1fr; }
+  .grid-chart { grid-template-columns: 1fr; }
+  .grid-cta   { grid-template-columns: 1fr; gap: 32px; }
+
+  .navbar-inner { padding: 0 16px; }
+
+  /* Hide tagline on very small screens */
+  .navbar-tagline { display: none; }
+
+  /* Hero CTA button full width */
+  .hero-cta-btn { width: 100%; text-align: center; justify-content: center; }
+
+  /* Hero content padding on mobile */
+  .hero-content { padding: 100px 20px 60px 20px !important; }
+
+  /* RevenueSystem cards: 1 col on mobile */
+  .rev-row { grid-template-columns: 1fr !important; }
+
+  /* WhyTrust rows: 1 col on mobile */
+  .why-row { grid-template-columns: 1fr !important; }
+
+  /* Implementation cards: 1 col on mobile */
+  .impl-row { grid-template-columns: 1fr !important; }
+
+  /* Stat cards: 2 col on mobile */
+  .stat-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* CaseStudy chart panel full width */
+  .chart-panel { min-width: 0; }
+
+  /* Navbar CTA: show short text, hide long */
+  .navbar-cta-long { display: none !important; }
+  .navbar-cta-short { display: inline !important; }
+}
+
+/* Hero two-column panels grid */
+.hero-panels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: flex-start;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Navbar CTA button — shorten text on mobile via font-size */
+@media (max-width: 900px) {
+  .hero-panels-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  /* Hero h1 font size on tablet */
+  .hero-h1 { font-size: 44px !important; }
+  /* Navbar padding */
+  nav > div { padding-left: 24px !important; padding-right: 24px !important; }
+}
+
+@media (max-width: 600px) {
+  .hero-panels-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  /* Hero h1 font size on mobile */
+  .hero-h1 { font-size: 32px !important; }
+  /* Hero section padding */
+  .hero-content { padding: 100px 20px 60px 20px !important; }
+  /* Navbar padding */
+  nav > div { padding-left: 16px !important; padding-right: 16px !important; }
+  /* Navbar CTA button text — hide long label, show short */
+  .navbar-cta-long { display: none; }
+  .navbar-cta-short { display: inline; }
+  /* CTA section padding */
+  #cta { padding: 72px 0 !important; }
+  /* Section padding overrides */
+  section[style*="padding: \"100px"] { padding: 56px 0 !important; }
+}

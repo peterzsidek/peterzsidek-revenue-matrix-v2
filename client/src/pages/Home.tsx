@@ -317,7 +317,7 @@ function Navbar() {
             borderBottomRightRadius: "12px",
           }}
         >
-          Kötelezettségmentes diagnosztikát kérek <span className="btn-arrow">→</span>
+          <span className="navbar-cta-long">Kötelezettségmentes diagnosztikát kérek</span><span className="navbar-cta-short" style={{display:"none"}}>Diagnosztika</span> <span className="btn-arrow">→</span>
         </a>
       </div>
     </nav>
@@ -348,6 +348,7 @@ function HeroSection() {
       {/* Content */}
       <div
         ref={heroRef}
+        className="hero-content"
         style={{
           position: 'relative',
           zIndex: 2,
@@ -364,6 +365,7 @@ function HeroSection() {
           variants={heroH1Variants}
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
+          className="hero-h1"
           style={{
             fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
             fontWeight: 200,
@@ -406,17 +408,7 @@ function HeroSection() {
         </motion.p>
 
         {/* Two-column panels — open symmetrically from center */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '72px',
-            alignItems: 'flex-start',
-            maxWidth: '1280px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
+        <div className="hero-panels-grid">
           {/* Left panel — slides in from left */}
           <motion.div
             variants={heroLeftPanelVariants}
@@ -511,12 +503,14 @@ function DifferentiatorTable() {
 
         {/* Wrapper fades in together with the rows — opacity only, no y/blur so it doesn’t
              fight with the individual row animations. overflow:hidden kept for rounded corners. */}
+        <div className="diff-table-scroll">
         <motion.div
           ref={tableRef}
           initial={{ opacity: 0 }}
-          animate={{ opacity: tableInView ? 1 : 0 }}
-          transition={{ duration: 0.01, delay: 0 }}
-          style={{ border: "1px solid rgba(240,223,200,0.1)", overflow: "hidden", borderTopLeftRadius: "20px" }}
+          animate={tableInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="diff-table-inner"
+          style={{ border: "1px solid rgba(240,223,200,0.08)", borderRadius: "0", overflow: "hidden", marginBottom: "40px" }}
         >
           {/* Header row — animated as first stagger item */}
           <motion.div variants={rowReveal} custom={0} initial="hidden" animate={tableInView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
@@ -538,6 +532,7 @@ function DifferentiatorTable() {
             </motion.div>
           ))}
         </motion.div>
+        </div>{/* /diff-table-scroll */}
         <motion.div
           variants={fadeUpVariants}
           initial="hidden"
@@ -733,12 +728,12 @@ function RevenueSystemSection() {
         </motion.div>
 
         {/* Row 1: cards 1-2-3 — slide in from left, staggered */}
-        <div ref={row1Ref} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "2px" }}>
+        <div ref={row1Ref} className="rev-row" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "2px" }}>
           {revenueSystemCards.slice(0, 3).map((card, i) => cardJSX(card, i))}
         </div>
 
         {/* Row 2: cards 4-5-6 — same left-slide, triggered separately */}
-        <div ref={row2Ref} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
+        <div ref={row2Ref} className="rev-row" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", alignItems: "stretch", marginBottom: "64px" }}>
           {revenueSystemCards.slice(3).map((card, i) => cardJSX(card, i + 3))}
         </div>
 
@@ -794,7 +789,7 @@ function ForWhomSection() {
           </p>
         </motion.div>
 
-        <div ref={cardsRef} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px" }}>
+        <div ref={cardsRef} className="grid-2col">
           {/* Left card — slides in from left, list items cascade */}
           <motion.div
             variants={slideFromLeft}
@@ -1061,7 +1056,7 @@ function CaseStudySection() {
         <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={1}>
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "14px", color: "#f06f66", lineHeight: 1.7, marginBottom: "20px", maxWidth: "720px" }}>A Revenue Matrix diagnózisa a kétszintű vizsgálat után így jut el a cégre szabott,<br />megvalósítható stratégiáig.</p>
         </motion.div>
-        <motion.div ref={cardsRef} variants={staggerContainer} initial="hidden" animate={cardsInView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
+        <motion.div ref={cardsRef} variants={staggerContainer} initial="hidden" animate={cardsInView ? "visible" : "hidden"} className="stat-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2px", marginBottom: "64px" }}>
           {/* Flip card for the 335 stat */}
           <motion.div variants={staggerItem} className="stat-flip-card" style={{ borderBottomRightRadius: "20px" }}>
             <div className="stat-flip-inner">
@@ -1148,7 +1143,7 @@ function CaseStudySection() {
           custom={0}
           style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}
         >Minden buborék egy bevételre ható eszközt jelöl.</motion.p>
-        <div ref={chartRef} style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "48px", alignItems: "start" }}>
+        <div ref={chartRef} className="grid-chart">
           {/* Chart column */}
           <motion.div
             variants={fadeUpVariants}
@@ -1371,10 +1366,10 @@ function WhyTrustSection() {
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
         </motion.div>
         <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-          <div ref={row1Ref} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
+          <div ref={row1Ref} className="why-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
             {reasons.slice(0, 2).map((item, i) => renderCard(item, i, row1InView))}
           </div>
-          <div ref={row2Ref} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
+          <div ref={row2Ref} className="why-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
             {reasons.slice(2, 4).map((item, i) => renderCard(item, i + 2, row2InView))}
           </div>
         </div>
@@ -1419,7 +1414,7 @@ function ImplementationSection() {
           A cél nem egy jól kinéző terv, hanem az, hogy a fontos lépések valóban elinduljanak, a megfelelő időben és a megfelelő sorrendben.
         </p>
         </motion.div>
-        <div ref={cardsRef} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
+        <div ref={cardsRef} className="impl-row" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "2px", maxWidth: "900px", marginBottom: "32px" }}>
           {[
             { label: "Azonnali", timeframe: "1–4 hét", desc: "Olyan beavatkozások, amelyek gyorsan elindíthatók, és rövid időn belül kézzelfogható eredményt hozhatnak.", highlight: true },
             { label: "Középtávú", timeframe: "1–3 hónap", desc: "Azok a lépések, amelyek már építik a láthatóságot, az elérést és az ügyfélszerzési működést, és amelyekre a későbbi rendszer támaszkodni tud.", highlight: false },
@@ -1469,7 +1464,7 @@ function CTASection() {
   return (
     <section id="cta" style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.25)" }}>
       <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }}>
+        <div className="grid-cta">
           {/* Left column — blur+lift fade-up */}
           <motion.div variants={slideFromLeft} initial="hidden" animate={inView ? "visible" : "hidden"}>
             <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
