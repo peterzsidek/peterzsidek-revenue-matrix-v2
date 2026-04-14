@@ -552,6 +552,9 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
+  /* DifferentiatorSection — closer to cards above on mobile */
+  .diff-section { padding-top: 20px !important; }
+
   /* WhyTrust card 3 (i=2): only top-right corner rounded on mobile */
   .why-card-2 {
     border-top-right-radius: 28px !important;

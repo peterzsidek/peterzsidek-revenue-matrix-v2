@@ -502,7 +502,7 @@ function DifferentiatorTable() {
   const mobileCardsInView = useResponsiveInView(0.35, mobileCardsRef as React.RefObject<HTMLElement | null>);
   const anyTableInView = tableInView || mobileCardsInView;
   return (
-    <section className="mobile-section-pad" style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
+    <section className="mobile-section-pad diff-section" style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div
           ref={headerRef}
