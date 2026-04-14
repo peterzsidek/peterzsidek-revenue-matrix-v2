@@ -234,7 +234,7 @@ function HeroDifferentiatorTabs() {
                         style={{
                           position: "absolute",
                           bottom: "calc(100% + 10px)",
-                          left: 0,
+                          right: 0,
                           width: "clamp(280px, 380px, 420px)",
                           maxWidth: "calc(100vw - 32px)",
                           backgroundColor: "rgba(18,18,18,0.98)",
