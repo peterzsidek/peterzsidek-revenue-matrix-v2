@@ -778,7 +778,7 @@ function RevenueSystemSection() {
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", position: "relative", zIndex: 1 }}>
 
         {/* Header */}
-        <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
+        <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} className="rev-header" style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
           <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2, marginBottom: "28px" }}>
             Így építjük fel a bevételi<br />rendszeredet

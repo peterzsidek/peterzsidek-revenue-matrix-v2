@@ -593,6 +593,9 @@ h1, h2, h3, h4, h5, h6 {
   /* Implementation header desc — reduce gap before cards on mobile */
   .impl-header-desc { margin-bottom: 20px !important; }
 
+  /* RevenueSystem header — reduce gap between label and cards on mobile */
+  .rev-header { margin-bottom: 20px !important; }
+
   /* Hero subtitle font size */
   .hero-subtitle { font-size: 15px !important; margin-bottom: 40px !important; }
 
