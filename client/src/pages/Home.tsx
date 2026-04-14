@@ -1480,7 +1480,7 @@ function ImplementationSection() {
         <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "16px", lineHeight: 1.85, color: "rgba(240,223,200,0.75)", marginBottom: "16px", maxWidth: "720px" }}>
           A diagnózis nem a folyamat vége, hanem a kezdete. A Revenue Matrix alapján felépítjük a megvalósítás sorrendjét, majd részt is veszünk annak kivitelezésében.
         </p>
-        <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", lineHeight: 1.85, color: "rgba(240,223,200,0.55)", maxWidth: "720px", marginBottom: "48px" }}>
+        <p className="impl-header-desc" style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", lineHeight: 1.85, color: "rgba(240,223,200,0.55)", maxWidth: "720px", marginBottom: "48px" }}>
           A cél nem egy jól kinéző terv, hanem az, hogy a fontos lépések valóban elinduljanak, a megfelelő időben és a megfelelő sorrendben.
         </p>
         </motion.div>
