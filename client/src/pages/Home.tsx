@@ -1599,7 +1599,7 @@ function CTASection() {
                   animate={formInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.6, ease: EASE, delay: 0.9 }}
                 >
-                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(240,223,200,0.5)", lineHeight: 1.5, textAlign: "center", marginTop: "4px" }}>Kötelezettség nélkül. Emberi nyelven.</p>
+                  <p className="cta-tagline" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(240,223,200,0.5)", lineHeight: 1.5, textAlign: "center", marginTop: "4px" }}>Kötelezettség nélkül. Emberi nyelven.</p>
                   <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)", lineHeight: 1.6 }}>* Kötelező mezők.<br />Az adataidat bizalmasan kezeljük, harmadik félnek nem adjuk át. A „visszahívást kérek" gombra kattintva hozzájárulsz adataid GDPR-megfelelő kezeléséhez.{" "}<a href="/adatkezeles" style={{ color: "rgba(240,111,102,0.6)", textDecoration: "underline" }}>Adatkezelési tájékoztató</a></p>
                 </motion.div>
               </form>
