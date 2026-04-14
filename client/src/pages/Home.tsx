@@ -123,6 +123,28 @@ function useStaggerInView(count: number, threshold = 0.05) {
   return { ref, triggered };
 }
 
+// Responsive inView hook — uses IntersectionObserver with a viewport-height-relative
+// rootMargin so animations trigger at the right moment on all screen sizes.
+// factor=0.35 means the element must be 35% of vh above the bottom edge before triggering.
+function useResponsiveInView(factor = 0.35, ref: React.RefObject<HTMLElement | null>): boolean {
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || inView) return;
+    const getMargin = () => {
+      const px = Math.round(window.innerHeight * factor);
+      return `0px 0px -${px}px 0px`;
+    };
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); observer.disconnect(); } },
+      { rootMargin: getMargin() }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref, factor, inView]);
+  return inView;
+}
+
 // Count-up hook — starts counting when `active` becomes true
 function useCountUp(target: number, active: boolean, duration = 1400, delay = 0) {
   const [count, setCount] = useState(0);
@@ -473,7 +495,7 @@ function DifferentiatorTable() {
   const headerRef = useRef<HTMLDivElement>(null);
   const tableRef = useRef<HTMLDivElement>(null);
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
-  const tableInView = useFramerInView(tableRef, { once: true, margin: "0px 0px -400px 0px" });
+  const tableInView = useResponsiveInView(0.35, tableRef as React.RefObject<HTMLElement | null>);
   return (
     <section style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
@@ -599,13 +621,13 @@ function RevenueSystemSection() {
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
   // Row 1 (cards 1-2-3): fires when row 1 is clearly on screen
   const row1Ref = useRef<HTMLDivElement>(null);
-  const row1InView = useFramerInView(row1Ref, { once: true, margin: "0px 0px -400px 0px" });
+  const row1InView = useResponsiveInView(0.35, row1Ref as React.RefObject<HTMLElement | null>);
   // Row 2 (cards 4-5-6): fires when row 2 is clearly on screen (deeper trigger)
   const row2Ref = useRef<HTMLDivElement>(null);
-  const row2InView = useFramerInView(row2Ref, { once: true, margin: "0px 0px -400px 0px" });
+  const row2InView = useResponsiveInView(0.35, row2Ref as React.RefObject<HTMLElement | null>);
   // Closing statement: fires after row 2
   const closingRef = useRef<HTMLDivElement>(null);
-  const closingInView = useFramerInView(closingRef, { once: true, margin: "0px 0px -200px 0px" });
+  const closingInView = useResponsiveInView(0.2, closingRef as React.RefObject<HTMLElement | null>);
 
   const cardJSX = (card: typeof revenueSystemCards[0], i: number) => (
     <motion.div
@@ -772,9 +794,8 @@ function ForWhomSection() {
   const cardsRef = useRef<HTMLDivElement>(null);
   // header: fires when header itself is 30% visible
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
-  // cards: negative bottom margin means the element must be at least 300px
-  // above the bottom edge of the viewport before it triggers — i.e. clearly on screen
-  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -400px 0px" });
+  // cards: viewport-proportional trigger — fires when element is clearly on screen
+  const cardsInView = useResponsiveInView(0.35, cardsRef as React.RefObject<HTMLElement | null>);
 
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
@@ -894,7 +915,7 @@ function CaseStudySection() {
   const { ref, inView } = useInView(0.15);
   // Separate ref for the stat cards — fires much later so cards are clearly visible
   const cardsRef = useRef<HTMLDivElement>(null);
-  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -400px 0px" });
+  const cardsInView = useResponsiveInView(0.35, cardsRef as React.RefObject<HTMLElement | null>);
   // Count-up for each stat card — staggered delays match the staggerItem animation
   const count335 = useCountUp(335, cardsInView, 1600, 0);
   const count127 = useCountUp(127, cardsInView, 1400, 120);
@@ -903,7 +924,7 @@ function CaseStudySection() {
   // Chart gets its own ref — fires even later than the cards so the diagram
   // only draws when the user has scrolled well past the stat cards
   const chartRef = useRef<HTMLDivElement>(null);
-  const chartInView = useFramerInView(chartRef, { once: true, margin: "0px 0px -300px 0px" });
+  const chartInView = useResponsiveInView(0.28, chartRef as React.RefObject<HTMLElement | null>);
 
   useEffect(() => {
     if (!chartInView) return;
@@ -1267,9 +1288,9 @@ function WhyTrustSection() {
   const headerRef = useRef<HTMLDivElement>(null);
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.4 });
   const row1Ref = useRef<HTMLDivElement>(null);
-  const row1InView = useFramerInView(row1Ref, { once: true, margin: "0px 0px -400px 0px" });
+  const row1InView = useResponsiveInView(0.35, row1Ref as React.RefObject<HTMLElement | null>);
   const row2Ref = useRef<HTMLDivElement>(null);
-  const row2InView = useFramerInView(row2Ref, { once: true, margin: "0px 0px -300px 0px" });
+  const row2InView = useResponsiveInView(0.28, row2Ref as React.RefObject<HTMLElement | null>);
 
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   const slideLeft = {
@@ -1383,7 +1404,7 @@ function ImplementationSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useFramerInView(ref, { once: true, margin: "-80px" });
   const cardsRef = useRef<HTMLDivElement>(null);
-  const cardsInView = useFramerInView(cardsRef, { once: true, margin: "0px 0px -350px 0px" });
+  const cardsInView = useResponsiveInView(0.32, cardsRef as React.RefObject<HTMLElement | null>);
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   return (
     <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
@@ -1443,9 +1464,9 @@ function ImplementationSection() {
 // CTA section
 function CTASection() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useFramerInView(ref, { once: true, margin: "0px 0px -200px 0px" });
+  const inView = useResponsiveInView(0.2, ref as React.RefObject<HTMLElement | null>);
   const formRef = useRef<HTMLDivElement>(null);
-  const formInView = useFramerInView(formRef, { once: true, margin: "0px 0px -250px 0px" });
+  const formInView = useResponsiveInView(0.25, formRef as React.RefObject<HTMLElement | null>);
   const [formData, setFormData] = useState({ name: "", company: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
