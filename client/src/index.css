@@ -528,6 +528,25 @@ h1, h2, h3, h4, h5, h6 {
   /* Chart section: hide right panel on mobile (too narrow) */
   .chart-legend-panel { display: none !important; }
 
+  /* Chart x-axis labels: symmetric placement below chart frame on mobile */
+  .chart-x-labels {
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 8px !important;
+  }
+  .chart-x-label-left {
+    width: 50%;
+    text-align: center;
+    margin-left: 0 !important;
+    display: block;
+  }
+  .chart-x-label-right {
+    width: 50%;
+    text-align: center;
+    margin-right: 0 !important;
+    display: block;
+  }
+
   /* Footer flex → column */
   .footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
 

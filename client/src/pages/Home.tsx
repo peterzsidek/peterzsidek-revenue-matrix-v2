@@ -971,7 +971,9 @@ function CaseStudySection() {
       if (typeof window !== "undefined" && (window as any).Chart) {
         const canvas = document.getElementById("caseMatrix") as HTMLCanvasElement;
         if (!canvas || (canvas as any)._chartInstance) return;
-        const BUBBLE_R = 9;
+        const isMobileChart = typeof window !== "undefined" && window.innerWidth <= 600;
+        const BUBBLE_R = isMobileChart ? 6 : 9;
+        const chartPadding = isMobileChart ? { top: 16, right: 16, bottom: 16, left: 16 } : { top: 40, right: 40, bottom: 40, left: 40 };
         // Custom HTML tooltip
         let tooltipEl = document.getElementById("chartTooltip");
         if (!tooltipEl) {
@@ -1079,7 +1081,7 @@ function CaseStudySection() {
                 external: externalTooltip,
               },
             },
-            layout: { padding: { top: 40, right: 40, bottom: 40, left: 40 } },
+            layout: { padding: chartPadding },
             scales: {
               x: {
                 min: 0, max: 10,
@@ -1221,9 +1223,9 @@ function CaseStudySection() {
                 <canvas id="caseMatrix" style={{ display: "block", width: "100%", height: "100%" }} />
               </div>
             </div>
-            <div style={{ marginLeft: "28px", display: "flex", justifyContent: "space-between", paddingTop: "10px", paddingRight: "4px" }}>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginLeft: "25px" }}>könnyebben bevezethő</span>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginRight: "23px" }}>nehezebben bevezethő</span>
+            <div className="chart-x-labels" style={{ marginLeft: "28px", display: "flex", justifyContent: "space-between", paddingTop: "10px", paddingRight: "4px" }}>
+              <span className="chart-x-label-left" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginLeft: "25px" }}>könnyebben bevezethő</span>
+              <span className="chart-x-label-right" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginRight: "23px" }}>nehezebben bevezethő</span>
             </div>
           </motion.div>
           {/* Right panel */}
