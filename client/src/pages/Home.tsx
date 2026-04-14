@@ -1518,12 +1518,22 @@ function CTASection() {
   const [formData, setFormData] = useState({ name: "", company: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-  const FORMSPREE_DIAG_ID = "YOUR_FORM_ID";
+  const MAIL_ENDPOINT = "https://brandfabrik.hu/send.php";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch(`https://formspree.io/f/${FORMSPREE_DIAG_ID}`, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ ...formData, _subject: "Revenue Matrix — Diagnosztika kérés" }) });
+      await fetch(MAIL_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          challenge: formData.message,
+          company: formData.company,
+          email: formData.email,
+        }),
+      });
     } catch (_) { }
     setSubmitted(true);
   };
