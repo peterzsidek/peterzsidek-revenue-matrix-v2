@@ -400,6 +400,11 @@
 /* Short text hidden by default */
 .navbar-cta-short { display: none; }
 
+/* --- Text wrap balance — prevents single-word orphan lines --- */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
 /* --- Hero --- */
 .hero-panels {
   display: flex;
@@ -526,6 +531,11 @@
 
   /* Hero subtitle font size */
   .hero-subtitle { font-size: 15px !important; margin-bottom: 40px !important; }
+
+  /* Text wrap balance on mobile — prevents single-word orphan lines */
+  p, span, label, li {
+    text-wrap: balance;
+  }
 
   /* Hero left panel: center-align text on mobile */
   .hero-left-panel { text-align: center !important; }
