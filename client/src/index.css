@@ -548,6 +548,22 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
+  /* WhyTrust card 3 (i=2): only top-right corner rounded on mobile */
+  .why-card-2 {
+    border-top-right-radius: 28px !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  /* WhyTrust card 4 (i=3): only top-left corner rounded on mobile */
+  .why-card-3 {
+    border-top-left-radius: 28px !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
   /* Footer flex → column */
   .footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
 

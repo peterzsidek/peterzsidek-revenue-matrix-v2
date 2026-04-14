@@ -1385,7 +1385,7 @@ function WhyTrustSection() {
         variants={variant}
         initial="hidden"
         animate={rowInView ? "visible" : "hidden"}
-        className={isLeft ? "why-card-left" : "why-card-right"}
+        className={`${isLeft ? "why-card-left" : "why-card-right"} why-card-${i}`}
         style={{
           padding: "48px 40px",
           backgroundColor: "rgba(240,223,200,0.03)",
