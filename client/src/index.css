@@ -370,6 +370,36 @@
   height: 64px;
 }
 
+/* Navbar inner row — replaces inline style */
+.navbar-inner-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Navbar logo */
+.navbar-logo {
+  height: 48px;
+  flex-shrink: 0;
+}
+
+/* Navbar CTA button */
+.navbar-cta-btn {
+  padding: 10px 20px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+/* Short text hidden by default */
+.navbar-cta-short { display: none; }
+
 /* --- Hero --- */
 .hero-panels {
   display: flex;
@@ -400,6 +430,9 @@
   .grid-cta   { grid-template-columns: 1fr; gap: 48px; }
 
   .navbar-inner { padding: 0 24px; }
+  .navbar-inner-row { padding: 0 24px; height: 64px; }
+  .navbar-logo { height: 40px; }
+  .navbar-cta-btn { padding: 9px 16px; font-size: 12px; }
   .hero-panels { gap: 8px; }
 }
 
@@ -476,7 +509,19 @@
   /* Footer flex → column */
   .footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
 
-  /* Navbar height */
+  /* Navbar inner row */
+  .navbar-inner-row { height: 56px !important; padding: 0 16px !important; }
+
+  /* Navbar logo — smaller on mobile */
+  .navbar-logo { height: 32px !important; }
+
+  /* Navbar CTA — icon-only on mobile */
+  .navbar-cta-btn { padding: 9px 14px !important; font-size: 0 !important; letter-spacing: 0 !important; }
+  .navbar-cta-long { display: none !important; }
+  .navbar-cta-short { display: none !important; }
+  .navbar-cta-arrow { font-size: 18px !important; margin: 0 !important; }
+
+  /* Navbar height fallback */
   nav { height: 56px !important; }
 
   /* Hero subtitle font size */

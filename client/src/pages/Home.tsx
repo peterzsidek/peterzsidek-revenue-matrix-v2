@@ -317,29 +317,29 @@ function Navbar() {
         boxSizing: 'border-box',
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px", maxWidth: "1280px", marginLeft: "auto", marginRight: "auto", padding: "0 40px", boxSizing: "border-box" }}>
-        <img src={LOGO_URL} alt="Brandfabrik" style={{ height: "48px", objectFit: "contain" }} />
+      <div className="navbar-inner-row">
+        <img src={LOGO_URL} alt="Brandfabrik" className="navbar-logo" style={{ objectFit: "contain" }} />
         <a
           href="#cta"
-          className="btn-coral"
+          className="btn-coral navbar-cta-btn"
           style={{
             backgroundColor: "#f06f66",
             color: "#303030",
-            padding: "10px 20px",
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 700,
-            fontSize: "13px",
             textTransform: "uppercase",
-            letterSpacing: "0.08em",
             textDecoration: "none",
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
             borderRadius: "0",
-            borderBottomRightRadius: "12px",
+            borderBottomRightRadius: "5px",
+            whiteSpace: "nowrap",
           }}
         >
-          <span className="navbar-cta-long">Kötelezettségmentes diagnosztikát kérek</span><span className="navbar-cta-short" style={{display:"none"}}>Diagnosztika</span> <span className="btn-arrow">→</span>
+          <span className="navbar-cta-long">Kötelezettségmentes diagnosztikát kérek</span>
+          <span className="navbar-cta-short">Diagnosztika</span>
+          <span className="btn-arrow navbar-cta-arrow"> →</span>
         </a>
       </div>
     </nav>
