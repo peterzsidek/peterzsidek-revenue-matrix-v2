@@ -527,7 +527,8 @@ function DifferentiatorTable() {
 
         {/* Wrapper fades in together with the rows — opacity only, no y/blur so it doesn’t
              fight with the individual row animations. overflow:hidden kept for rounded corners. */}
-        <div className="diff-table-scroll">
+        {/* Desktop table — hidden on mobile via CSS */}
+        <div className="diff-table-desktop">
         <motion.div
           ref={tableRef}
           initial={{ opacity: 0 }}
@@ -536,7 +537,7 @@ function DifferentiatorTable() {
           className="diff-table-inner"
           style={{ border: "1px solid rgba(240,223,200,0.08)", borderRadius: "0", overflow: "hidden", marginBottom: "40px" }}
         >
-          {/* Header row — animated as first stagger item */}
+          {/* Header row */}
           <motion.div variants={rowReveal} custom={0} initial="hidden" animate={tableInView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
             <div style={{ padding: "16px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.7)" }}>Szempont</div>
             <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos ügynökségi működés</div>
@@ -556,7 +557,40 @@ function DifferentiatorTable() {
             </motion.div>
           ))}
         </motion.div>
-        </div>{/* /diff-table-scroll */}
+        </div>{/* /diff-table-desktop */}
+
+        {/* Mobile card list — shown on mobile via CSS, hidden on desktop */}
+        <div className="diff-cards-mobile">
+          {/* Column header strip */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", marginBottom: "2px" }}>
+            <div style={{ padding: "10px 14px", backgroundColor: "rgba(240,223,200,0.04)", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Ügynökség</div>
+            <div style={{ padding: "10px 14px", backgroundColor: "rgba(240,111,102,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66", borderLeft: "2px solid rgba(240,111,102,0.3)" }}>Brandfabrik</div>
+          </div>
+          {differentiatorRows.map((row, i) => (
+            <motion.div
+              key={i}
+              variants={rowReveal}
+              custom={(i + 1) * 0.08}
+              initial="hidden"
+              animate={tableInView ? "visible" : "hidden"}
+              style={{ backgroundColor: i % 2 === 0 ? "rgba(255,255,255,0.015)" : "transparent", borderBottom: i < differentiatorRows.length - 1 ? "1px solid rgba(240,223,200,0.06)" : "none" }}
+            >
+              {/* Aspect label */}
+              <div style={{ padding: "10px 14px 6px", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", color: "rgba(240,111,102,0.7)" }}>{row.aspect}</div>
+              {/* Two-column comparison */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px" }}>
+                <div style={{ padding: "8px 14px 14px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
+                  <span style={{ color: "rgba(240,111,102,0.45)", fontSize: "13px", flexShrink: 0, marginTop: "1px" }}>✕</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(240,223,200,0.55)", lineHeight: 1.5 }}>{row.agency}</span>
+                </div>
+                <div style={{ padding: "8px 14px 14px", display: "flex", gap: "8px", alignItems: "flex-start", backgroundColor: "rgba(240,111,102,0.04)", borderLeft: "2px solid rgba(240,111,102,0.2)" }}>
+                  <span style={{ color: "#f06f66", fontSize: "13px", flexShrink: 0, marginTop: "1px" }}>✓</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 500, color: "#f0dfc8", lineHeight: 1.5 }}>{row.brandfabrik}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>{/* /diff-cards-mobile */}
         <motion.div
           variants={fadeUpVariants}
           initial="hidden"

@@ -421,6 +421,23 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 600px;
 }
 
+/* Desktop table — visible by default, hidden on mobile */
+.diff-table-desktop {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile card list — hidden by default, shown on mobile */
+.diff-cards-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 40px;
+  border: 1px solid rgba(240,223,200,0.08);
+  overflow: hidden;
+}
+
 /* ============================================================
    TABLET  ≤ 900px
    ============================================================ */
@@ -552,6 +569,10 @@ h1, h2, h3, h4, h5, h6 {
 
   /* DifferentiatorTable: smaller min-width on mobile */
   .diff-table-inner { min-width: 480px; }
+
+  /* DifferentiatorTable: hide desktop table, show mobile cards */
+  .diff-table-desktop { display: none !important; }
+  .diff-cards-mobile { display: flex !important; }
 
   /* Hero panels-grid gap */
   .hero-panels-grid { gap: 20px !important; }
