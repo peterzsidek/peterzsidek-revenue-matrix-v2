@@ -32,7 +32,7 @@ export default function Adatkezeles() {
         }}>
           Adatkezelési tájékoztató
         </h1>
-        <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "56px" }}>
+        <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", color: "rgba(240,223,200,0.6)", marginBottom: "56px" }}>
           Hatályos: 2026. április 1-től
         </p>
 

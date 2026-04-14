@@ -543,7 +543,7 @@ function DifferentiatorTable() {
           {/* Header row */}
           <motion.div variants={rowReveal} custom={0} initial="hidden" animate={tableInView ? "visible" : "hidden"} style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", backgroundColor: "rgba(240,111,102,0.08)", borderBottom: "1px solid rgba(240,111,102,0.2)" }}>
             <div style={{ padding: "16px 24px", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.7)" }}>Szempont</div>
-            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.4)" }}>Hagyományos ügynökségi működés</div>
+            <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,223,200,0.08)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "rgba(240,223,200,0.6)" }}>Hagyományos ügynökségi működés</div>
             <div style={{ padding: "16px 24px", borderLeft: "1px solid rgba(240,111,102,0.3)", backgroundColor: "rgba(240,111,102,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#f06f66" }}>Brandfabrik megközelítés</div>
           </motion.div>
           {differentiatorRows.map((row, i) => (
@@ -892,8 +892,8 @@ function ForWhomSection() {
           >
             <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 100%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.6, pointerEvents: "none" }} />
             <div style={{ padding: "16px 24px", borderBottom: "1px solid rgba(240,223,200,0.08)", display: "flex", alignItems: "center", gap: "10px" }}>
-              <span style={{ color: "rgba(240,223,200,0.35)", fontSize: "16px", fontWeight: 700 }}>✕</span>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(240,223,200,0.35)" }}>Nem neked szól, ha…</span>
+              <span style={{ color: "rgba(240,223,200,0.55)", fontSize: "16px", fontWeight: 700 }}>✕</span>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.15em", color: "rgba(240,223,200,0.55)" }}>Nem neked szól, ha…</span>
             </div>
             <motion.div
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
@@ -903,13 +903,12 @@ function ForWhomSection() {
             >
               {noItems.map((item, i) => (
                 <motion.div key={i} variants={listItemVariants} style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
-                  <span style={{ color: "rgba(240,223,200,0.25)", fontSize: "18px", lineHeight: 1, marginTop: "2px", flexShrink: 0 }}>—</span>
-                  <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.45)", lineHeight: 1.65 }}>{item}</span>
+                  <span style={{ color: "rgba(240,223,200,0.45)", fontSize: "18px", lineHeight: 1, marginTop: "2px", flexShrink: 0 }}>—</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "15px", color: "rgba(240,223,200,0.65)", lineHeight: 1.65 }}>{item}</span>
                 </motion.div>
               ))}
             </motion.div>
-            <div style={{ padding: "20px 24px", borderTop: "1px solid rgba(240,223,200,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "13px", color: "rgba(240,223,200,0.3)", fontStyle: "italic", lineHeight: 1.6 }}>
-              Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tudunk-e valóban segíteni.
+            <div style={{ padding: "20px 24px", borderTop: "1px solid rgba(240,223,200,0.06)", fontFamily: "'Poppins', sans-serif", fontSize: "13px", color: "rgba(240,223,200,0.55)", fontStyle: "italic", lineHeight: 1.6 }}>Ha nem vagy benne biztos, írj nekünk — őszintén megmondjuk, tudunk-e valóban segíteni.
             </div>
           </motion.div>
         </div>
@@ -1135,8 +1134,8 @@ function CaseStudySection() {
                 <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count335}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>teljes vizsgált kommunikációs eszköztár</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
-                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block", marginTop: "0px" }}>→</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.45)", lineHeight: 1, display: "inline-block", marginTop: "0px" }}>→</span>
                 </div>
               </div>
               {/* Back face */}
@@ -1155,8 +1154,8 @@ function CaseStudySection() {
                 <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count127}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>iparágra szűrt releváns eszköz</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
-                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.45)", lineHeight: 1, display: "inline-block" }}>→</span>
                 </div>
               </div>
               <div className="stat-flip-back" style={{ borderBottomLeftRadius: "20px" }}>
@@ -1174,8 +1173,8 @@ function CaseStudySection() {
                 <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count30}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>a cégre szabott lehetőség</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
-                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.45)", lineHeight: 1, display: "inline-block" }}>→</span>
                 </div>
               </div>
               <div className="stat-flip-back" style={{ borderBottomRightRadius: "20px" }}>
@@ -1193,8 +1192,8 @@ function CaseStudySection() {
                 <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count3}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>megvalósítási fázis</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
-                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.25)", lineHeight: 1, display: "inline-block" }}>→</span>
+                  <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.5)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
+                  <span className="revenue-card-arrow" style={{ fontSize: "14px", color: "rgba(240,223,200,0.45)", lineHeight: 1, display: "inline-block" }}>→</span>
                 </div>
               </div>
               <div className="stat-flip-back" style={{ borderBottomLeftRadius: "20px" }}>
@@ -1209,7 +1208,7 @@ function CaseStudySection() {
           initial="hidden"
           animate={chartInView ? "visible" : "hidden"}
           custom={0}
-          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.4)", marginBottom: "20px", fontStyle: "italic" }}
+          style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.6)", marginBottom: "20px", fontStyle: "italic" }}
         >Minden buborék egy bevételre ható eszközt jelöl.</motion.p>
         <div ref={chartRef} className="grid-chart">
           {/* Chart column */}
@@ -1222,16 +1221,16 @@ function CaseStudySection() {
           >
             <div style={{ display: "flex", gap: "0" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", width: "28px", flexShrink: 0, paddingTop: "16px", paddingBottom: "16px" }}>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.4)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block", marginTop: "50px" }}>nagyobb hatás</span>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.2)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block", marginBottom: "45px" }}>kisebb hatás</span>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.6)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block", marginTop: "50px" }}>nagyobb hatás</span>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.45)", textTransform: "uppercase", letterSpacing: "1.5px", whiteSpace: "nowrap", transform: "rotate(-90deg)", display: "block", marginBottom: "45px" }}>kisebb hatás</span>
               </div>
               <div style={{ flex: 1, aspectRatio: "1 / 1", maxHeight: "560px", backgroundColor: "rgba(255,255,255,0.015)", border: "1px solid rgba(240,223,200,0.12)", borderTopLeftRadius: "20px", overflow: "hidden" }}>
                 <canvas id="caseMatrix" style={{ display: "block", width: "100%", height: "100%" }} />
               </div>
             </div>
             <div className="chart-x-labels" style={{ marginLeft: "28px", display: "flex", justifyContent: "space-between", paddingTop: "10px", paddingRight: "4px" }}>
-              <span className="chart-x-label-left" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginLeft: "25px" }}>könnyebben bevezethő</span>
-              <span className="chart-x-label-right" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.3)", textTransform: "uppercase", letterSpacing: "1.5px", marginRight: "23px" }}>nehezebben bevezethő</span>
+              <span className="chart-x-label-left" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.55)", textTransform: "uppercase", letterSpacing: "1.5px", marginLeft: "25px" }}>könnyebben bevezethő</span>
+              <span className="chart-x-label-right" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 400, color: "rgba(240,223,200,0.55)", textTransform: "uppercase", letterSpacing: "1.5px", marginRight: "23px" }}>nehezebben bevezethő</span>
             </div>
           </motion.div>
           {/* Right panel */}
@@ -1263,7 +1262,7 @@ function CaseStudySection() {
                   <div style={{ width: "12px", height: "12px", borderRadius: "50%", backgroundColor: l.color, border: `1.5px solid ${l.border}`, flexShrink: 0, marginTop: "3px" }} />
                   <div>
                     <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "13px", color: "#f0dfc8", marginBottom: "2px" }}>{l.label}</div>
-                    <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,223,200,0.45)" }}>{l.sub}</div>
+                    <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "12px", color: "rgba(240,223,200,0.6)" }}>{l.sub}</div>
                   </div>
                 </div>
               ))}
@@ -1600,7 +1599,7 @@ function CTASection() {
                   transition={{ duration: 0.6, ease: EASE, delay: 0.9 }}
                 >
                   <p className="cta-tagline" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "13px", fontWeight: 400, color: "rgba(240,223,200,0.5)", lineHeight: 1.5, textAlign: "center", marginTop: "4px" }}>Kötelezettség nélkül. Emberi nyelven.</p>
-                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)", lineHeight: 1.6 }}>* Kötelező mezők.<br />Az adataidat bizalmasan kezeljük, harmadik félnek nem adjuk át. A „visszahívást kérek" gombra kattintva hozzájárulsz adataid GDPR-megfelelő kezeléséhez.{" "}<a href="/adatkezeles" style={{ color: "rgba(240,111,102,0.6)", textDecoration: "underline" }}>Adatkezelési tájékoztató</a></p>
+                  <p style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.55)", lineHeight: 1.6 }}>* Kötelező mezők.<br />Az adataidat bizalmasan kezeljük, harmadik félnek nem adjuk át. A „visszahívást kérek" gombra kattintva hozzájárulsz adataid GDPR-megfelelő kezeléséhez.{" "}<a href="/adatkezeles" style={{ color: "rgba(240,111,102,0.6)", textDecoration: "underline" }}>Adatkezelési tájékoztató</a></p>
                 </motion.div>
               </form>
             )}
@@ -1620,8 +1619,8 @@ function Footer() {
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <img src={LOGO_URL} alt="Brandfabrik" style={{ height: "38px", objectFit: "contain" }} />
           </div>
-          <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.3)" }}>© {new Date().getFullYear()} Brandfabrik. Minden jog fenntartva.</div>
-          <a href="/adatkezeles" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.35)", textDecoration: "none", borderBottom: "1px solid rgba(240,223,200,0.15)", paddingBottom: "1px" }}>Adatkezelési tájékoztató</a>
+          <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.55)" }}>© {new Date().getFullYear()} Brandfabrik. Minden jog fenntartva.</div>
+          <a href="/adatkezeles" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", color: "rgba(240,223,200,0.55)", textDecoration: "none", borderBottom: "1px solid rgba(240,223,200,0.25)", paddingBottom: "1px" }}>Adatkezelési tájékoztató</a>
         </div>
       </div>
     </footer>
