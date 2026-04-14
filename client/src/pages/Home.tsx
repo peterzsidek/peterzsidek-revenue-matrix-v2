@@ -412,6 +412,7 @@ function HeroSection() {
           variants={heroSubtitleVariants}
           initial="hidden"
           animate={heroInView ? "visible" : "hidden"}
+          className="hero-subtitle"
           style={{
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 300,
@@ -436,6 +437,7 @@ function HeroSection() {
             variants={heroLeftPanelVariants}
             initial="hidden"
             animate={heroInView ? "visible" : "hidden"}
+            className="hero-left-panel"
             style={{ textAlign: 'right' }}
           >
             <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: '15px', lineHeight: 1.5, color: 'rgba(240,223,200,0.85)', marginBottom: '8px' }}>
@@ -497,7 +499,7 @@ function DifferentiatorTable() {
   const headerInView = useFramerInView(headerRef, { once: true, amount: 0.3 });
   const tableInView = useResponsiveInView(0.35, tableRef as React.RefObject<HTMLElement | null>);
   return (
-    <section style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
+    <section className="mobile-section-pad" style={{ backgroundColor: "#2a2a2a", padding: "40px 0 100px" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div
           ref={headerRef}
@@ -662,7 +664,7 @@ function RevenueSystemSection() {
         userSelect: "none" as const,
       }}>{card.num}</div>
       {/* Content */}
-      <div style={{ padding: "100px 36px 56px 36px", position: "relative" }}>
+      <div className="revenue-card-content" style={{ padding: "100px 36px 56px 36px", position: "relative" }}>
         <div className="revenue-card-title" style={{
           fontFamily: "'Poppins', sans-serif",
           fontWeight: 700,
@@ -718,7 +720,7 @@ function RevenueSystemSection() {
   );
 
   return (
-    <section style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px", position: "relative", overflow: "hidden" }}>
+    <section className="mobile-section-pad" style={{ backgroundColor: "#2c2c2c", padding: "100px 0 80px", position: "relative", overflow: "hidden" }}>
       {/* Network background image */}
       <div style={{
         position: "absolute",
@@ -798,7 +800,7 @@ function ForWhomSection() {
   const cardsInView = useResponsiveInView(0.35, cardsRef as React.RefObject<HTMLElement | null>);
 
   return (
-    <section style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
+    <section className="mobile-section-pad" style={{ padding: "100px 0", backgroundColor: "#2a2a2a" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "56px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
@@ -1064,7 +1066,7 @@ function CaseStudySection() {
   }, [chartInView]);
 
   return (
-    <section ref={ref} style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.18)" }}>
+    <section ref={ref} className="mobile-section-pad" style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.18)" }}>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" async />
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div variants={fadeUpVariants} initial="hidden" animate={inView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "24px" }}>
@@ -1085,7 +1087,7 @@ function CaseStudySection() {
               {/* Front face */}
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
-                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count335}</div>
+                <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count335}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>teljes vizsgált kommunikációs eszköztár</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
@@ -1105,7 +1107,7 @@ function CaseStudySection() {
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
-                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count127}</div>
+                <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count127}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>iparágra szűrt releváns eszköz</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
@@ -1124,7 +1126,7 @@ function CaseStudySection() {
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 100% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomRightRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
-                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count30}</div>
+                <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count30}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>a cégre szabott lehetőség</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
@@ -1143,7 +1145,7 @@ function CaseStudySection() {
               <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 0% 0%, rgba(240,111,102,0.07) 0%, transparent 65%)", opacity: 0.85, pointerEvents: "none", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", zIndex: 0 }} />
               <div className="stat-flip-front" style={{ backgroundColor: "rgba(240,223,200,0.03)", borderBottomLeftRadius: "20px" }}>
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", backgroundColor: "rgba(240,223,200,0.12)" }} />
-                <div style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count3}</div>
+                <div className="stat-number" style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 700, fontSize: "clamp(40px, 4vw, 56px)", color: "#f0dfc8", lineHeight: 1, marginBottom: "12px" }}>{count3}</div>
                 <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 300, fontSize: "13px", color: "rgba(240,223,200,0.55)", lineHeight: 1.5, flex: 1 }}>megvalósítási fázis</div>
                 <div style={{ position: "absolute", bottom: "20px", right: "20px", display: "flex", alignItems: "center", gap: "6px" }}>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", fontWeight: 500, color: "rgba(240,223,200,0.3)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1 }}>részletek</span>
@@ -1193,6 +1195,7 @@ function CaseStudySection() {
             initial="hidden"
             animate={chartInView ? "visible" : "hidden"}
             custom={0.3}
+            className="chart-legend-panel"
             style={{ display: "flex", flexDirection: "column", gap: "28px" }}
           >
             {/* How to read */}
@@ -1343,6 +1346,7 @@ function WhyTrustSection() {
         variants={variant}
         initial="hidden"
         animate={rowInView ? "visible" : "hidden"}
+        className={isLeft ? "why-card-left" : "why-card-right"}
         style={{
           padding: "48px 40px",
           backgroundColor: "rgba(240,223,200,0.03)",
@@ -1380,7 +1384,7 @@ function WhyTrustSection() {
   };
 
   return (
-    <section style={{ padding: "120px 0", backgroundColor: "#303030" }}>
+    <section className="mobile-section-pad" style={{ padding: "120px 0", backgroundColor: "#303030" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "72px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
@@ -1407,7 +1411,7 @@ function ImplementationSection() {
   const cardsInView = useResponsiveInView(0.32, cardsRef as React.RefObject<HTMLElement | null>);
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   return (
-    <section style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
+    <section className="mobile-section-pad" style={{ padding: "100px 0", backgroundColor: "#303030", position: "relative", overflow: "hidden" }}>
       {/* Halftone dot pattern — centered, mix-blend-mode:multiply makes white areas transparent */}
       <div
         aria-hidden="true"
@@ -1483,7 +1487,7 @@ function CTASection() {
   const inputStyle = { width: "100%", backgroundColor: "rgba(240,223,200,0.06)", border: "1px solid rgba(240,223,200,0.15)", borderBottomRightRadius: "10px", color: "#f0dfc8", padding: "14px 18px", fontFamily: "'Poppins', sans-serif", fontSize: "15px", fontWeight: 300, outline: "none" };
 
   return (
-    <section id="cta" style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.25)" }}>
+    <section id="cta" className="mobile-section-pad" style={{ padding: "120px 0", backgroundColor: "rgba(0,0,0,0.25)" }}>
       <div ref={ref} className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <div className="grid-cta">
           {/* Left column — blur+lift fade-up */}
@@ -1567,7 +1571,7 @@ function Footer() {
   return (
     <footer style={{ backgroundColor: "#1e1e1e", borderTop: "1px solid rgba(240,223,200,0.08)", padding: "40px 0" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
+        <div className="footer-inner" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <img src={LOGO_URL} alt="Brandfabrik" style={{ height: "38px", objectFit: "contain" }} />
           </div>

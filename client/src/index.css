@@ -425,7 +425,7 @@
   .hero-cta-btn { width: 100%; text-align: center; justify-content: center; }
 
   /* Hero content padding on mobile */
-  .hero-content { padding: 100px 20px 60px 20px !important; }
+  .hero-content { padding: 80px 16px 48px 16px !important; }
 
   /* RevenueSystem cards: 1 col on mobile */
   .rev-row { grid-template-columns: 1fr !important; }
@@ -445,6 +445,73 @@
   /* Navbar CTA: show short text, hide long */
   .navbar-cta-long { display: none !important; }
   .navbar-cta-short { display: inline !important; }
+
+  /* ---- Section-level padding overrides ---- */
+  /* All sections with inline padding: 100px 0 → 56px 0 */
+  .mobile-section-pad { padding: 56px 0 !important; }
+
+  /* RevenueSystem card inner padding */
+  .revenue-card-content { padding: 72px 20px 36px 20px !important; }
+
+  /* Revenue card large bg number — smaller on mobile */
+  .revenue-card-number { font-size: 52px !important; }
+
+  /* WhyTrust card: reduce padding and switch border direction on mobile */
+  .why-card-left  { padding: 28px 20px !important; border-left: none !important; border-top: 3px solid rgba(240,223,200,0.15) !important; }
+  .why-card-right { padding: 28px 20px !important; border-right: none !important; border-top: 3px solid rgba(240,223,200,0.15) !important; }
+
+  /* Implementation card padding */
+  .impl-card-inner { padding: 28px 20px !important; }
+
+  /* CTA section left column padding */
+  .cta-left-col { padding: 40px 0 0 0 !important; }
+
+  /* Stat flip cards — fixed height on mobile */
+  .stat-flip-card { height: 160px !important; }
+  .stat-flip-front, .stat-flip-back { padding: 20px 16px !important; }
+
+  /* Chart section: hide right panel on mobile (too narrow) */
+  .chart-legend-panel { display: none !important; }
+
+  /* Footer flex → column */
+  .footer-inner { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+
+  /* Navbar height */
+  nav { height: 56px !important; }
+
+  /* Hero subtitle font size */
+  .hero-subtitle { font-size: 15px !important; margin-bottom: 40px !important; }
+
+  /* Hero left panel: center-align text on mobile */
+  .hero-left-panel { text-align: center !important; }
+  .hero-left-panel .hero-cta-btn { margin-left: auto; margin-right: auto; }
+
+  /* Section header margin-bottom reduction */
+  .section-header-mb { margin-bottom: 36px !important; }
+
+  /* CaseStudy stat number font size */
+  .stat-number { font-size: 36px !important; }
+
+  /* Stat grid: 2 columns, tighter */
+  .stat-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 2px !important; margin-bottom: 40px !important; }
+
+  /* DifferentiatorTable: smaller min-width on mobile */
+  .diff-table-inner { min-width: 480px; }
+
+  /* Hero panels-grid gap */
+  .hero-panels-grid { gap: 20px !important; }
+
+  /* RevenueSystem section header margin */
+  .rev-header-mb { margin-bottom: 32px !important; }
+
+  /* Closing statement in RevenueSystem */
+  .rev-closing { padding: 24px 20px !important; }
+
+  /* WhyTrust header margin */
+  .why-header-mb { margin-bottom: 40px !important; }
+
+  /* CTA section: reduce form padding */
+  .cta-form-wrapper { padding: 28px 20px !important; }
 }
 
 /* Hero two-column panels grid */
