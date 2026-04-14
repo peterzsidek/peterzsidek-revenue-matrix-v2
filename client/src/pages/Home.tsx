@@ -597,7 +597,7 @@ function DifferentiatorTable() {
         <motion.div
           variants={fadeUpVariants}
           initial="hidden"
-          animate={tableInView ? "visible" : "hidden"}
+          animate={anyTableInView ? "visible" : "hidden"}
           custom={0.4}
           style={{ marginTop: "40px", borderLeft: "4px solid #f06f66", paddingLeft: "24px", maxWidth: "720px" }}
         >
