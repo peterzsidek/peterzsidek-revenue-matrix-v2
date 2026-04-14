@@ -580,13 +580,13 @@ function DifferentiatorTable() {
             >
               {/* Aspect label */}
               <div style={{ padding: "10px 14px 6px", fontFamily: "'Poppins', sans-serif", fontSize: "10px", fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: "0.1em", color: "rgba(240,111,102,0.7)" }}>{row.aspect}</div>
-              {/* Two-column comparison */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px" }}>
+              {/* Two-column comparison — no gap, border on right col only so divider is always centered */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
                 <div style={{ padding: "8px 14px 14px", display: "flex", gap: "8px", alignItems: "flex-start" }}>
                   <span style={{ color: "rgba(240,111,102,0.45)", fontSize: "13px", flexShrink: 0, marginTop: "1px" }}>✕</span>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 300, color: "rgba(240,223,200,0.55)", lineHeight: 1.5 }}>{row.agency}</span>
                 </div>
-                <div style={{ padding: "8px 14px 14px", display: "flex", gap: "8px", alignItems: "flex-start", backgroundColor: "rgba(240,111,102,0.04)", borderLeft: "2px solid rgba(240,111,102,0.2)" }}>
+                <div style={{ padding: "8px 14px 14px", display: "flex", gap: "8px", alignItems: "flex-start", backgroundColor: "rgba(240,111,102,0.04)", borderLeft: "2px solid rgba(240,111,102,0.25)" }}>
                   <span style={{ color: "#f06f66", fontSize: "13px", flexShrink: 0, marginTop: "1px" }}>✓</span>
                   <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "12px", fontWeight: 500, color: "#f0dfc8", lineHeight: 1.5 }}>{row.brandfabrik}</span>
                 </div>
