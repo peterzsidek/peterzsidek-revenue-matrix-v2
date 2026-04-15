@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import HeroPreview from "./pages/HeroPreview";
 import Adatkezeles from "./pages/Adatkezeles";
 import DifferentiatorPrototype from "./pages/DifferentiatorPrototype";
+import InAppBrowserBanner from "./components/InAppBrowserBanner";
 
 
 function Router() {
@@ -40,6 +41,7 @@ function App() {
           <Toaster />
           <div style={{ overflowX: 'clip', width: '100%', maxWidth: '100vw', position: 'relative' }}>
             <Router />
+            <InAppBrowserBanner />
           </div>
         </TooltipProvider>
       </ThemeProvider>
