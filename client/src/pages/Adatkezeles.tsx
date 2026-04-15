@@ -4,7 +4,7 @@ export default function Adatkezeles() {
   const sections = [
     {
       title: "1. Az adatkezelő",
-      content: `Adatkezelő: Brandfabrik (a továbbiakban: „Brandfabrik" vagy „mi").\nA Revenue Matrix™ diagnosztikai szolgáltatás keretében gyűjtött személyes adatok kezelője a Brandfabrik.\nKapcsolat: a weboldalon megadott elérhetőségeken keresztül.`,
+      content: `Adatkezelő: Brandfabrik (a továbbiakban: „Brandfabrik" vagy „mi").\nA Revenue Matrix diagnosztikai szolgáltatás keretében gyűjtött személyes adatok kezelője a Brandfabrik.\nKapcsolat: a weboldalon megadott elérhetőségeken keresztül.`,
     },
     {
       title: "2. Milyen adatokat gyűjtünk?",
@@ -12,7 +12,7 @@ export default function Adatkezeles() {
     },
     {
       title: "3. Az adatkezelés célja és jogalapja",
-      content: `Az adatkezelés célja:\n• Visszahívás biztosítása az érdeklődő számára\n• Revenue Matrix™ diagnosztikai elemzés elvégzése és eredményeinek bemutatása\n• Üzleti kapcsolatfelvétel és ajánlatadás\n\nJogalap: az érintett önkéntes hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont), amelyet az űrlap elküldésével ad meg.`,
+      content: `Az adatkezelés célja:\n• Visszahívás biztosítása az érdeklődő számára\n• Revenue Matrix diagnosztikai elemzés elvégzése és eredményeinek bemutatása\n• Üzleti kapcsolatfelvétel és ajánlatadás\n\nJogalap: az érintett önkéntes hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont), amelyet az űrlap elküldésével ad meg.`,
     },
     {
       title: "4. Adatmegőrzési idő",
