@@ -539,8 +539,8 @@ h1, h2, h3, h4, h5, h6 {
   .stat-flip-card { height: 220px !important; }
   .stat-flip-front, .stat-flip-back { padding: 20px 16px !important; }
 
-  /* Chart section: hide right panel on mobile (too narrow) */
-  .chart-legend-panel { display: none !important; }
+  /* Chart legend panel: show below chart on mobile */
+  .chart-legend-panel { display: flex !important; flex-direction: column !important; margin-top: 32px !important; }
 
   /* Chart x-axis labels: symmetric placement below chart frame on mobile */
   .chart-x-labels {
