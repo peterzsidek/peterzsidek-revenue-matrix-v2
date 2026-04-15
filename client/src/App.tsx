@@ -38,7 +38,9 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div style={{ overflowX: 'clip', width: '100%', maxWidth: '100vw', position: 'relative' }}>
+            <Router />
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
