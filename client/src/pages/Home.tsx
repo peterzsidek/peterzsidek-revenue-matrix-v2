@@ -22,7 +22,7 @@ const heroSubtitleVariants = {
   },
 };
 const heroLeftPanelVariants = {
-  hidden: { opacity: 0, x: 0 },
+  hidden: { opacity: 0, x: -28 },
   visible: {
     opacity: 1, x: 0,
     transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as const, delay: 0.85 }
@@ -36,7 +36,7 @@ const heroBtnVariants = {
   },
 };
 const heroRightPanelVariants = {
-  hidden: { opacity: 0, x: 0 },
+  hidden: { opacity: 0, x: 28 },
   visible: {
     opacity: 1, x: 0,
     transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as const, delay: 0.85 }
@@ -70,7 +70,7 @@ const staggerItem = {
 };
 // Row reveal for table rows — subtle, left-to-right
 const rowReveal = {
-  hidden: { opacity: 0, x: 0, filter: "blur(2px)" },
+  hidden: { opacity: 0, x: -20, filter: "blur(2px)" },
   visible: (delay: number = 0) => ({
     opacity: 1, x: 0, filter: "blur(0px)",
     transition: { duration: 0.6, ease: EASE_SOFT, delay }
@@ -78,14 +78,14 @@ const rowReveal = {
 };
 // Slide from left/right for symmetric card pairs
 const slideFromLeft = {
-  hidden: { opacity: 0, x: 0, filter: "blur(3px)" },
+  hidden: { opacity: 0, x: -40, filter: "blur(3px)" },
   visible: {
     opacity: 1, x: 0, filter: "blur(0px)",
     transition: { duration: 0.85, ease: EASE_SOFT }
   },
 };
 const slideFromRight = {
-  hidden: { opacity: 0, x: 0, filter: "blur(3px)" },
+  hidden: { opacity: 0, x: 40, filter: "blur(3px)" },
   visible: {
     opacity: 1, x: 0, filter: "blur(0px)",
     transition: { duration: 0.85, ease: EASE_SOFT }
@@ -656,7 +656,7 @@ const revenueSystemCards = [
 // Revenue card left-slide variant — each card slides in from the left with a per-card delay
 // No blur on cards (same reason as h1: blur on many elements causes jank)
 const revenueCardVariant = {
-  hidden: { opacity: 0, x: 0 },
+  hidden: { opacity: 0, x: -56 },
   visible: (delay: number = 0) => ({
     opacity: 1, x: 0,
     transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const, delay }
@@ -1344,19 +1344,19 @@ function WhyTrustSection() {
 
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   const slideLeft = {
-    hidden: { opacity: 0, x: 0 },
+    hidden: { opacity: 0, x: -60 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: EASE } },
   };
   const slideRight = {
-    hidden: { opacity: 0, x: 0 },
+    hidden: { opacity: 0, x: 60 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: EASE } },
   };
   const slideLeftDelayed = {
-    hidden: { opacity: 0, x: 0 },
+    hidden: { opacity: 0, x: -60 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: EASE, delay: 0.18 } },
   };
   const slideRightDelayed = {
-    hidden: { opacity: 0, x: 0 },
+    hidden: { opacity: 0, x: 60 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.9, ease: EASE, delay: 0.18 } },
   };
 
@@ -1494,8 +1494,8 @@ function ImplementationSection() {
           ].map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: 0 }}
-              animate={cardsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
+              initial={{ opacity: 0, x: -56 }}
+              animate={cardsInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -56 }}
               transition={{ duration: 0.9, ease: EASE, delay: i * 0.18 }}
               className={`revenue-card${item.highlight ? "" : " impl-card-grey"}`}
               style={{ backgroundColor: item.highlight ? "#3d3230" : "#2a2a2a", borderTop: `3px solid ${item.highlight ? "#f06f66" : "#4f4c48"}`, padding: "28px 24px", borderBottomRightRadius: "30px", position: "relative", overflow: "hidden" }}
