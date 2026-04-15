@@ -1432,7 +1432,7 @@ function WhyTrustSection() {
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
         <motion.div ref={headerRef} variants={fadeUpVariants} initial="hidden" animate={headerInView ? "visible" : "hidden"} custom={0} style={{ marginBottom: "72px" }}>
           <div style={{ width: "48px", height: "3px", backgroundColor: "#f06f66", marginBottom: "24px" }} />
-          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mittől lesz ebből valóban működő rendszer?</h2>
+          <h2 style={{ fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif", fontWeight: 300, fontSize: "clamp(32px, 3.5vw, 52px)", color: "#f0dfc8", lineHeight: 1.2 }}>Mitől lesz ebből valóban működő rendszer?</h2>
         </motion.div>
         <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
           <div ref={row1Ref} className="why-row" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "2px" }}>
