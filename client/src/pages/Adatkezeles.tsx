@@ -51,17 +51,11 @@ export default function Adatkezeles() {
           gap: "12px",
         }}>
           <Link href="/">
-            <span style={{
-              fontFamily: "'Zalando Sans Expanded', 'Poppins', sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(14px, 4vw, 18px)",
-              color: "#f0dfc8",
-              cursor: "pointer",
-              letterSpacing: "0.05em",
-              whiteSpace: "nowrap",
-            }}>
-              BRANDFABRIK
-            </span>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310419663032362343/QvwZVu498WhwxVrDug5WRT/brandfabrik-logo_a07a612a.png"
+              alt="Brandfabrik"
+              style={{ height: "38px", objectFit: "contain", cursor: "pointer", display: "block" }}
+            />
           </Link>
           <Link href="/">
             <span style={{
