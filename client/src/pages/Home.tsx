@@ -1517,11 +1517,17 @@ function CTASection() {
   const formInView = useResponsiveInView(0.25, formRef as React.RefObject<HTMLElement | null>);
   const [formData, setFormData] = useState({ name: "", company: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
   const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
   const MAIL_ENDPOINT = "https://brandfabrik.hu/send.php";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Honeypot check — botok kitöltik, emberek nem
+    if (honeypot) return;
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     try {
       await fetch(MAIL_ENDPOINT, {
         method: "POST",
@@ -1535,6 +1541,7 @@ function CTASection() {
         }),
       });
     } catch (_) { }
+    setIsSubmitting(false);
     setSubmitted(true);
   };
 
@@ -1578,6 +1585,16 @@ function CTASection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {/* Honeypot mező — botok kitöltik, emberek nem látják */}
+                <input
+                  type="text"
+                  name="website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
                 {[
                   <input key="name" style={inputStyle} type="text" placeholder="Neved *" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />,
                   <input key="company" style={inputStyle} type="text" placeholder="Vállalkozás neve *" required value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} />,
@@ -1599,8 +1616,8 @@ function CTASection() {
                   animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
                   transition={{ duration: 0.7, ease: EASE, delay: 0.7 }}
                 >
-                  <button type="submit" className="btn-coral" style={{ width: "100%", backgroundColor: "#f06f66", color: "#303030", padding: "18px 32px", fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.1em", border: "none", cursor: "pointer", marginTop: "8px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "0", borderBottomRightRadius: "12px" }}>
-                    Visszahívást kérek <span className="btn-arrow">→</span>
+                  <button type="submit" disabled={isSubmitting} className="btn-coral" style={{ width: "100%", backgroundColor: isSubmitting ? "rgba(240,111,102,0.5)" : "#f06f66", color: "#303030", padding: "18px 32px", fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "14px", textTransform: "uppercase", letterSpacing: "0.1em", border: "none", cursor: isSubmitting ? "not-allowed" : "pointer", marginTop: "8px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "0", borderBottomRightRadius: "12px" }}>
+                    {isSubmitting ? "Küldés..." : <>Visszahívást kérek <span className="btn-arrow">→</span></>}
                   </button>
                 </motion.div>
                 <motion.div
