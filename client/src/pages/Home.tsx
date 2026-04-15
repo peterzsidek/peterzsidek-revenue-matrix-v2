@@ -253,11 +253,14 @@ function HeroDifferentiatorTabs() {
                         ref={tooltipRef}
                         onMouseEnter={cancelClose}
                         onMouseLeave={scheduleClose}
+                        onClick={(e) => e.stopPropagation()}
                         style={{
-                          position: "absolute",
-                          bottom: "calc(100% + 10px)",
-                          right: 0,
-                          width: "clamp(280px, 380px, 420px)",
+                          position: "fixed",
+                          bottom: "auto",
+                          top: "50%",
+                          left: "50%",
+                          transform: "translate(-50%, -50%)",
+                          width: "min(380px, calc(100vw - 32px))",
                           maxWidth: "calc(100vw - 32px)",
                           backgroundColor: "rgba(18,18,18,0.98)",
                           border: "1px solid rgba(240,111,102,0.3)",
