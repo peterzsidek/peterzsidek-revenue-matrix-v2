@@ -1,6 +1,17 @@
 <?php
-// CORS – csak a saját domainről engedélyezve
-header('Access-Control-Allow-Origin: https://brandfabrik.hu');
+// CORS – engedélyezett domainek
+$allowed_origins = [
+    'https://brandfabrik.hu',
+    'https://www.brandfabrik.hu',
+    'https://peterzsidek-revenue-matrix-v2.pages.dev',
+    'https://revmatrix-swax7y8k.manus.space',
+];
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if (in_array($origin, $allowed_origins)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+} else {
+    header('Access-Control-Allow-Origin: https://brandfabrik.hu');
+}
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 header('Content-Type: application/json; charset=utf-8');
