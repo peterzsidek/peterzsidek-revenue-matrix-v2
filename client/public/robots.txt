@@ -1,4 +1,39 @@
+# robots.txt — brandfabrik.hu
+
+# Allow all standard crawlers
 User-agent: *
 Allow: /
 
+# Claude (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ChatGPT (OpenAI)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Gemini / Google AI
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Bing / Microsoft Copilot
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Sitemap
 Sitemap: https://brandfabrik.hu/sitemap.xml
