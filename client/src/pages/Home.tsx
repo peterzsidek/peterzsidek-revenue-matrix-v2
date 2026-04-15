@@ -1625,7 +1625,7 @@ function Footer() {
   return (
     <footer style={{ backgroundColor: "#1e1e1e", borderTop: "1px solid rgba(240,223,200,0.08)", padding: "40px 0" }}>
       <div className="container" style={{ maxWidth: "1280px", marginLeft: "auto", marginRight: "auto" }}>
-        <div className="footer-inner" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
+        <div className="footer-inner" style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", gap: "12px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <img src={LOGO_URL} alt="Brandfabrik" style={{ height: "38px", objectFit: "contain" }} />
           </div>
